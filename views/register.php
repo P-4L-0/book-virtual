@@ -7,7 +7,7 @@
 </head>
 <body>
     <div class="container">
-        <form method="POST" action="../php/register.php">
+        <form method="POST" action="../php/routes.php/register">
             <fieldset>
                 <label>Nombres</label>
                 <input name="nombre" type="text" required>
