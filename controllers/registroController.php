@@ -2,7 +2,7 @@
 $datos = $_POST;
 require_once __DIR__ . '/../database/connection.php';
 
-class Registro
+class RegistroController
 {
 
     private PDO $db;

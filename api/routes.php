@@ -1,10 +1,10 @@
 <?php
-require_once __DIR__ . '/register.php';
+require_once __DIR__ . '/registroController.php';
 
 
 
 //instancia de controladores
-$registro = new Registro();
+$registro = new RegistroController();
 
 
 //obtención del método http
