@@ -13,13 +13,16 @@ class Usuario{
     }
     public function crear(){
         $stmt = $this->db->prepare("INSERT INTO user() VALUES (?)");
-        $stmt->bind_param("?");
+        $stmt->bind_param("",);
         return $stmt->execute(); 
     }
 
-    public function obtener(){
-        
-    }
+    public function comprobarExistencia($email){
+        $stmt = $this->db->prepare("SELECT COUNT(*) FROM user WHERE email = ?");
+        $stmt->bind_Param("s", $email);
+        $stmt->execute();
+        return $stmt->fetchColumn() > 0;
+    }   
 
     public function auth($email, $password){
         $stmt = $this->db->prepare("SELECT email, password FROM user where email = ?");
