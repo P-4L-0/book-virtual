@@ -6,15 +6,37 @@ require_once __DIR__ . '/../database/connection.php';
  */
 class Usuario{
 
-    public function __construct(){}
-    public function crear(){}
+    private PDO $db; 
 
-    public function obtener(){}
+    public function __construct(){
+        $this->db = Connection::connection();
+    }
+    public function crear(){
+        $stmt = $this->db->prepare("INSERT INTO user() VALUES (?)");
+        $stmt->bind_param("?");
+        return $stmt->execute(); 
+    }
 
-    public function auth(){}
+    public function obtener(){
+        
+    }
+
+    public function auth($email, $password){
+        $stmt = $this->db->prepare("SELECT email, password FROM user where email = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $user = $result->fetch_assoc();
+
+        if($user && password_verify($password, $user['password'],)){
+            return $user;
+        }
+
+        return NULL; 
+    }
 
     public function __destruct(){
-
+        Connection::disconnect();
     }
 
 
