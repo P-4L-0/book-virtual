@@ -16,13 +16,12 @@
       <div class="flex flex-col w-full h-full lg:w-3/5 lg:order-2">
         <div class="flex flex-col items-center w-full h-full lg:justify-center">
           <a href="/" class="">
-            <img src="VirtualBooks.png" alt="" /><!--LOGO-->
+            <img src="../resources/VirtualBooks.png" alt="" /><!--LOGO-->
           </a>
           <h1 class="text-red-500 font-bold text-2xl mb-10 mt-10">
             Registrarse
           </h1>
           <form action="/" class="w-4/5 lg:flex flex-col items-center">
-            <input type="hidden" id="_token" value="{{ csrf_token() }}" />
             <input
               class="block w-full p-2 outline outline-1 outline-red-500 mb-4 lg:w-2/5"
               type="text"
@@ -55,7 +54,7 @@
                 class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer"
               >
                 <img
-                  src="{{ asset('storage/svg/eye-scan.svg') }}"
+                  src=""
                   alt="scan_eye"
                   type="image/svg+xml"
                   id="see_password_img"
@@ -80,7 +79,7 @@
           </form>
           <p class="my-8">
             ¿Ya posees una cuenta?
-            <a href="/login" class="text-red-500 font-bold"> Iniciar Sesion </a>
+            <a href="/login" class="text-red-500 font-bold"> Iniciar Sesión </a>
           </p>
         </div>
         <p class="flex grow items-end text-vh-green text-center lg:block">
@@ -98,7 +97,7 @@
         <!-- Contenedor de la imagen -->
         <div class="w-full h-full relative">
           <img
-            src="books.jpg"
+            src="../resources/books.jpg"
             alt="doctor_svg"
             class="w-full h-full object-cover rounded-xl"
           />
