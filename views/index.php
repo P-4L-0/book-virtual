@@ -10,7 +10,7 @@
 
 <body class="w-full h-full overflow-x-hidden">
 
-    <?php include "templates/header.php"; ?>
+    <?php require_once __DIR__ . "../resources/templates/header.php"; ?>
 
     <div class="w-full h-auto">
         <!-- Styles pc -->
@@ -28,7 +28,7 @@
             </div>
             <div class="w-1/2 hidden lg:flex">
                 <div class="w-full flex justify-center items-center">
-                    <img class="h-full lg:h-auto lg:w-full" src="storage/svg/books.svg" alt="Libros digitales" />
+                    <img class="h-full lg:h-auto lg:w-full" src="" alt="Libros digitales" />
                 </div>
                 <div class="">
                     <div class="flex flex-col items-end">
@@ -44,7 +44,7 @@
         <div class="lg:hidden">
             <div class="flex mb-5 pt-16 bg-gray-100 w-full">
                 <div class="w-3/4 flex justify-center items-center">
-                    <img class="h-full" src="storage/svg/books.svg" alt="Libros digitales" />
+                    <img class="h-full" src="" alt="Libros digitales" />
                 </div>
                 <div class="w-1/4 flex items-center justify-end">
                     <div class="flex flex-col justify-center">
@@ -113,27 +113,27 @@
             <div
                 class="w-full flex flex-wrap justify-center items-center gap-5 lg:w-1/2 lg:flex-row lg:flex-wrap lg:justify-start lg:ml-8 lg:mr-8 lg:flex-grow">
                 <div class="w-32 h-32 bg-gray-100 p-8 rounded-2xl shadow-lg flex flex-col items-center">
-                    <img src="storage/svg/library.svg" alt="Biblioteca" class="w-10">
+                    <img src="" alt="Biblioteca" class="w-10">
                     <p class="font-bold">Biblioteca Digital</p>
                 </div>
                 <div class="w-32 h-32 bg-gray-100 p-8 rounded-2xl shadow-lg flex flex-col items-center">
-                    <img src="storage/svg/recommendation.svg" alt="Recomendaciones" class="w-10">
+                    <img src="" alt="Recomendaciones" class="w-10">
                     <p class="font-bold">Recomendaciones</p>
                 </div>
                 <div class="w-32 h-32 bg-gray-100 p-8 rounded-2xl shadow-lg flex flex-col items-center">
-                    <img src="storage/svg/offline.svg" alt="Lectura offline" class="w-10">
+                    <img src="" alt="Lectura offline" class="w-10">
                     <p class="font-bold">Lectura Offline</p>
                 </div>
                 <div class="w-32 h-32 bg-gray-100 p-8 rounded-2xl shadow-lg flex flex-col items-center">
-                    <img src="storage/svg/community.svg" alt="Comunidad" class="w-10">
+                    <img src="" alt="Comunidad" class="w-10">
                     <p class="font-bold">Comunidad</p>
                 </div>
                 <div class="w-32 h-32 bg-gray-100 p-8 rounded-2xl shadow-lg flex flex-col items-center">
-                    <img src="storage/svg/updates.svg" alt="Actualizaciones" class="w-10">
+                    <img src="" alt="Actualizaciones" class="w-10">
                     <p class="font-bold">Actualizaciones</p>
                 </div>
                 <div class="w-32 h-32 bg-gray-100 p-8 rounded-2xl shadow-lg flex flex-col items-center">
-                    <img src="storage/svg/support.svg" alt="Soporte" class="w-10">
+                    <img src="" alt="Soporte" class="w-10">
                     <p class="font-bold">Soporte 24/7</p>
                 </div>
             </div>
@@ -141,7 +141,7 @@
 
         <div class="w-full flex flex-col lg:flex-row">
             <div class="m-8 flex items-center justify-center lg:w-1/2">
-                <img src="storage/svg/reading.svg" alt="Lectura" class="mx-auto my-0 w-full lg:w-3/4 lg:ml-auto">
+                <img src="" alt="Lectura" class="mx-auto my-0 w-full lg:w-3/4 lg:ml-auto">
             </div>
             <div class="flex justify-center lg:my-20 text-left items-center flex-col">
                 <h2 class="font-bold p-2 text-xl text-red-300 lg:font-bold lg:text-left lg:text-4xl">
@@ -152,15 +152,15 @@
                             <h2 class="text-xl lg:text-2xl font-semibold text-gray-700 mb-4">Nuestros Servicios</h2>
                             <ul class="space-y-4">
                                 <li class="text-base lg:text-xl font-medium text-gray-600 flex items-center">
-                                    <img src="storage/svg/check.svg" class="w-6 h-6 text-red-300 mr-2">
+                                    <img src="" class="w-6 h-6 text-red-300 mr-2">
                                     Acceso ilimitado a miles de libros digitales.
                                 </li>
                                 <li class="text-base lg:text-xl font-medium text-gray-600 flex items-center">
-                                    <img src="storage/svg/check.svg" class="w-6 h-6 text-red-300 mr-2">
+                                    <img src="" class="w-6 h-6 text-red-300 mr-2">
                                     Recomendaciones personalizadas basadas en tus gustos.
                                 </li>
                                 <li class="text-base lg:text-xl font-medium text-gray-600 flex items-center">
-                                    <img src="storage/svg/check.svg" class="w-6 h-6 text-red-300 mr-2">
+                                    <img src="" class="w-6 h-6 text-red-300 mr-2">
                                     Lectura sin interrupciones, sin anuncios.
                                 </li>
                             </ul>
@@ -232,7 +232,7 @@
     </div>
 
     <div class="w-full h-auto footer-container">
-        <?php include 'templates/footer.php'; ?>
+        <?php require_once __DIR__ . '../resources/templates/footer.php'; ?>
     </div>
 
 </html>
