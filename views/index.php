@@ -28,7 +28,7 @@
             </div>
             <div class="w-1/2 hidden lg:flex">
                 <div class="w-full flex justify-center items-center">
-                    <img class="h-full lg:h-auto lg:w-3/4" src="index.png" alt="Libros digitales" />
+                    <img class="h-full lg:h-auto lg:w-3/4" src="../resources/img/index.png" alt="Libros digitales" />
                 </div>
                 <div class="">
                     <div class="flex flex-col items-end">
@@ -44,7 +44,7 @@
         <div class="lg:hidden">
             <div class="flex mb-5 pt-16 bg-gray-100 w-full">
                 <div class="w-3/4 flex justify-center items-center">
-                    <img class="h-full lg:h-auto lg:w-3/4" src="index.png" alt="Libros digitales" />
+                    <img class="h-full lg:h-auto lg:w-3/4" src="../resources/img/index.png" alt="Libros digitales" />
                 </div>
                 <div class="w-1/4 flex items-center justify-end">
                     <div class="flex flex-col justify-center">
@@ -113,23 +113,23 @@
             <div
                 class="w-full flex flex-wrap justify-center items-center gap-5 lg:w-1/2 lg:flex-row lg:flex-wrap lg:justify-start lg:ml-8 lg:mr-8 lg:flex-grow">
                 <div class="w-32 h-32 bg-gray-100 p-8 rounded-2xl shadow-lg flex flex-col items-center text-center">
-                    <img src="biblioteca-en-linea.png" alt="Biblioteca" class="w-10">
+                    <img src="../resources/img/biblioteca-en-linea.png" alt="Biblioteca" class="w-10">
                     <p class="font-bold">Biblioteca Digital</p>
                 </div>
                 <div class="w-32 h-32 bg-gray-100 p-8 rounded-2xl shadow-lg flex flex-col items-center text-center">
-                    <img src="zona-de-lectura.png" alt="Lectura offline" class="w-10">
+                    <img src="../resources/img/zona-de-lectura.png" alt="Lectura offline" class="w-10">
                     <p class="font-bold">Lectura Offline</p>
                 </div>
                 <div class="w-32 h-32 bg-gray-100 p-8 rounded-2xl shadow-lg flex flex-col items-center text-center">
-                    <img src="comunidad.png" alt="Comunidad" class="w-10">
+                    <img src="../resources/img/comunidad.png" alt="Comunidad" class="w-10">
                     <p class="font-bold">Comunidad</p>
                 </div>
                 <div class="w-32 h-32 bg-gray-100 p-8 rounded-2xl shadow-lg flex flex-col items-center text-center">
-                    <img src="actualizacion-de-sistema.png" alt="Actualizaciones" class="w-10">
+                    <img src="../resources/img/actualizacion-de-sistema.png" alt="Actualizaciones" class="w-10">
                     <p class="font-bold">Actualizaciones</p>
                 </div>
                 <div class="w-32 h-32 bg-gray-100 p-8 rounded-2xl shadow-lg flex flex-col items-center text-center">
-                    <img src="soporte-tecnico.png" alt="Soporte" class="w-10">
+                    <img src="../resources/img/soporte-tecnico.png" alt="Soporte" class="w-10">
                     <p class="font-bold">Soporte 24/7</p>
                 </div>
             </div>
@@ -137,7 +137,7 @@
 
         <div class="w-full flex flex-col lg:flex-row">
             <div class="m-8 flex items-center justify-center lg:w-1/2">
-                <img src="leer.png" alt="Lectura" class="mx-auto my-0 w-3/12 lg:w-1/3 lg:ml-auto">
+                <img src="../resources/img/leer.png" alt="Lectura" class="mx-auto my-0 w-3/12 lg:w-1/3 lg:ml-auto">
             </div>
 
             <div class="flex justify-center lg:my-20 text-left items-center flex-col">
@@ -150,15 +150,15 @@
                             <h2 class="text-xl lg:text-2xl font-semibold text-gray-700 mb-4">Nuestros Servicios</h2>
                             <ul class="space-y-4">
                                 <li class="text-base lg:text-xl font-medium text-gray-600 flex items-center">
-                                    <img src="libros.png" class="w-8 h-8 text-red-300 mr-2">
+                                    <img src="../resources/img/libros.png" class="w-8 h-8 text-red-300 mr-2">
                                     Acceso ilimitado a miles de libros digitales.
                                 </li>
                                 <li class="text-base lg:text-xl font-medium text-gray-600 flex items-center">
-                                    <img src="retroalimentacion.png" class="w-8 h-8 text-red-300 mr-2">
+                                    <img src="../resources/img/retroalimentacion.png" class="w-8 h-8 text-red-300 mr-2">
                                     Recomendaciones personalizadas basadas en tus gustos.
                                 </li>
                                 <li class="text-base lg:text-xl font-medium text-gray-600 flex items-center">
-                                    <img src="publicidad-online.png" class="w-8 h-8 text-red-300 mr-2">
+                                    <img src="../resources/img/publicidad-online.png" class="w-8 h-8 text-red-300 mr-2">
                                     Lectura sin interrupciones, sin anuncios.
                                 </li>
                             </ul>
@@ -221,7 +221,7 @@
             </div>
             <div class="lg:w-1/2">
                 <div class="m-8 flex items-center justify-center">
-                    <img src="comunidad-lectora.png" alt="Comunidad"
+                    <img src="../resources/img/comunidad-lectora.png" alt="Comunidad"
                         class="mx-auto my-0 w-full lg:w-3/4 lg:ml-auto">
                 </div>
             </div>
