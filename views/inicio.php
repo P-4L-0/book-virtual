@@ -22,7 +22,7 @@
                     <h3 class="text-xl font-semibold text-gray-800 mb-4">Libros</h3>
                     <div class="flex flex-col items-start justify-start w-full h-32">
                         <div class="flex items-center mt-8 ml-2">
-                            <img class="h-12 w-12 mr-4" src="resources/svg/bookmark.svg" alt="Libros" />
+                            <img class="h-12 w-12 mr-4" src="../resources/svg/bookmark.svg" alt="Libros" />
                             <h1 class="text-2xl">0</h1>
                         </div>
                         <canvas id="doctors_chart"></canvas>
@@ -32,7 +32,7 @@
                     <h3 class="text-xl font-semibold text-gray-800 mb-4">Categorías</h3>
                     <div class="flex flex-col items-start justify-start w-full h-32">
                         <div class="flex items-center mt-8 ml-2">
-                            <img class="h-12 w-12 mr-4" src="public/svg/bookmark.svg" alt="Categorías" />
+                            <img class="h-12 w-12 mr-4" src="../resources/svg/bookmark.svg" alt="Categorías" />
                             <h1 class="text-2xl">0</h1>
                         </div>
                         <canvas id="appointments_chart"></canvas>
@@ -42,7 +42,7 @@
                     <h3 class="text-xl font-semibold text-gray-800 mb-4">Autores</h3>
                     <div class="flex flex-col items-start justify-start w-full h-32">
                         <div class="flex items-center mt-8 ml-2">
-                            <img class="h-12 w-12 mr-4" src="public/svg/bookmark.svg" alt="Autores" />
+                            <img class="h-12 w-12 mr-4" src="../resources/svg/bookmark.svg" alt="Autores" />
                             <h1 class="text-2xl">0</h1>
                         </div>
                         <canvas id="appointments_chart"></canvas>
@@ -52,7 +52,7 @@
                     <h3 class="text-xl font-semibold text-gray-800 mb-4">Deseados</h3>
                     <div class="flex flex-col items-start justify-start w-full h-32">
                         <div class="flex items-center mt-8 ml-2">
-                            <img class="h-12 w-12 mr-4" src="public/svg/bookmark.svg" alt="Deseados" />
+                            <img class="h-12 w-12 mr-4" src="../resources/svg/bookmark.svg" alt="Deseados" />
                             <h1 class="text-2xl">0</h1>
                         </div>
                         <canvas id="appointments_chart"></canvas>

@@ -1,4 +1,5 @@
-<nav class="hidden lg:flex fixed top-0 left-0 bottom-0 w-64 bg-gradient-to-b from-gray-100 to-gray-300 text-gray-800 shadow-lg rounded-r-3xl overflow-hidden z-10">
+<!-- Menú lateral (sidebar) mejorado -->
+<nav class="hidden lg:flex fixed top-0 left-0 bottom-0 w-64 bg-gradient-to-b from-gray-100 to-gray-300 text-gray-700 shadow-lg rounded-r-3xl z-10">
     <div class="sidebar flex flex-col flex-grow items-center py-6">
         
         <!-- Título con tipografía llamativa -->
@@ -8,7 +9,7 @@
 
         <!-- Logo con sombra -->
         <div class="mt-4 w-40">
-            <object data="{{ asset('storage/svg/logo-icon-white.svg') }}" class="w-full drop-shadow-lg" type="image/svg+xml" aria-label="Logo de Virtual Book"></object>
+            <object data="{{ asset('storage/svg/logo-icon-white.svg') }}" class="w-full drop-shadow-lg" type="image/svg+xml"></object>
         </div>
 
         <!-- Menú -->
