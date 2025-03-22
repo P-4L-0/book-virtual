@@ -14,8 +14,7 @@
 <body class="flex h-screen">
     <div class="min-h-screen flex font-sans">
         <!-- Incluye el archivo de la barra lateral (sidebar) -->
-        <?php include 'menu.php'; ?>
-
+        <?php include 'templates/menu.php'; ?> 
         <main class="flex-1 lg:pl-72 p-6 space-y-8">
             <!-- Grid para los 4 cuadros -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -23,7 +22,7 @@
                     <h3 class="text-xl font-semibold text-gray-800 mb-4">Libros</h3>
                     <div class="flex flex-col items-start justify-start w-full h-32">
                         <div class="flex items-center mt-8 ml-2">
-                            <img class="h-12 w-12 mr-4" src="public/svg/bookmark.svg" alt="Libros" />
+                            <img class="h-12 w-12 mr-4" src="resources/svg/bookmark.svg" alt="Libros" />
                             <h1 class="text-2xl">0</h1>
                         </div>
                         <canvas id="doctors_chart"></canvas>
@@ -60,7 +59,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Sección de últimos libros añadidos -->
             <!-- Sección de últimos libros añadidos -->
             <div class="bg-white p-6 rounded-2xl shadow-lg">
                 <h2 class="text-lg font-semibold text-gray-700 mb-4">Últimos Libros Añadidos</h2>
@@ -107,67 +105,7 @@
 
         </main>
     </div>
-    <script>
-        const createChart = (ctx, type, label, data, borderColor, backgroundColor, fill = false) => {
-            if (ctx) {
-                new Chart(ctx, {
-                    type: type,
-                    data: {
-                        labels: data.map(entry => entry.date),
-                        datasets: [{
-                            label: label,
-                            data: data.map(entry => entry.count),
-                            borderColor: borderColor,
-                            backgroundColor: backgroundColor,
-                            fill: fill,
-                        }],
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: {
-                                position: 'top',
-                            },
-                            tooltip: {
-                                callbacks: {
-                                    label: function(context) {
-                                        let label = context.dataset.label || '';
-                                        if (label) {
-                                            label += ': ';
-                                        }
-                                        if (context.parsed.y !== null) {
-                                            label += new Intl.NumberFormat().format(context.parsed.y);
-                                        }
-                                        return label;
-                                    }
-                                }
-                            }
-                        },
-                        scales: {
-                            x: {
-                                grid: {
-                                    display: false,
-                                }
-                            },
-                            y: {
-                                grid: {
-                                    borderDash: [5, 5],
-                                },
-                                ticks: {
-                                    callback: function(value) {
-                                        return new Intl.NumberFormat().format(value);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                });
-            } else {
-                console.error('Error al obtener el contexto para el gráfico:', ctx);
-            }
-        };
-    </script>
+    
 </body>
 
 </html>
