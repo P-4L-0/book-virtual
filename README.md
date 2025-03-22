@@ -1,73 +1,101 @@
--Descripción y contexto
+Virtual Book Management System
+Description and Context
+This project is the development of a Book Management System using pure PHP without the use of additional frameworks. The system will allow users to register, log in, and efficiently manage their books, authors, and categories. Users will be able to create, update, and delete books, as well as manage the categories and authors associated with each book. They can also manage their personal profiles, add books to their favorite list, and log out securely.
 
-Este proyecto consiste en el desarrollo de un sistema de gestión de libros utilizando
-PHP puro, sin el uso de frameworks adicionales. El sistema permitirá a los usuarios 
-registrarse,iniciar sesión y gestionar sus libros, autores y categorías de manera eficiente.
-Los usuarios podrán crear, actualizar y eliminar libros, además de gestionar las categorías
-y autores asociados a cada libro. También podrán administrar su perfil personal, agregar 
-libros a su lista de favoritos y cerrarse sesión de forma segura.
+The application provides a simple yet functional interface for book management, with a structure that allows for easy and efficient handling of books, authors, and categories. The goal of this project is to provide a practical solution for organizing and managing information related to books.
 
-La aplicación proporcionará una interfaz sencilla pero funcional para la administración de libros,
-con una estructura que permitirá gestionar de manera fácil y eficiente tanto los libros como los
-autores y categorías asociados. Este proyecto tiene como objetivo proporcionar una solución práctica 
-para organizar y administrar la información relacionada con los libros.
+User Guide
+1. Registration
+Allows a new user to register in the system.
 
--Guía de usuario
-Registro: Permite a un nuevo usuario registrarse en el sistema.
-Inicio de sesión: Permite al usuario autenticarse en el sistema.
-Libros: Caso de uso central que agrupa acciones relacionadas con la gestión de libros.
-Crear: Permite agregar un nuevo libro al sistema.
-Actualizar: Permite modificar la información de un libro existente.
-Eliminar: Permite eliminar un libro del sistema.
-Incluye "Categoría" y "Autores": Esto indica que la gestión de libros también involucra la gestión de categorías y autores.
+2. Login
+Allows the user to authenticate and access the system.
+
+3. Books (Central Use Case)
+Create: Add a new book to the system.
+
+Update: Modify information for an existing book.
+
+Delete: Remove a book from the system.
+
+Includes Category and Authors: The management of books also involves managing categories and authors associated with each book.
+
+4. Category Management
+Create: Add a new category for books.
+
+Update: Modify an existing category.
+
+Delete: Remove a category from the system.
+
+5. Author Management
+Create: Add a new author to the system.
+
+Update: Modify an author's details.
+
+Delete: Remove an author from the system.
+
+6. Profile
+Edit Profile: Allows users to update their personal information.
+
+7. Favorites
+Add Book: Add a book to the favorite list.
+
+Delete: Remove a book from the favorites list.
+
+8. Logout
+Allows the user to log out from the system securely.
+
+Installation Guide
+Using GitHub Desktop
+Download GitHub Desktop: If you don't have it, download GitHub Desktop from here.
+
+Clone the Repository:
+
+Open GitHub Desktop.
+
+Sign in with your GitHub account.
+
+Clone the repository by copying the following URL:
+
+bash
+Copiar
+Editar
+https://github.com/P-4L-0/book-virtual.git
+Choose the appropriate folder (Recommended: Xampp/htdocs).
+
+Click Clone.
+
+Open the Project: After cloning, open the project folder in GitHub Desktop.
+
+Using Command Line (Command Prompt)
+Install Git: Download and install Git from here.
+
+Clone the Repository:
+
+Open the terminal.
+
+Navigate to the folder where you want to clone the repository.
+
+Run the following command:
+
+bash
+Copiar
+Editar
+git clone https://github.com/P-4L-0/book-virtual.git
+Authors
+Victor Alexander Guevara Campos #GC242653
+
+Juan José Galdaméz Soto #GS242646
+
+Edson Enrique Chavéz Castillo #CC242635
+
+Ricardo Amilcar Guevara Alvarado #GA242651
+
+Geovanni Francisco Jacinto Ventura #JV242656
+
+José Natanael Córdoba Magaña #CM240477
 
 
-Categoría: Permite gestionar las categorías de los libros.
-Crear: Agregar una nueva categoría.
-Actualizar: Modificar una categoría existente.
-Eliminar: Quitar una categoría del sistema.
-
-
-Autores: Permite la gestión de los autores en el sistema.
-Crear: Agregar un nuevo autor.
-Actualizar: Modificar los datos de un autor.
-Eliminar: Eliminar un autor del sistema.
-
-
-Perfil: Permite al usuario gestionar su información personal.
-Editar perfil: Permite modificar la información del perfil del usuario.
-
-
-Favoritos: Permite a los usuarios administrar una lista de libros favoritos.
-Agregar libro: Agregar un libro a la lista de favoritos.
-Eliminar: Eliminar un libro de la lista de favoritos.
-Cerrar sesión: Permite al usuario salir del sistema.
-
--Guía de instalación
-      GitHub Desktop
-          	1.Descargar GitHub Desktop
-          	2.Clonar el repositorio desde GitHub
-		            Abre GitHub Desktop.
-	            	Iniciar sesión.
-		            Clonar Repositorio
-		            Copiar la siguiente Url:https://github.com/P-4L-0/book-virtual.git
-	              Elegir la carpeta correspondiente.(Recomendado:Xampp/htdocs)
-		            Hacer click en clone.
-          	3.Abrir el proyecto.
-      Comanderia
-          Instalar Git
-          Clonar el repositorio
-          Abrir la terminal.
-          Ir a la carpeta que se desea clonar
-              Clonar:git clone : https://github.com/P-4L-0/book-virtual.git
-
--Autores
-          Victor Alexander Guevara Campos	#GC242653
-          Juan José Galdaméz Soto			#GS242646
-          Edson Enrique Chavéz Castillo 		#CC242635
-          Ricardo Amilcar Guevara Alvarado 	#GA242651
-          Geovanni Francisco Jacinto Ventura	#JV242656
-          José Natanael Córdoba Magaña		#CM240477
 -Licencias (código y doc)
         Link Figma (Mockups):https://www.figma.com/design/XO7H8GFCF5SoUrd96rw793/Virtual-Books-(Copy)?node-id=0-1&t=oCsIqAmvWpBfwhrj-1
         Link Documento:https://docs.google.com/document/d/1Q8QKD7KAZF2T7gPYXEro7OuaUCL14ujm/edit?usp=sharing&ouid=109601710273295023156&rtpof=true&sd=true
