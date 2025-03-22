@@ -1,5 +1,6 @@
 <?php
-require_once __DIR__ . '/registroController.php';
+require_once __DIR__ . '/../controllers/registroController.php';
+// require_once __DIR__ . '/../controllers/loginController.php';
 
 
 

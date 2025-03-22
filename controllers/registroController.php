@@ -17,63 +17,62 @@ class RegistroController
 
     public function registrar($datos)
     {
-        if (isset($_POST['register'])) {
-            $camposLlenos = true;
+        $camposLlenos = true;
 
-            foreach ($datos as $dato) {
-                if (empty($dato)) {
-                    $camposLlenos = false;
-                }
+        foreach ($datos as $dato) {
+            if (empty($dato)) {
+                $camposLlenos = false;
                 break;
             }
+        }
 
-            if ($camposLlenos) {
+        if ($camposLlenos) {
+            try {
+                $nombre = $this->sanitize($datos['nombre']);
+                $apellido = $this->sanitize($datos['apellido']);
+                $email = filter_var(trim($datos['email']), FILTER_SANITIZE_EMAIL);
+                if ($datos['password'] === $datos['p_confirm']) {
+                    $password = password_hash($datos['password'], PASSWORD_BCRYPT);
+                } else {
+                    echo <<<AOD
+                    <script>alert('Las contraseñas. deben de coincidir'); window.location.href='../../views/Registro.php';
+                    </script>;
+                    AOD;
+                }
+
                 try {
-                    $nombre = $this->sanitize($_POST['nombre']);
-                    $apellido = $this->sanitize($_POST['apellido']);
-                    $correo = filter_var(trim($_POST['correo']), FILTER_SANITIZE_EMAIL);
-                    $genero = ($_POST['genero'] === "Hombre" || $_POST['genero'] === "Mujer");
-
-                    $direccion = $this->sanitize($_POST['direccion']);
-
-                    $telefono = preg_match('/^[0-9]{8,}$/',$_POST['telefono']);
-
-                    // $tarjeta = htmlspecialchars(trim($_POST['tarjeta'])); what is this @feliz
-                    
-                    $dui = preg_match('/^[0-9]{9}$/', $_POST['dui']) ? $_POST['dui'] : null;
-                    $nacimiento = $_POST['nacimiento'];
-                    $contra = password_hash($_POST['contra'], PASSWORD_BCRYPT);
-
-                    // Validar formato de fecha (nacimiento)
-                    $fecha_nacimiento = DateTime::createFromFormat('Y-m-d', $nacimiento);
-                    if (!$fecha_nacimiento || $fecha_nacimiento->format('Y-m-d') !== $nacimiento) {
-                        echo "<script>alert('Fecha de nacimiento inválida.'); window.location.href='../views/register.html';</script>";
-                        exit();
-                    }
-
-                    // Verificar si el correo ya está registrado
+                    // Verificar si el email ya está registrado
                     $user = new Usuario();
-                    if( $user->comprobarExistencia($correo)){
-                        echo "<script>alert('El correo ya está registrado.'); window.location.href='../views/register.html';</script>";
-                    }
-
-                    // Insertar nuevo usuario en la base de datos
-                    // Verificar si la consulta se ejecutó correctamente
-                    try{
-                        $user->crear();
-                        //falta los datos xd
-                    }catch(PDOException $e){
+                    if ($user->comprobarExistencia($email)) {
                         echo <<<AOD
-                            <script>alert('Ocurrió un error en el registro: window.location.href='../views/register.html';
-                        </script>";
+                        <script>
+                        alert('El email ya está registrado.'); window.location.href='../../views/Registro.php';
+                        </script>;
                         AOD;
                     }
                 } catch (PDOException $e) {
-                    echo "<script>alert('Error en la base de datos: " . $e->getMessage() . "'); window.location.href='../views/register.html';</script>";
+                    echo $e->getMessage();
                 }
-            } else {
-                echo "<script>alert('Por favor, completa todos los campos.'); window.location.href='../views/register.html';</script>";
+
+                try {
+                    $user->crear($nombre, $apellido, $email, $password);
+                    echo <<<AOD
+                    <script>alert('Registro bien.');
+                    window.location.href='../../views/inicio_Sesion.php';
+                    </script>;
+                    AOD;
+                } catch (PDOException $e) {
+                    echo <<<AOD
+                    <script>alert('Ocurrió un error en el registro: window.location.href='../../views/registro.php';
+                    </script>;
+                    AOD;
+                }
+
+            } catch (PDOException $e) {
+                echo "<script>alert('Error en la base de datos: " . $e->getMessage() . "'); window.location.href='../views/register.html';</script>";
             }
+        } else {
+            echo "<script>alert('Por favor, completa todos los campos.'); window.location.href='../views/register.html';</script>";
         }
 
     }
