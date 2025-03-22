@@ -10,7 +10,7 @@
 
 <body class="w-full h-full overflow-x-hidden">
 
-    <?php require_once __DIR__ . "../resources/templates/header.php"; ?>
+    <?php require_once __DIR__ . "/../views/templates/header.php"; ?>
 
     <div class="w-full h-auto">
         <!-- Styles pc -->
@@ -229,7 +229,7 @@
     </div>
 
     <div class="w-full h-auto footer-container">
-        <?php require_once __DIR__ . '../resources/templates/footer.php'; ?>
+        <?php require_once __DIR__ . '/../views/templates/footer.php'; ?>
     </div>
 
 </html>
