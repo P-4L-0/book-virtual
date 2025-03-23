@@ -29,7 +29,7 @@ class LoginController
                 if ($userId) {
                     session_start();
                     session_regenerate_id(true);
-                    $_SESSION['user_id'] = $userId;
+                    $_SESSION['id_usuario'] = $userId;
                     echo <<<AOD
                     <script>alert("Inicio exitoso");</script>
                     AOD;
