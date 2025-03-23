@@ -46,6 +46,13 @@ class Usuario
         return NULL;
     }
 
+    public function getName($id){
+        $stmt = $this->db->prepare("SELECT nombre FROM usuarios WHERE id_usuario = :id_usuario");
+        $stmt->bindParam(":id_usuario", $id);   
+        $stmt->execute();
+        return $id = $stmt->fetch();
+    }
+
     public function __destruct()
     {
         Connection::disconnect();
