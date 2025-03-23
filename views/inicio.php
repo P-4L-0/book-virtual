@@ -1,12 +1,13 @@
 <?php
 require_once __DIR__ . '/../models/usuario.php';
-
 session_start();
-if(isset($_SESSION)){
+
+if(isset($_SESSION["id_usuario"])){
     $user = new Usuario();
     $username = $user->getName($_SESSION['id_usuario']);
 }else{
-    header('../views/index.php');
+    header('Location: ../views/index.php');
+    exit;
 }
 ?>
 <!DOCTYPE html>
