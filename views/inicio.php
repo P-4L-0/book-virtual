@@ -25,7 +25,7 @@ if(isset($_SESSION["id_usuario"])){
     <div class="min-h-screen flex font-sans">
         <?php require_once '../views/templates/menu.php'; ?>
         <main class="flex-1 lg:pl-72 p-6 space-y-8">
-            <div>
+            <div class="border-solid border-b-4 border-[#d5d5d5]">
                 <h3 class="text-2xl">Hola <?= $username['nombre']?></h3>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
