@@ -28,7 +28,7 @@ class RegistroController
                     AOD;
                     exit;
                 } else {
-                    $password = $datos['password'];
+                    $password = password_hash($datos['password'], PASSWORD_BCRYPT);
                 }
 
                 try {

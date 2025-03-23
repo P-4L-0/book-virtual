@@ -16,11 +16,10 @@ class Usuario
     public function crear($nombre, $apellido, $email, $password)
     {
         $stmt = $this->db->prepare("INSERT INTO usuarios(nombre, apellido, email, contraseña) VALUES (:nombre, :apellido, :email, :password)");
-        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
         $stmt->bindParam(":nombre", $nombre);
         $stmt->bindParam(":apellido", $apellido);
         $stmt->bindParam(":email", $email);
-        $stmt->bindParam(":password", $hashedPassword);
+        $stmt->bindParam(":password", $$password);
         return $stmt->execute();
     }
 
