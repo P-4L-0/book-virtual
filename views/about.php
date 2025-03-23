@@ -9,13 +9,12 @@
 </head>
 
 <body class="w-full h-full">
-    <?php include 'templates/loader.php'; ?>
     <div class="w-full h-auto">
-        <?php include 'templates/header.php'; ?>
+        <?php require_once __DIR__ . '/../views/templates/header.php'; ?>
     </div>
 
     <!-- Sección de "¿Por qué elegir Virtual Books?" -->
-    <div class="flex flex-col lg:flex-row w-full py-8 md:pl-16 px-5 lg:pt-16 bg-red-50">
+    <div class="flex flex-col lg:flex-row w-full py-8 md:pl-16 px-5 lg:pt-16 bg-[#fafafa]">
         <!-- Contenedor de texto -->
         <div class="flex flex-col w-full lg:w-1/2 mx-auto items-center md:justify-center lg:text-left text-center">
             <h2 class="font-bold text-xl py-4 lg:mt-10 lg:text-4xl text-red-400 pb-1 lg:pb-6">
