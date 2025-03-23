@@ -31,11 +31,17 @@ class LoginController
                     session_regenerate_id(true);
                     $_SESSION['id_usuario'] = $userId;
                     echo <<<AOD
-                    <script>alert("Inicio exitoso");</script>
+                    <script>
+                        alert("Inicio exitoso");
+                        window.location = "../../views/inicio.php";
+                    </script>
                     AOD;
                 } else {
                     echo <<<AOD
-                    <script>alert("Credenciales Incorrectas");</script>
+                    <script>
+                        alert("Credenciales Incorrectas");
+                        window.location = "../../views/login.php";
+                    </script>
                     AOD;
                     exit; 
                 }
@@ -46,7 +52,9 @@ class LoginController
             }
         } else {
             echo <<<AOD
-            <script>alert("Todos los campos son requeridos");</script>
+            <script>
+                alert("Todos los campos son requeridos");
+            </script>
             AOD;
             exit;
         }
