@@ -11,9 +11,11 @@ class LogOut
         session_destroy();
 
         echo <<<AOD
-        <script>alert("Cerrando sesión :V")</script>
+        <script>
+            alert("Cerrando sesión :V")
+            window.location = "../../views/index.php";
+        </script>
         AOD; 
-        header("/../views/index.php");
     }
 
 }

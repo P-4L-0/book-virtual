@@ -31,12 +31,11 @@ CREATE TABLE Categorias (
 -- libros
 CREATE TABLE Libros (
     id_libro INT AUTO_INCREMENT PRIMARY KEY,
-    id_usuario INT,
+    id_usuario INT NOT NULL,
     titulo VARCHAR(255) NOT NULL,
     id_autor INT,
     id_categoria INT,
-    anio_publicacion YEAR,
-    editorial VARCHAR(255),
+    descripcion longtext,
     FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE,
     FOREIGN KEY (id_autor) REFERENCES Autores(id_autor) ON DELETE SET NULL,
     FOREIGN KEY (id_categoria) REFERENCES Categorias(id_categoria) ON DELETE SET NULL
