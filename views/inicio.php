@@ -5,6 +5,7 @@ session_start();
 if(isset($_SESSION["id_usuario"])){
     $user = new Usuario();
     $username = $user->getName($_SESSION['id_usuario']);
+    $info = $user->getCountOfALL($_SESSION['id_usuario']);
 }else{
     header('Location: ../views/index.php');
     exit;
@@ -34,7 +35,7 @@ if(isset($_SESSION["id_usuario"])){
                     <div class="flex flex-col items-start justify-start w-full h-32">
                         <div class="flex items-center mt-8 ml-2">
                             <img class="h-12 w-12 mr-4" src="../resources/svg/bookmark.svg" alt="Libros" />
-                            <h1 class="text-2xl">0</h1>
+                            <h1 class="text-2xl"><?= $info['Libros']?></h1>
                         </div>
                         <canvas id="doctors_chart"></canvas>
                     </div>

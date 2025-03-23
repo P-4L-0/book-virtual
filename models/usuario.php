@@ -52,6 +52,31 @@ class Usuario
         return $id = $stmt->fetch();
     }
 
+    public function getCountOfALL($id) {
+        $stmt = $this->db->prepare(
+            "SELECT COUNT(L.id_usuario) as Libros,
+                    COUNT(A.id_usuario) as Autores,
+                    COUNT(C.id_usuario) as Categorias,
+                    COUNT(D.id_usuario) FROM Libros L 
+                    JOIN Autores A on L.id_usuario = A.id_usuario
+                    JOIN Categorias C on A.id_usuario = C.id_usuario
+                    JOIN LibrosDeseados D on C.id_usuario = D.id_usuario
+                    WHERE L.id_usuario = :id_usuario");
+        $stmt->bindParam(":id_usuario", $id);
+        $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($resultado === false) {
+            return [
+                'Libros' => 0,
+                'Autores' => 0,
+                'Categorias' => 0,
+                'LibrosDeseados' => 0
+            ];
+        }
+
+        return $resultado;
+    }
+
     public function __destruct()
     {
         Connection::disconnect();
