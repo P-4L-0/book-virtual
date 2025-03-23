@@ -23,7 +23,8 @@ class RegistroController
                 $email = filter_var(trim($datos['email']), FILTER_SANITIZE_EMAIL);
                 if ($datos['password'] !== $datos['p_confirm']) {
                     echo <<<AOD
-                    <script>alert('Las contraseñas. deben de coincidir'); window.location.href='../../views/Registro.php';
+                    <script>
+                        alert('Las contraseñas. deben de coincidir');           window.location.href='../../views/Registro.php';
                     </script>;
                     AOD;
                     exit;
@@ -37,7 +38,8 @@ class RegistroController
                     if ($user->comprobarExistencia($email)) {
                         echo <<<AOD
                         <script>
-                        alert('El email ya está registrado.'); window.location.href='../../views/Registro.php';
+                            alert('El email ya está registrado.'); 
+                            window.location = '../../views/Registro.php';
                         </script>;
                         AOD;
                         exit;
@@ -49,23 +51,35 @@ class RegistroController
                 try {
                     $user->crear($nombre, $apellido, $email, $password);
                     echo <<<AOD
-                    <script>alert('Registro bien.');
-                    window.location.href='../../views/inicio_Sesion.php';
+                    <script>
+                        alert('Registro exitoso.');
+                        window.location = '../../views/login.php';
                     </script>;
                     AOD;
                 } catch (PDOException $e) {
                     echo <<<AOD
-                    <script>alert('Ocurrió un error en el registro: window.location.href='../../views/registro.php';
+                    <script>
+                        alert("Ocurrió un error en el registro"); 
+                        window.location = '../../views/registro.php';
                     </script>;
                     AOD;
                     exit;
                 }
 
             } catch (PDOException $e) {
-                echo "<script>alert('Error en la base de datos: " . $e->getMessage() . "'); window.location.href='../views/register.html';</script>";
+                echo <<<AOD
+                <script>
+                    alert("Error: {$e->getMessage()}");
+                    window.location.href='../views/register.html';</script>";
+                AOD;
             }
         } else {
-            echo "<script>alert('Por favor, completa todos los campos.'); window.location.href='../../views/registro.php';</script>";
+            echo <<<AOD
+            <script>
+                alert('Por favor, completa todos los campos.'); 
+                window.location = '../../views/registro.php';
+            </script>";
+            AOD;
             exit;
         }
 
