@@ -1,11 +1,12 @@
 <?php
 require_once __DIR__ . '/../controllers/registroController.php';
-// require_once __DIR__ . '/../controllers/loginController.php';
+require_once __DIR__ . '/../controllers/loginController.php';
 
 
 
 //instancia de controladores
 $registro = new RegistroController();
+$login = new LoginController();
 
 
 //obtención del método http
@@ -16,11 +17,15 @@ $route = end($uri);
 //rutas de la api
 $routes = [
     'POST' => [
-        'register' => function () use ($registro): void {
+        'register' => function () use ($registro) {
             $datos = $_POST; 
             $registro->registrar($datos);
         },
-    ]
+        'login'=> function () use ($login) {
+            $datos = $_POST;
+            $login->authenticate($datos);
+        }
+    ],
 ];
 
 if (isset($routes[$method][$route])) {

@@ -5,16 +5,6 @@ require_once __DIR__ . '/../models/usuario.php';
 
 class RegistroController
 {
-
-    private PDO $db;
-
-    public function __construct()
-    {
-        $this->db = Connection::Connection();
-    }
-
-
-
     public function registrar($datos)
     {
         $camposLlenos = true;
@@ -31,13 +21,14 @@ class RegistroController
                 $nombre = $this->sanitize($datos['nombre']);
                 $apellido = $this->sanitize($datos['apellido']);
                 $email = filter_var(trim($datos['email']), FILTER_SANITIZE_EMAIL);
-                if ($datos['password'] === $datos['p_confirm']) {
-                    $password = password_hash($datos['password'], PASSWORD_BCRYPT);
-                } else {
+                if ($datos['password'] !== $datos['p_confirm']) {
                     echo <<<AOD
                     <script>alert('Las contraseñas. deben de coincidir'); window.location.href='../../views/Registro.php';
                     </script>;
                     AOD;
+                    exit;
+                } else {
+                    $password = $datos['password'];
                 }
 
                 try {
@@ -49,6 +40,7 @@ class RegistroController
                         alert('El email ya está registrado.'); window.location.href='../../views/Registro.php';
                         </script>;
                         AOD;
+                        exit;
                     }
                 } catch (PDOException $e) {
                     echo $e->getMessage();
@@ -66,13 +58,15 @@ class RegistroController
                     <script>alert('Ocurrió un error en el registro: window.location.href='../../views/registro.php';
                     </script>;
                     AOD;
+                    exit;
                 }
 
             } catch (PDOException $e) {
                 echo "<script>alert('Error en la base de datos: " . $e->getMessage() . "'); window.location.href='../views/register.html';</script>";
             }
         } else {
-            echo "<script>alert('Por favor, completa todos los campos.'); window.location.href='../views/register.html';</script>";
+            echo "<script>alert('Por favor, completa todos los campos.'); window.location.href='../../views/registro.php';</script>";
+            exit;
         }
 
     }
