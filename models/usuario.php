@@ -34,13 +34,13 @@ class Usuario
 
     public function auth($email, $password)
     {
-        $stmt = $this->db->prepare("SELECT email, password FROM usuarios where email = :email");
-        $stmt->bindParam(":email", $email);
+        $stmt = $this->db->prepare("SELECT id_usuario,contraseña FROM usuarios where email = :email");
+        $stmt->bindParam(":email",$email);
         $stmt->execute();   
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($user && password_verify($password, $user['password'], )) {
-            return $user;
+        if ($user && password_verify($password, $user['contraseña'])) {
+            return $user['id_usuario'];
         }
 
         return NULL;
