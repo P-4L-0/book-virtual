@@ -51,7 +51,7 @@
         </form>
         <p class="my-8">
           ¿No posees una cuenta?
-          <a href="/login" class="text-red-500 font-bold"> Registrarse </a>
+          <a href="../views/registro.php" class="text-red-500 font-bold"> Registrarse </a>
         </p>
       </div>
       <p class="flex grow items-end text-vh-green text-center lg:block">
