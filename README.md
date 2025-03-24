@@ -1,73 +1,62 @@
--Descripción y contexto
+# Sistema de Gestión de Libros Virtual
 
-Este proyecto consiste en el desarrollo de un sistema de gestión de libros utilizando
-PHP puro, sin el uso de frameworks adicionales. El sistema permitirá a los usuarios 
-registrarse,iniciar sesión y gestionar sus libros, autores y categorías de manera eficiente.
-Los usuarios podrán crear, actualizar y eliminar libros, además de gestionar las categorías
-y autores asociados a cada libro. También podrán administrar su perfil personal, agregar 
-libros a su lista de favoritos y cerrarse sesión de forma segura.
+![VirtualBooks](/resources/img/Logo.png)
 
-La aplicación proporcionará una interfaz sencilla pero funcional para la administración de libros,
-con una estructura que permitirá gestionar de manera fácil y eficiente tanto los libros como los
-autores y categorías asociados. Este proyecto tiene como objetivo proporcionar una solución práctica 
-para organizar y administrar la información relacionada con los libros.
+## Descripción y Contexto
+Este proyecto consiste en el desarrollo de un Sistema de Gestión de Libros utilizando PHP puro, sin el uso de frameworks adicionales. El sistema permitirá a los usuarios registrarse, iniciar sesión y gestionar eficientemente sus libros, autores y categorías. Los usuarios podrán crear, actualizar y eliminar libros, así como gestionar las categorías y autores asociados a cada libro. También podrán gestionar sus perfiles personales, agregar libros a su lista de favoritos y cerrar sesión de manera segura.
 
--Guía de usuario
-Registro: Permite a un nuevo usuario registrarse en el sistema.
-Inicio de sesión: Permite al usuario autenticarse en el sistema.
-Libros: Caso de uso central que agrupa acciones relacionadas con la gestión de libros.
-Crear: Permite agregar un nuevo libro al sistema.
-Actualizar: Permite modificar la información de un libro existente.
-Eliminar: Permite eliminar un libro del sistema.
-Incluye "Categoría" y "Autores": Esto indica que la gestión de libros también involucra la gestión de categorías y autores.
+La aplicación ofrece una interfaz simple pero funcional para la gestión de libros, con una estructura que permite manejar de forma fácil y eficiente los libros, autores y categorías. El objetivo de este proyecto es proporcionar una solución práctica para organizar y gestionar la información relacionada con los libros.
 
+## Guía del Usuario
 
-Categoría: Permite gestionar las categorías de los libros.
-Crear: Agregar una nueva categoría.
-Actualizar: Modificar una categoría existente.
-Eliminar: Quitar una categoría del sistema.
+### 1. Registro
+Permite a un nuevo usuario registrarse en el sistema.
 
+### 2. Inicio de sesión
+Permite al usuario autenticarse y acceder al sistema.
 
-Autores: Permite la gestión de los autores en el sistema.
-Crear: Agregar un nuevo autor.
-Actualizar: Modificar los datos de un autor.
-Eliminar: Eliminar un autor del sistema.
+### 3. Libros (Caso de uso central)
+   - **Crear:** Añadir un nuevo libro al sistema.  
+   - **Actualizar:** Modificar la información de un libro existente.  
+   - **Eliminar:** Eliminar un libro del sistema.  
+   - **Incluye Categorías y Autores:** La gestión de libros también implica gestionar las categorías y autores asociados a cada libro.
 
+### 4. Gestión de Categorías
+   - **Crear:** Añadir una nueva categoría para libros.  
+   - **Actualizar:** Modificar una categoría existente.  
+   - **Eliminar:** Eliminar una categoría del sistema.
 
-Perfil: Permite al usuario gestionar su información personal.
-Editar perfil: Permite modificar la información del perfil del usuario.
+### 5. Gestión de Autores
+   - **Crear:** Añadir un nuevo autor al sistema.  
+   - **Actualizar:** Modificar los detalles de un autor.  
+   - **Eliminar:** Eliminar un autor del sistema.
 
+### 6. Perfil
+   - **Editar perfil:** Permite a los usuarios actualizar su información personal.
 
-Favoritos: Permite a los usuarios administrar una lista de libros favoritos.
-Agregar libro: Agregar un libro a la lista de favoritos.
-Eliminar: Eliminar un libro de la lista de favoritos.
-Cerrar sesión: Permite al usuario salir del sistema.
+### 7. Favoritos
+   - **Añadir libro:** Añadir un libro a la lista de favoritos.  
+   - **Eliminar:** Eliminar un libro de la lista de favoritos.
 
--Guía de instalación
-      GitHub Desktop
-          	1.Descargar GitHub Desktop
-          	2.Clonar el repositorio desde GitHub
-		            Abre GitHub Desktop.
-	            	Iniciar sesión.
-		            Clonar Repositorio
-		            Copiar la siguiente Url:https://github.com/P-4L-0/book-virtual.git
-	              Elegir la carpeta correspondiente.(Recomendado:Xampp/htdocs)
-		            Hacer click en clone.
-          	3.Abrir el proyecto.
-      Comanderia
-          Instalar Git
-          Clonar el repositorio
-          Abrir la terminal.
-          Ir a la carpeta que se desea clonar
-              Clonar:git clone : https://github.com/P-4L-0/book-virtual.git
+### 8. Cerrar sesión
+Permite al usuario cerrar sesión de manera segura.
 
--Autores
-          Victor Alexander Guevara Campos	#GC242653
-          Juan José Galdaméz Soto			#GS242646
-          Edson Enrique Chavéz Castillo 		#CC242635
-          Ricardo Amilcar Guevara Alvarado 	#GA242651
-          Geovanni Francisco Jacinto Ventura	#JV242656
-          José Natanael Córdoba Magaña		#CM240477
--Licencias (código y doc)
-        Link Figma (Mockups):https://www.figma.com/design/XO7H8GFCF5SoUrd96rw793/Virtual-Books-(Copy)?node-id=0-1&t=oCsIqAmvWpBfwhrj-1
-        Link Documento:https://docs.google.com/document/d/1Q8QKD7KAZF2T7gPYXEro7OuaUCL14ujm/edit?usp=sharing&ouid=109601710273295023156&rtpof=true&sd=true
+## Guía de Instalación
+
+### Usando GitHub Desktop
+
+1. **Clonar el repositorio:**  
+   - Abre la terminal.  
+   - Navega a la carpeta donde deseas clonar el repositorio.  
+   - Ejecuta el siguiente comando:  
+     ```bash
+     git clone https://github.com/P-4L-0/book-virtual.git
+     ```
+
+## Autores
+- Victor Alexander Guevara Campos #GC242653  
+- Juan José Galdaméz Soto #GS242646  
+- Edson Enrique Chavéz Castillo #CC242635  
+- Ricardo Amilcar Guevara Alvarado #GA242651  
+- Geovanni Francisco Jacinto Ventura #JV242656  
+- José Natanael Córdoba Magaña #CM240477

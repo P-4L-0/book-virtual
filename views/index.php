@@ -14,7 +14,7 @@
 
     <div class="w-full h-auto">
         <!-- Styles pc -->
-        <div class="hidden lg:flex lg:pt-28 mb-5 bg-gray-100 w-full">
+        <div class="hidden lg:flex lg:pt-28 mb-5 bg-[#fafafa] w-full">
             <div class="w-1/2 hidden lg:flex justify-center items-center">
                 <div class="w-4/5">
                     <div class="ml-4 mt-4 mb-2">
@@ -210,8 +210,8 @@
                     <h2 class="text-center lg:text-start font-bold mt-3 lg:pl-5 lg:mx-0 mx-9 lg:text-3xl xl:text-4xl">
                         Únete a nosotros y descubre un mundo de historias.</h2>
                     <div class="flex lg:justify-start justify-center py-4 items-center">
-                        <?php if (!isset($_SESSION['user'])): ?>
-                            <a href="/login" target="_self"
+                        <?php if (!isset($_SESSION['id_usuario'])): ?>
+                            <a href="../views/login.php" target="_self"
                                 class="w-3/5 h-10 content-center text-white bg-red-300 text-sm lg:text-base xl:text-lg shadow-xl my-5 rounded-full lg:w-2/5 hover:bg-white hover:text-red-300 duration-200 ease-in inline-block text-center mx-4">
                                 Únete ya
                             </a>

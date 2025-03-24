@@ -1,17 +1,54 @@
-CREATE SCHEMA IF NOT EXISTS `biblioteca` DEFAULT CHARACTER SET utf8mb4;
-USE `biblioteca`;
+CREATE DATABASE Biblioteca;
+USE Biblioteca;
 
-CREATE TABLE IF NOT EXISTS `usuarios` (
-  `id_usuario` INT(11) NOT NULL AUTO_INCREMENT,
-  `nombre` VARCHAR(100) NOT NULL,
-  `apellido` VARCHAR(100) NOT NULL,
-  `correo` VARCHAR(150) NOT NULL UNIQUE,
-  `password` VARCHAR(255) NOT NULL,
-  `genero` ENUM('Hombre', 'Mujer') NOT NULL,
-  `direccion` VARCHAR(255) NOT NULL,
-  `telefono` VARCHAR(15) NOT NULL,
-  `tarjeta` VARCHAR(50) NOT NULL,
-  `dui` VARCHAR(9) NOT NULL UNIQUE,
-  `nacimiento` DATE NOT NULL,
-  PRIMARY KEY (`id_usuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+-- usuarios
+CREATE TABLE Usuarios (
+    id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    apellido VARCHAR(100) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    contraseña VARCHAR(255) NOT NULL
+);
+
+-- autores
+CREATE TABLE Autores (
+    id_autor INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT NOT NULL,
+    nombre VARCHAR(255) NOT NULL,
+    -- nacionalidad VARCHAR(100),
+    -- fecha_nacimiento DATE,
+    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE
+);
+
+-- categorías
+CREATE TABLE Categorias (
+    id_categoria INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT NOT NULL,
+    nombre VARCHAR(100) NOT NULL UNIQUE,
+    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE
+);
+
+-- libros
+CREATE TABLE Libros (
+    id_libro INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT NOT NULL,
+    titulo VARCHAR(255) NOT NULL,
+    id_autor INT,
+    id_categoria INT,
+    descripcion longtext,
+    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE,
+    FOREIGN KEY (id_autor) REFERENCES Autores(id_autor) ON DELETE SET NULL,
+    FOREIGN KEY (id_categoria) REFERENCES Categorias(id_categoria) ON DELETE SET NULL
+);
+
+-- deseados
+CREATE TABLE LibrosDeseados (
+    id_deseado INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT NOT NULL,
+    titulo VARCHAR(255) NOT NULL,
+    id_autor INT,
+    id_categoria INT,
+    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE,
+    FOREIGN KEY (id_autor) REFERENCES Autores(id_autor) ON DELETE SET NULL,
+    FOREIGN KEY (id_categoria) REFERENCES Categorias(id_categoria) ON DELETE SET NULL
+);
