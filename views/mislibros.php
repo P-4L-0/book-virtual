@@ -1,10 +1,11 @@
 <?php
-
+require_once __DIR__ . "/../models/libro.php";
 session_start();
 
-if(isset($_SESSION["id_usuario"])){
-   //nothing here for now
-}else{
+if (isset($_SESSION["id_usuario"])) {
+    $libro = new Libro();
+    $libros = $libro->getAll($_SESSION['id_usuario']);
+} else {
     header('Location: ../views/index.php');
     exit;
 }
@@ -37,64 +38,33 @@ if(isset($_SESSION["id_usuario"])){
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Carta 1 -->
-                    <div
-                        class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-200">
-                        <!-- Contenido de la tarjeta -->
-                        <div class="p-6">
-                            <h2 class="text-2xl font-semibold text-gray-800 mb-2">La Metamorfosis</h2>
-                            <p class="text-gray-600">Autor: Franz Kafka</p>
-                            <p class="text-gray-500 mt-2">Publicado en 1915, esta obra es una de las más famosas de
-                                Kafka, explorando temas como la alienación y la identidad.</p>
-                            <div class="mt-4">
-                                <span
-                                    class="inline-block bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Clásico</span>
-                            </div>
-                        </div>
+                    <?php if (count($libros) > 0): ?>
+                        <?php foreach ($libros as $libro): ?>
+                            <div
+                                class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-200">
+                                <!-- Contenido de la tarjeta -->
+                                <div class="p-6">
+                                    <h2 class="text-2xl font-semibold text-gray-800 mb-2"><?= $libro['Titulo'] ?></h2>
+                                    <p class="text-gray-600"><?= $libro['Autor'] ?> </p>
+                                    <p class="text-gray-500 mt-2"><?= $libro['Descripcion'] ?> </p>
+                                    <div class="mt-4">
+                                        <span
+                                            class="inline-block bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full"><?= $libro['Categoria'] ?>
+                                        </span>
+                                    </div>
+                                </div>
 
-                        <div class="flex justify-end items-center p-4 border-t border-gray-100">
-                            <img class="h-6 w-6 mr-4 cursor-pointer" src="../resources/img/x.png" alt="Eliminar" />
-                            <img class="h-6 w-6 cursor-pointer" src="../resources/img/heart.png" alt="Favorito" />
-                        </div>
-                    </div>
-
-                    <!-- Carta 2 -->
-                    <div
-                        class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-200">
-                        <div class="p-6">
-                            <h2 class="text-2xl font-semibold text-gray-800 mb-2">El Proceso</h2>
-                            <p class="text-gray-600">Autor: Franz Kafka</p>
-                            <p class="text-gray-500 mt-2">Una novela que narra la lucha de un hombre contra un sistema
-                                burocrático absurdo y opresivo.</p>
-                            <div class="mt-4">
-                                <span
-                                    class="inline-block bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Clásico</span>
+                                <div class="flex justify-end items-center p-4 border-t border-gray-100">
+                                    <img class="h-6 w-6 mr-4 cursor-pointer" src="../resources/img/x.png" alt="Eliminar" />
+                                    <img class="h-6 w-6 cursor-pointer" src="../resources/img/heart.png" alt="Favorito" />
+                                </div>
                             </div>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <div class="bg-gray-100 rounded-lg shadow-md p-6 flex items-center space-x-6">
+                            <h1>Aun no agregas Libros</h1>
                         </div>
-                        <div class="flex justify-end items-center p-4 border-t border-gray-100">
-                            <img class="h-6 w-6 mr-4 cursor-pointer" src="../resources/img/x.png" alt="Eliminar" />
-                            <img class="h-6 w-6 cursor-pointer" src="../resources/img/heart.png" alt="Favorito" />
-                        </div>
-                    </div>
-
-                    <!-- Carta 3 -->
-                    <div
-                        class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-200">
-                        <div class="p-6">
-                            <h2 class="text-2xl font-semibold text-gray-800 mb-2">Carta al Padre</h2>
-                            <p class="text-gray-600">Autor: Franz Kafka</p>
-                            <p class="text-gray-500 mt-2">Una carta íntima y emocional que Kafka escribió a su padre,
-                                explorando su relación complicada.</p>
-                            <div class="mt-4">
-                                <span
-                                    class="inline-block bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Autobiográfico</span>
-                            </div>
-                        </div>
-                        <div class="flex justify-end items-center p-4 border-t border-gray-100">
-                            <img class="h-6 w-6 mr-4 cursor-pointer" src="../resources/img/x.png" alt="Eliminar" />
-                            <img class="h-6 w-6 cursor-pointer" src="../resources/img/heart.png" alt="Favorito" />
-                        </div>
-                    </div>
+                    <?php endif; ?>
                 </div>
             </div>
 

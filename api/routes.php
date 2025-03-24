@@ -2,13 +2,15 @@
 require_once __DIR__ . '/../controllers/registroController.php';
 require_once __DIR__ . '/../controllers/loginController.php';
 require_once __DIR__ . '/../controllers/logOutController.php';
+require_once __DIR__ . '/../controllers/categoraiController.php';
 
 
 
 //instancia de controladores
 $registro = new RegistroController();
 $login = new LoginController();
-$logOut = new LogOut();
+$logOut = new LogOutController();
+$category = new CategoryController();
 
 //obtención del método http
 $method = $_SERVER["REQUEST_METHOD"];
@@ -28,6 +30,10 @@ $routes = [
         },
         'logout' => function () use ($logOut){
             $logOut->logOut();
+        },
+        'category' => function () use ($category){
+            $datos = $_POST;
+            $category->add($datos);
         }
     ]
 ];

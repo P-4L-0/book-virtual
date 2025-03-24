@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../models/usuario.php';
 
-class LogOut
+class LogOutController
 {
 
     public function logOut()
