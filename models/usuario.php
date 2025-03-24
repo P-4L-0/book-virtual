@@ -19,7 +19,7 @@ class Usuario
         $stmt->bindParam(":nombre", $nombre);
         $stmt->bindParam(":apellido", $apellido);
         $stmt->bindParam(":email", $email);
-        $stmt->bindParam(":password", $$password);
+        $stmt->bindParam(":password", $password);
         return $stmt->execute();
     }
 

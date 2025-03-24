@@ -15,9 +15,7 @@
       <!-- Contenedor del formulario -->
       <div class="flex flex-col w-full h-full lg:w-3/5 lg:order-2">
         <div class="flex flex-col items-center w-full h-full lg:justify-center">
-          <a href="/" class="">
-            <img src="../resources/VirtualBooks.png" alt="" /><!--LOGO-->
-          </a>
+            <img src="../resources/img/VirtualBooks.png" alt="" /><!--LOGO-->
           <h1 class="text-red-500 font-bold text-2xl mb-10 mt-10">
             Registrarse
           </h1>
@@ -84,7 +82,7 @@
           </form>
           <p class="my-8">
             ¿Ya posees una cuenta?
-            <a href="/login" class="text-red-500 font-bold"> Iniciar Sesión </a>
+            <a href="../views/login.php" class="text-red-500 font-bold"> Iniciar Sesión </a>
           </p>
         </div>
         <p class="flex grow items-end text-vh-green text-center lg:block">
@@ -102,7 +100,7 @@
         <!-- Contenedor de la imagen -->
         <div class="w-full h-full relative">
           <img
-            src="../resources/books.jpg"
+            src="../resources/img/books.jpg"
             alt="doctor_svg"
             class="w-full h-full object-cover rounded-xl"
           />

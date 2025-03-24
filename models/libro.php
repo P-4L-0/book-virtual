@@ -38,6 +38,14 @@ class Libro
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function edit(){
+
+    }
+
+    public function delete(){
+        
+    }
+
     public function __destruct()
     {
         Connection::disconnect();

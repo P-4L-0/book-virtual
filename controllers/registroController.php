@@ -59,7 +59,7 @@ class RegistroController
                 } catch (PDOException $e) {
                     echo <<<AOD
                     <script>
-                        alert("Ocurrió un error en el registro"); 
+                        alert("Ocurrió un error en el registro :c"); 
                         window.location = '../../views/registro.php';
                     </script>;
                     AOD;

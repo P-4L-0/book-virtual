@@ -20,6 +20,14 @@ class LibroDeseado{
 
     }
 
+    public function edit(){
+
+    }
+
+    public function delete(){
+        
+    }
+
     public function __destruct(){
         Connection::disconnect();
     }

@@ -15,8 +15,8 @@ CREATE TABLE Autores (
     id_autor INT AUTO_INCREMENT PRIMARY KEY,
     id_usuario INT NOT NULL,
     nombre VARCHAR(255) NOT NULL,
-    -- nacionalidad VARCHAR(100),
-    -- fecha_nacimiento DATE,
+    nacionalidad VARCHAR(100),
+    fecha_nacimiento DATE,
     FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE
 );
 
