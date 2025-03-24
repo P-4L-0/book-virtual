@@ -23,7 +23,12 @@ class Libro
 
     public function getOne($id_libro, $id_usuario)
     {
-        $stmt = $this->db->prepare("SELECT * FROM Libro where id_libro = :id_libro AND id_usuario = :id_usuario");
+        $stmt = $this->db->prepare(
+        "SELECT L.titulo as Titulo, L.descripcion as Descripcion, 
+                A.nombre as Autor, C.nombre as Categoria FROM Libros L
+                JOIN Autores A on L.id_autor = A.id_autor
+                JOIN Categorias C on L.id_categoria = C.id_categoria    
+                WHERE L.id_libro = :id_libro AND L.id_usuario = :id_usuario");
         $stmt->bindParam(":id_libro", $id_libro);
         $stmt->bindParam(":id_usuario", $id_usuario);
         $stmt->execute();
@@ -32,18 +37,26 @@ class Libro
 
     public function getAll($id_usuario)
     {
-        $stmt = $this->db->prepare("SELECT * FROM Libros WHERE id_usuario = :id_usuario ORDER BY id_libro DESC");
+        $stmt = $this->db->prepare(
+        "SELECT L.titulo as Titulo, L.descripcion as Descripcion, 
+                A.nombre as Autor, C.nombre as Categoria FROM Libros L
+                JOIN Autores A on L.id_autor = A.id_autor
+                JOIN Categorias C on L.id_categoria = C.id_categoria
+                WHERE L.id_usuario = :id_usuario ORDER BY id_libro DESC"
+        );
         $stmt->bindParam(":id_usuario", $id_usuario);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function edit(){
+    public function edit()
+    {
 
     }
 
-    public function delete(){
-        
+    public function delete()
+    {
+
     }
 
     public function __destruct()

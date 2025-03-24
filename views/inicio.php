@@ -38,7 +38,7 @@ if (isset($_SESSION["id_usuario"])) {
                     <div class="flex flex-col items-start justify-start w-full h-32">
                         <div class="flex items-center mt-8 ml-2">
                             <img class="h-12 w-12 mr-4" src="../resources/svg/bookmark.svg" alt="Libros" />
-                            <h1 class="text-2xl"><?= $info['Libros'] ?></h1>
+                            <h1 class="text-2xl"><?= $info['Libros'] ?? "0"; ?></h1>
                         </div>
                         <canvas id="doctors_chart"></canvas>
                     </div>
@@ -48,7 +48,7 @@ if (isset($_SESSION["id_usuario"])) {
                     <div class="flex flex-col items-start justify-start w-full h-32">
                         <div class="flex items-center mt-8 ml-2">
                             <img class="h-12 w-12 mr-4" src="../resources/svg/bookmark.svg" alt="Categorías" />
-                            <h1 class="text-2xl">0</h1>
+                            <h1 class="text-2xl"><?= $info['Categorias'] ?? "0"; ?></h1>
                         </div>
 
                     </div>
@@ -58,7 +58,7 @@ if (isset($_SESSION["id_usuario"])) {
                     <div class="flex flex-col items-start justify-start w-full h-32">
                         <div class="flex items-center mt-8 ml-2">
                             <img class="h-12 w-12 mr-4" src="../resources/svg/bookmark.svg" alt="Autores" />
-                            <h1 class="text-2xl">0</h1>
+                            <h1 class="text-2xl"><?= $info['Autores'] ?? "0"; ?></h1>
                         </div>
 
                     </div>
@@ -68,7 +68,7 @@ if (isset($_SESSION["id_usuario"])) {
                     <div class="flex flex-col items-start justify-start w-full h-32">
                         <div class="flex items-center mt-8 ml-2">
                             <img class="h-12 w-12 mr-4" src="../resources/svg/bookmark.svg" alt="Deseados" />
-                            <h1 class="text-2xl">0</h1>
+                            <h1 class="text-2xl"><?= $info['LibrosDeseados'] ?? "0"; ?></h1>
                         </div>
                     </div>
                 </div>
@@ -91,9 +91,9 @@ if (isset($_SESSION["id_usuario"])) {
 
                                 <?php foreach ($libros as $libro): ?>
                                     <tr>
-                                        <td class="py-4 px-6"><?= $libro['titulo']; ?></td>
-                                        <td class="py-4 px-6"><?= $libro['id_categoria']; ?></td>
-                                        <td class="py-4 px-6"><?= $libro['id_autor']; ?></td>
+                                        <td class="py-4 px-6"><?= $libro['Titulo']; ?></td>
+                                        <td class="py-4 px-6"><?= $libro['Categoria']; ?></td>
+                                        <td class="py-4 px-6"><?= $libro['Autor']; ?></td>
                                     </tr>
                                 <?php endforeach; ?>
                             <?php else: ?>
