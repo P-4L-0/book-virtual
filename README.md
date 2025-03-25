@@ -1,3 +1,20 @@
+#DOCUMENTACION
+[Avance Proyecto.pdf](https://github.com/user-attachments/files/19441144/Avance.Proyecto.pdf)
+
+#DIAGRAMAS
+[LINK](https://drive.google.com/file/d/1fQeiKaorfWk0wy2La_VpeNX56wG4sUkN/view?usp=sharing)
+
+#TRELLO
+[LINK](https://trello.com/invite/b/67db91e72f80f895fc125cbc/ATTI9e3ecd80d05c8b4e92c437a28a35fb5f15115F8F/catedra)
+
+## Autores
+- Victor Alexander Guevara Campos #GC242653  
+- Juan José Galdaméz Soto #GS242646  
+- Edson Enrique Chavéz Castillo #CC242635  
+- Ricardo Amilcar Guevara Alvarado #GA242651  
+- Geovanni Francisco Jacinto Ventura #JV242656  
+- José Natanael Córdoba Magaña #CM240477
+
 # Sistema de Gestión de Libros Virtual
 
 ![VirtualBooks](/resources/img/Logo.png)
@@ -52,20 +69,3 @@ Permite al usuario cerrar sesión de manera segura.
      ```bash
      git clone https://github.com/P-4L-0/book-virtual.git
      ```
-
-## Autores
-- Victor Alexander Guevara Campos #GC242653  
-- Juan José Galdaméz Soto #GS242646  
-- Edson Enrique Chavéz Castillo #CC242635  
-- Ricardo Amilcar Guevara Alvarado #GA242651  
-- Geovanni Francisco Jacinto Ventura #JV242656  
-- José Natanael Córdoba Magaña #CM240477
-
-#DOCUMENTACION
-[Avance Proyecto.pdf](https://github.com/user-attachments/files/19441144/Avance.Proyecto.pdf)
-
-#DIAGRAMAS
-[LINK](https://drive.google.com/file/d/1fQeiKaorfWk0wy2La_VpeNX56wG4sUkN/view?usp=sharing)
-
-#TRELLO
-[LINK](https://trello.com/invite/b/67db91e72f80f895fc125cbc/ATTI9e3ecd80d05c8b4e92c437a28a35fb5f15115F8F/catedra)
