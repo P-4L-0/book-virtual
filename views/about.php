@@ -36,7 +36,7 @@
 
         <!-- Contenedor de la imagen (visible solo en pantallas grandes) -->
         <div class="hidden lg:flex lg:w-1/2 lg:items-end lg:justify-end mt-auto">
-            <img src="acercaDe.png" alt="Book Lover Image" class="w-full h-auto object-cover lg:w-auto lg:h-full" />
+            <img src="../resources/img/image.png" alt="Book Lover Image" class="w-full h-auto object-cover lg:w-auto lg:h-full" />
         </div>
     </div>
 
@@ -46,11 +46,11 @@
     <div class="hidden lg:block lg:w-1/4 items-center justify-center lg:order-last rounded-xl relative ml-40 bg-red-100 p-8 shadow-md">
         <div class="absolute top-0 right-0 mr-[-48px] mt-[-48px] rounded-xl overflow-hidden">
             <!-- Imagen del libro (reemplaza el SVG) -->
-            <img src="libro.png" alt="Libro" class="w-full h-auto rounded-xl" />
+            <img src="../resources/img/libro1.jpg" alt="Libro" class="w-full h-auto rounded-xl" />
         </div>
         <div class="absolute bottom-0 left-0 ml-[-48px] mb-[-48px] rounded-xl overflow-hidden">
 
-            <img src="libro.png" alt="Libro" class="w-full h-auto rounded-xl" />
+            <img src="../resources/img/libro2.jpg" alt="Libro" class="w-full h-auto rounded-xl" />
         </div>
     </div>
 
@@ -80,13 +80,13 @@
         <!-- Contenido para Tablet y Celular -->
         <div class="lg:hidden w-3/4 mx-auto flex items-center justify-center p-8 rounded-xl bg-red-100">
             <div class="flex w-full h-full items-center justify-center shadow-xl">
-                <img src="ñiño.png" alt="Niño leyendo" class="w-full h-auto lg:w-96 lg:h-96 md:w-60 md:h-60 rounded-xl">
+                <img src="../resources/img/leyendo.jpg" alt="Niño leyendo" class="w-full h-auto lg:w-96 lg:h-96 md:w-60 md:h-60 rounded-xl">
             </div>
         </div>
         <!-- Contenido para PC -->
         <div class="hidden lg:w-1/2 lg:flex items-center justify-center lg:order-last">
             <div class="lg:w-1/2 rounded-xl bg-red-100 p-4 shadow-md">
-                <img src="ñiño.png" alt="Niño leyendo"
+                <img src="../resources/img/leyendo.jpg" alt="Niño leyendo"
                     class="w-full h-auto lg:w-96 lg:h-96 md:w-60 md:h-60 rounded-xl mx-auto">
             </div>
         </div>

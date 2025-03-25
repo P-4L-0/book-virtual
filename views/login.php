@@ -38,7 +38,7 @@
               placeholder="Contraseña" id="password" name="password"/>
             <!-- Icono de "Ver Contraseña" -->
             <label for="see_password" class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer">
-              <img src="" alt="scan_eye" type="image/svg+xml" id="see_password_img" class="h-5 w-5" />
+              <img src="../resources/img/icono.png" alt="scan_eye" type="image/svg+xml" id="see_password_img" class="h-5 w-5" />
             </label>
           </div>
 
