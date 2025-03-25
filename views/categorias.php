@@ -41,17 +41,23 @@ if (isset($_SESSION["id_usuario"])) {
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <?php if (count($categorys) > 0): ?>
-                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <h2 class="text-xl font-semibold text-red-800 mb-4">TERROR</h2>
-                        <p class="text-gray-600">Explora las mejores historias de terror.</p>
-                        <div class="mt-4 text-sm text-gray-500">
-                            <span class="font-semibold">Libros totales:</span> 120
+                    <?php foreach ($categorys as $category): ?>
+                        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <h2 class="text-xl font-semibold text-red-800 mb-4"><?= $category['nombre']; ?></h2>
+                            <div class="mt-4 text-sm text-gray-500">
+                                <span class="font-semibold">Libros totales:
+                                    <?php
+                                    $count = $cat->getLibros($category['id_categoria']);
+                                    echo $count['Total'];
+                                    ?>
+                                </span>
+                            </div>
+                            <button
+                                class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition duration-300">
+                                Ver Libros
+                            </button>
                         </div>
-                        <button
-                            class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition duration-300">
-                            Ver más
-                        </button>
-                    </div>
+                    <?php endforeach; ?>
                 <?php else: ?>
                     <!-- Tarjeta de Terror -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
