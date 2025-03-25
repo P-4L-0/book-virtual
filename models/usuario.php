@@ -34,8 +34,8 @@ class Usuario
     public function auth($email, $password)
     {
         $stmt = $this->db->prepare("SELECT id_usuario,contraseña FROM usuarios where email = :email");
-        $stmt->bindParam(":email",$email);
-        $stmt->execute();   
+        $stmt->bindParam(":email", $email);
+        $stmt->execute();
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($user && password_verify($password, $user['contraseña'])) {
@@ -45,24 +45,25 @@ class Usuario
         return NULL;
     }
 
-    public function getName($id){
+    public function getName($id)
+    {
         $stmt = $this->db->prepare("SELECT nombre FROM usuarios WHERE id_usuario = :id_usuario");
-        $stmt->bindParam(":id_usuario", $id);   
+        $stmt->bindParam(":id_usuario", $id);
         $stmt->execute();
         return $id = $stmt->fetch();
     }
 
-    public function getCountOfALL($id) {
+    public function getCountOfALL($id)
+    {
         $stmt = $this->db->prepare(
-            "SELECT COUNT(L.id_usuario) as Libros,
-                    COUNT(A.id_usuario) as Autores,
-                    COUNT(C.id_usuario) as Categorias,
-                    COUNT(D.id_usuario) FROM Libros L 
-                    JOIN Autores A on L.id_usuario = A.id_usuario
-                    JOIN Categorias C on A.id_usuario = C.id_usuario
-                    JOIN LibrosDeseados D on C.id_usuario = D.id_usuario
-                    WHERE L.id_usuario = :id_usuario");
-        $stmt->bindParam(":id_usuario", $id);
+            "SELECT 
+                (SELECT COUNT(*) FROM Libros WHERE id_usuario = ?) AS Libros,
+                (SELECT COUNT(*) FROM Autores WHERE id_usuario = ?) AS Autores,
+                (SELECT COUNT(*) FROM Categorias WHERE id_usuario = ?) AS Categorias,
+                (SELECT COUNT(*) FROM LibrosDeseados WHERE id_usuario = ?) AS LibrosDeseados
+                "
+        );
+        $stmt->execute([$id, $id, $id, $id]); //esto no se deberia hacer pero es mar corto que el metodo con bindParamd xd
         $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($resultado === false) {
