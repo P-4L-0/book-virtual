@@ -3,6 +3,8 @@ require_once __DIR__ . '/../controllers/registroController.php';
 require_once __DIR__ . '/../controllers/loginController.php';
 require_once __DIR__ . '/../controllers/logOutController.php';
 require_once __DIR__ . '/../controllers/categoraiController.php';
+require_once __DIR__ . '/../controllers/libroController.php';
+require_once __DIR__ . '/../controllers/autorController.php';
 
 
 
@@ -11,11 +13,15 @@ $registro = new RegistroController();
 $login = new LoginController();
 $logOut = new LogOutController();
 $category = new CategoryController();
+$libro = new LibroController();
+$autor = new CategoryController();
 
 //obtención del método http
 $method = $_SERVER["REQUEST_METHOD"];
 $uri = explode("/", trim($_SERVER["REQUEST_URI"], "/"));
-$route = end($uri);
+$lastSegment = end($uri);
+$id = is_numeric($lastSegment) ? intval($lastSegment) : null;
+$route = $id ? prev($id) : $lastSegment;   
 
 //rutas de la api
 $routes = [
@@ -34,8 +40,23 @@ $routes = [
         'category' => function () use ($category){
             $datos = $_POST;
             $category->add($datos);
+        },
+        'libro' => function () use ($libro){
+            $datos = $_POST;
+        },
+        'autor' => function () use ($autor){
+            $datos = $_POST;
         }
-    ]
+    ],
+    // 'GET' => [
+    //     'category' => function ($id) use ($category){
+    //         if($id){
+    //             //nothing here
+    //         }else{
+    //             //for now
+    //         }
+    //     }
+    // ]
 ];
 
 if (isset($routes[$method][$route])) {
