@@ -1,15 +1,3 @@
-<?php
-require_once __DIR__ . "/../models/libro.php";
-session_start();
-
-if (isset($_SESSION["id_usuario"])) {
-    $libro = new Libro();
-    $libros = $libro->getAll($_SESSION['id_usuario']);
-} else {
-    header('Location: ../views/index.php');
-    exit;
-}
-?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -25,7 +13,7 @@ if (isset($_SESSION["id_usuario"])) {
 
 <body class="flex h-screen">
     <div class="min-h-screen flex font-sans">
-        <?php include 'templates/menu.php'; ?>
+        @include('templates/menu.php')
         <main class="flex-1 lg:pl-72 p-6 space-y-8">
             <div class="container mx-auto p-4">
                 <header class="text-center mb-8">

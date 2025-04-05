@@ -2,8 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+// rutas para la vista
+Route::view('/', 'index');
 Route::view('/about', 'about');
+Route::view('/login', 'login');
+Route::view('/register', 'Registro');
+

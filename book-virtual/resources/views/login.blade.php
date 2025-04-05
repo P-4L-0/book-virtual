@@ -15,14 +15,14 @@
       <div class="lg:bg-black opacity-20 w-full h-full rounded-xl absolute inset-0"></div>
       <!-- Contenedor de la imagen -->
       <div class="w-full h-full relative">
-        <img src="../resources/img/books.jpg" alt="doctor_svg" class="w-full h-full object-cover rounded-xl" />
+        <img src="{{ asset('img/books.jpg') }}" alt="doctor_svg" class="w-full h-full object-cover rounded-xl" />
       </div>
     </div>
 
     <!-- Contenedor del formulario -->
     <div class="flex flex-col w-full h-full lg:w-3/5 lg:order-1">
       <div class="flex flex-col items-center w-full h-full lg:justify-center">
-        <img src="../resources/img/VirtualBooks.png" alt="" /><!--LOGO-->
+        <img src="{{ asset('img/VirtualBooks.png') }}" alt="" /><!--LOGO-->
         <h1 class="text-red-500 font-bold text-2xl mb-10 mt-10">
           Iniciar Sesión
         </h1>

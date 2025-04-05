@@ -21,7 +21,7 @@ if (isset($_SESSION["id_usuario"])) {
 
 <body class="flex justify-center items-center min-h-screen bg-gray-100">
     <div class="min-h-screen flex font-sans w-full p-6">
-        <?php include 'templates/menu.php'; ?>
+       @include('templates/menu.php')
 
         <div class="w-full max-w-3xl mx-auto mt-2 bg-white p-12 rounded-3xl shadow-xl border border-gray-200">
             <h2 class="text-4xl font-semibold text-gray-800 text-center mb-12">Agregar Categoría de Libros</h2>

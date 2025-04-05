@@ -1,16 +1,6 @@
-<?php
-
-session_start();
-
-if(isset($_SESSION["id_usuario"])){
-   //nothing here for now
-}else{
-    header('Location: ../views/index.php');
-    exit;
-}
-?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,13 +8,14 @@ if(isset($_SESSION["id_usuario"])){
     <link rel="shortcut icon" href="storage/svg/favicon.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
+
 <body class="flex h-screen bg-gray-100">
     <div class="min-h-screen flex font-sans w-full">
-        <?php include 'templates/menu.php'; ?>
-        
+        @include('templates/menu.php')
+
         <main class="flex-1 lg:pl-72 p-6 space-y-8">
             <h2 class="text-4xl font-semibold text-gray-700 mb-4">Área de Administración</h2>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="bg-white p-6 rounded-2xl shadow-lg text-center">
                     <h3 class="text-2xl font-bold text-gray-700 mb-4">Agregar Categoría</h3>
@@ -78,4 +69,5 @@ if(isset($_SESSION["id_usuario"])){
         </main>
     </div>
 </body>
+
 </html>

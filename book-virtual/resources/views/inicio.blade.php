@@ -1,19 +1,3 @@
-<?php
-require_once __DIR__ . '/../models/usuario.php';
-require_once __DIR__ . '/../models/libro.php';
-session_start();
-
-if (isset($_SESSION["id_usuario"])) {
-    $user = new Usuario();
-    $libro = new Libro();
-    $username = $user->getName($_SESSION['id_usuario']);
-    $info = $user->getCountOfALL($_SESSION['id_usuario']);
-    $libros = $libro->getAll($_SESSION['id_usuario']);
-} else {
-    header('Location: ../views/index.php');
-    exit;
-}
-?>
 <!DOCTYPE html>
 <html lang="es">
 

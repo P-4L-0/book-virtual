@@ -9,8 +9,7 @@
 </head>
 
 <body class="w-full h-full overflow-x-hidden">
-
-    <?php require_once __DIR__ . "/../views/templates/header.php"; ?>
+    @include('templates.header');
 
     <div class="w-full h-auto">
         <div class="hidden lg:flex lg:pt-28 mb-5 bg-[#fafafa] w-full">
@@ -25,7 +24,7 @@
             </div>
             <div class="w-1/2 hidden lg:flex">
                 <div class="w-full flex justify-center items-center">
-                    <img class="h-full lg:h-auto lg:w-3/4" src="../resources/img/index.png" alt="Gestión de libros" />
+                    <img class="h-full lg:h-auto lg:w-3/4" src="{{ asset('img/index.png') }}" alt="Gestión de libros" />
                 </div>
             </div>
         </div>
@@ -50,7 +49,7 @@
 
         <div class="w-full flex flex-col lg:flex-row">
             <div class="m-8 flex items-center justify-center lg:w-1/2">
-                <img src="../resources/img/leer.png" alt="Gestión de libros" class="mx-auto my-0 w-3/12 lg:w-1/3 lg:ml-auto">
+                <img src="{{ asset('img/leer.png') }}" alt="Gestión de libros" class="mx-auto my-0 w-3/12 lg:w-1/3 lg:ml-auto">
             </div>
 
             <div class="flex justify-center lg:my-20 text-left items-center flex-col">
@@ -63,15 +62,15 @@
                             <h2 class="text-xl lg:text-2xl font-semibold text-gray-700 mb-4">Beneficios</h2>
                             <ul class="space-y-4">
                                 <li class="text-base lg:text-xl font-medium text-gray-600 flex items-center">
-                                    <img src="../resources/img/libros.png" class="w-8 h-8 text-red-300 mr-2">
+                                    <img src="{{ asset('img/libros.png') }}" class="w-8 h-8 text-red-300 mr-2">
                                     Registro detallado de libros adquiridos.
                                 </li>
                                 <li class="text-base lg:text-xl font-medium text-gray-600 flex items-center">
-                                    <img src="../resources/img/retroalimentacion.png" class="w-8 h-8 text-red-300 mr-2">
+                                    <img src="{{ asset('img/retroalimentacion.png') }}" class="w-8 h-8 text-red-300 mr-2">
                                     Clasificación personalizada de tu biblioteca.
                                 </li>
                                 <li class="text-base lg:text-xl font-medium text-gray-600 flex items-center">
-                                    <img src="../resources/img/publicidad-online.png" class="w-8 h-8 text-red-300 mr-2">
+                                    <img src="{{ asset('img/publicidad-online.png') }}" class="w-8 h-8 text-red-300 mr-2">
                                     Lista de deseos para futuras compras.
                                 </li>
                             </ul>
@@ -82,9 +81,10 @@
         </div>
 
         <div class="w-full h-auto footer-container">
-            <?php require_once __DIR__ . '/../views/templates/footer.php'; ?>
+        @include('templates.footer');
         </div>
     </div>
 
 </body>
+
 </html>

@@ -1,14 +1,3 @@
-<?php
-
-session_start();
-
-if(isset($_SESSION["id_usuario"])){
-   //nothing here for now
-}else{
-    header('Location: ../views/index.php');
-    exit;
-}
-?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -26,7 +15,7 @@ if(isset($_SESSION["id_usuario"])){
 
 <body class="flex h-screen bg-gray-50">
     <div class="min-h-screen flex font-sans">
-        <?php include 'templates/menu.php'; ?>
+        @include('templates/menu.php')
         <main class="flex-1 lg:pl-72 p-6 space-y-8">
             <div class="container mx-auto p-4">
                 <header class="text-center mb-8">
@@ -58,7 +47,7 @@ if(isset($_SESSION["id_usuario"])){
                         <div class="flex justify-end items-center p-4 border-t border-gray-100">
                             <i id="likeIcon" class="fas fa-heart text-red-500 text-2xl cursor-pointer"></i>
                         </div>
-                            <!-- FALTA AGREGAR SCRIPT PAAAAAAA -->
+                        <!-- FALTA AGREGAR SCRIPT PAAAAAAA -->
 
                     </div>
 
@@ -80,7 +69,7 @@ if(isset($_SESSION["id_usuario"])){
                         <div class="flex justify-end items-center p-4 border-t border-gray-100">
                             <i id="likeIcon" class="fas fa-heart text-red-500 text-2xl cursor-pointer"></i>
                         </div>
-                            <!-- FALTA AGREGAR SCRIPT PAAAAAAA -->
+                        <!-- FALTA AGREGAR SCRIPT PAAAAAAA -->
 
 
                     </div>
@@ -103,7 +92,7 @@ if(isset($_SESSION["id_usuario"])){
                         <div class="flex justify-end items-center p-4 border-t border-gray-100">
                             <i id="likeIcon" class="fas fa-heart text-red-500 text-2xl cursor-pointer"></i>
                         </div>
-                            <!-- FALTA AGREGAR SCRIPT PAAAAAAA -->
+                        <!-- FALTA AGREGAR SCRIPT PAAAAAAA -->
 
 
 
