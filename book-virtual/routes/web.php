@@ -8,3 +8,8 @@ Route::view('/about', 'about');
 Route::view('/login', 'login');
 Route::view('/register', 'Registro');
 
+
+//ruta para vista 404 not found
+Route::fallback(function () {
+    return view('templates.404');
+});

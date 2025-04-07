@@ -5,10 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
-    <link rel="shortcut icon" href="storage/svg/favicon.png" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="shortcut icon" href="{{ asset('img/book.png') }}" 
+    @vite('resources/css/app.css')
 </head>
 
 <body class="flex h-screen text-xl">
@@ -29,19 +27,19 @@
             <!-- Tarjeta de autor -->
             <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 <?php if (count($autores) > 0): ?>
-                    <?php foreach ($autores as $autor): ?>
-                        <div class="bg-gray-100 rounded-lg shadow-md p-6 flex items-center space-x-6">
-                            <!-- <img src="" alt="Autor" class="w-20 h-20 rounded-full"> -->
-                            <div>
-                                <h3 class="text-xl font-semibold"><?= $autor['nombre'] ?></h3>
-                                <p class="text-gray-500 text-base"><?= $autor['nacionalidad'] ?></p>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                <?php else: ?>
-                    <div class="bg-gray-100 rounded-lg shadow-md p-6 flex items-center space-x-6">
-                        <h1>Aun no agregas autores</h1>
+                <?php    foreach ($autores as $autor): ?>
+                <div class="bg-gray-100 rounded-lg shadow-md p-6 flex items-center space-x-6">
+                    <!-- <img src="" alt="Autor" class="w-20 h-20 rounded-full"> -->
+                    <div>
+                        <h3 class="text-xl font-semibold"><?= $autor['nombre'] ?></h3>
+                        <p class="text-gray-500 text-base"><?= $autor['nacionalidad'] ?></p>
                     </div>
+                </div>
+                <?php    endforeach; ?>
+                <?php else: ?>
+                <div class="bg-gray-100 rounded-lg shadow-md p-6 flex items-center space-x-6">
+                    <h1>Aun no agregas autores</h1>
+                </div>
                 <?php endif; ?>
             </div>
         </main>
