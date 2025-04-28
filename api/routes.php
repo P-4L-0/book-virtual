@@ -1,11 +1,14 @@
 <?php
-require_once __DIR__ . '/registroController.php';
+require_once __DIR__ . '/../controllers/registroController.php';
+require_once __DIR__ . '/../controllers/loginController.php';
+require_once __DIR__ . '/../controllers/logOutController.php';
 
 
 
 //instancia de controladores
 $registro = new RegistroController();
-
+$login = new LoginController();
+$logOut = new LogOut();
 
 //obtención del método http
 $method = $_SERVER["REQUEST_METHOD"];
@@ -15,10 +18,17 @@ $route = end($uri);
 //rutas de la api
 $routes = [
     'POST' => [
-        'register' => function () use ($registro): void {
+        'register' => function () use ($registro) {
             $datos = $_POST; 
             $registro->registrar($datos);
         },
+        'login'=> function () use ($login) {
+            $datos = $_POST;
+            $login->authenticate($datos);
+        },
+        'logout' => function () use ($logOut){
+            $logOut->logOut();
+        }
     ]
 ];
 

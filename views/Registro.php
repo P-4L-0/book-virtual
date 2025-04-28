@@ -21,24 +21,27 @@
           <h1 class="text-red-500 font-bold text-2xl mb-10 mt-10">
             Registrarse
           </h1>
-          <form action="/" class="w-4/5 lg:flex flex-col items-center">
+          <form action="../api/routes.php/register" method="POST" class="w-4/5 lg:flex flex-col items-center">
             <input
               class="block w-full p-2 outline outline-1 outline-red-500 mb-4 lg:w-2/5"
               type="text"
               placeholder="Nombres"
               id="name"
+              name="nombre"
             />
             <input
               class="block w-full p-2 outline outline-1 outline-red-500 mb-4 lg:w-2/5"
               type="text"
               placeholder="Apellidos"
               id="lastName"
+              name="apellido"
             />
             <input
               class="block w-full p-2 outline outline-1 outline-red-500 mb-4 lg:w-2/5"
               type="email"
               placeholder="Email"
               id="mail"
+              name="email"
             />
             <!-- Contenedor para el campo de contraseña y el icono -->
             <div class="relative w-full lg:w-2/5 mb-4">
@@ -47,6 +50,7 @@
                 type="password"
                 placeholder="Contraseña"
                 id="password"
+                name="password"
               />
               <!-- Icono de "Ver Contraseña" -->
               <label
@@ -67,6 +71,7 @@
               type="password"
               placeholder="Confirmar Contraseña"
               id="password_confirm"
+              name="p_confirm"
             />
             <input type="checkbox" class="hidden" id="see_password" />
             <button
