@@ -30,7 +30,7 @@
         <p class="mb-10 text-gray-700 text-left">
           Hola, Bienvenido de nuevo!!
         </p>
-        <form action="../api/routes.php/login" method="POST" class="w-4/5 lg:flex flex-col items-center">
+        <form action="" method="POST" class="w-4/5 lg:flex flex-col items-center">
           <input class="block w-full p-2 outline outline-1 outline-red-500 mb-4 lg:w-2/5" type="email"
             placeholder="Email" id="mail" name="email"/>
           <!-- Contenedor para el campo de contraseña y el icono -->

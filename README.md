@@ -69,3 +69,4 @@ Permite al usuario cerrar sesión de manera segura.
      ```bash
      git clone https://github.com/P-4L-0/book-virtual.git
      ```
+<!--favicon gracias a: <a href="https://www.flaticon.com/free-icons/book" title="book icons">Book icons created by mikan933 - Flaticon</a>-->
