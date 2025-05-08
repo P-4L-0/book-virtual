@@ -32,7 +32,7 @@ class LoginController extends Controller
 
         if ($user and Hash::check($request->password, $user->password)) {
             //guardamos su session
-            // session(['usuario_id => $user->id]); 
+            Auth::login($user);
             return redirect()->intended('about');
         }
 
@@ -44,7 +44,7 @@ class LoginController extends Controller
 
     public function logout(Request $request)
     {
-        $request->session()->forget('usuario_id');
+        Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 

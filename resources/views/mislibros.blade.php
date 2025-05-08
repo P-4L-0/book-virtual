@@ -5,13 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
-    <link rel="shortcut icon" href="{{ asset('img/book.png') }}" 
-    @vite('resources/css/app.css')
-</head>
+    <link rel="shortcut icon" href="{{ asset('img/book.png') }}" @vite('resources/css/app.css') </head>
 
 <body class="flex h-screen">
     <div class="min-h-screen flex font-sans">
-        @include('templates/menu.php')
+        @include('templates.menu')
         <main class="flex-1 lg:pl-72 p-6 space-y-8">
             <div class="container mx-auto p-4">
                 <header class="text-center mb-8">
@@ -24,8 +22,8 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <?php if (count($libros) > 0): ?>
-                        <?php foreach ($libros as $libro): ?>
+                    @if (!empty($libro) AND count($libros) > 0)
+                        @foreach ($libros as $libro)
                             <div
                                 class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-200">
                                 <!-- Contenido de la tarjeta -->
@@ -45,12 +43,12 @@
                                     <img class="h-6 w-6 cursor-pointer" src="../resources/img/heart.png" alt="Favorito" />
                                 </div>
                             </div>
-                        <?php endforeach; ?>
-                    <?php else: ?>
+                        @endforeach
+                    @else
                         <div class="bg-gray-100 rounded-lg shadow-md p-6 flex items-center space-x-6">
                             <h1>Aun no agregas Libros</h1>
                         </div>
-                    <?php endif; ?>
+                    @endif
                 </div>
             </div>
 
