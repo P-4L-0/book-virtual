@@ -36,8 +36,9 @@ class LoginController extends Controller
             return redirect()->intended('about');
         }
 
+        // devolver errores de credenciales al form
         return back()->withErrors(
-            ['email' => 'Credenciales invalidas']
+            ['error' => 'Credenciales invalidas']
         )->withInput();
     }
 
