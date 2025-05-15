@@ -5,16 +5,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
-    <link rel="shortcut icon" href="{{ asset('img/book.png') }}" 
-    @vite('resources/css/app.css')
-</head>
+    <link rel="shortcut icon" href="{{ asset('img/book.png') }}" @vite('resources/css/app.css') </head>
 
 <body class="flex h-screen">
     <div class="min-h-screen flex font-sans">
-        <?php require_once '../views/templates/menu.php'; ?>
+        @include('templates.menu')
         <main class="flex-1 lg:pl-72 p-6 space-y-8">
             <div class="border-solid border-b-4 border-[#d5d5d5]">
-                <h3 class="text-2xl">Hola <?= $username['nombre'] ?></h3>
+                <h3 class="text-2xl">Hola <?= Auth::user()->nombre; ?></h3>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="bg-white shadow-lg rounded-lg p-4 h-48 border-3 border-gray-300">
@@ -42,7 +40,7 @@
                     <div class="flex flex-col items-start justify-start w-full h-32">
                         <div class="flex items-center mt-8 ml-2">
                             <img class="h-12 w-12 mr-4" src="../resources/svg/bookmark.svg" alt="Autores" />
-                            <h1 class="text-2xl"><?= $info['Autores'] ?? "0"; ?></h1>
+                            <h1 class="text-2xl"><?= $autor->autores->count() ?? "0"; ?></h1>
                         </div>
 
                     </div>
@@ -61,7 +59,7 @@
             <div class="bg-white p-6 rounded-2xl shadow-lg">
                 <h2 class="text-lg font-semibold text-gray-700 mb-4">Últimos Libros Añadidos</h2>
                 <div class="overflow-x-auto">
-                    <?php if (count($libros) > 0): ?>
+                    @if (!empty($libro) AND count($libros) > 0):
                         <table
                             class="min-w-full bg-white border border-gray-300 rounded-2xl border-collapse overflow-hidden">
                             <thead>
@@ -73,16 +71,16 @@
                             </thead>
                             <tbody>
 
-                                <?php foreach ($libros as $libro): ?>
+                                @foreach ($libros as $libro)
                                     <tr>
                                         <td class="py-4 px-6"><?= $libro['Titulo']; ?></td>
                                         <td class="py-4 px-6"><?= $libro['Categoria']; ?></td>
                                         <td class="py-4 px-6"><?= $libro['Autor']; ?></td>
                                     </tr>
-                                <?php endforeach; ?>
-                            <?php else: ?>
+                                @endforeach
+                    @else
                                 <h1>Aun no agregas libros</h1>
-                            <?php endif; ?>
+                            @endif
                         </tbody>
                     </table>
                 </div>

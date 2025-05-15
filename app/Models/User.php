@@ -42,15 +42,15 @@ class User extends Authenticatable
 
     //relacion con libros
     public function libros(){
-        $this->hasMany(Libro::class, 'user_id');
+        return $this->hasMany(Libro::class, 'user_id');
     }
 
     public function autores(){
-        $this->hasMany(Author::class, 'user_id');
+        return $this->hasMany(Author::class, 'user_id');
     }
 
     public function categorias(){
-        $this->hasMany(Category::class, 'user_id');
+        return $this->hasMany(Category::class, 'user_id');
     }
 
     
