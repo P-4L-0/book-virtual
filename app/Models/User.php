@@ -53,5 +53,9 @@ class User extends Authenticatable
         return $this->hasMany(Category::class, 'user_id');
     }
 
+     public function deseados(){
+        return $this->hasMany(desired::class, 'user_id');
+    }
+
     
 }

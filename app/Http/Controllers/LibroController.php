@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class LibroController extends Controller
+class LibroController 
 {
     public function userBooks()
     {

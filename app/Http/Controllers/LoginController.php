@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use function PHPUnit\Framework\callback;
 
-class LoginController extends Controller
+class LoginController
 {
     public function loginForm()
     {

@@ -12,7 +12,7 @@
 <body class="flex h-screen">
     <div class="min-h-screen flex font-sans">
         @include('templates.menu')
-        <main class="flex-1 lg:pl-72 p-6 space-y-8">
+        <main class="flex-1 lg:pl-72 p-6 ">
             <div class="border-solid border-b-4 border-[#d5d5d5]">
                 <h3 class="text-2xl">Hola {{ Auth::user()->nombre }}</h3>
             </div>
@@ -34,7 +34,7 @@
                     <div class="flex flex-col items-start justify-start w-full h-32">
                         <div class="flex items-center mt-8 ml-2">
                             <img class="h-12 w-12 mr-4" src="{{ asset('svg/bookmark.svg') }}" alt="Categorías" />
-                            <h1 class="text-2xl" id=""></h1>
+                            <h1 class="text-2xl" id="categorysTotal"></h1>
                         </div>
                     </div>
                 </div>
@@ -56,7 +56,7 @@
                     <div class="flex flex-col items-start justify-start w-full h-32">
                         <div class="flex items-center mt-8 ml-2">
                             <img class="h-12 w-12 mr-4" src="{{ asset('svg/bookmark.svg') }}" alt="Deseados" />
-                            <h1 class="text-2xl">{{ $info['LibrosDeseados'] ?? "0" }}</h1>
+                            <h1 class="text-2xl" id="whishBooksTotal"></h1>
                         </div>
                     </div>
                 </div>

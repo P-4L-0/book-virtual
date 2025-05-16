@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 
-class AutorController extends Controller
+class AutorController 
 {
 
     public function userAuthors()
