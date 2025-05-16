@@ -81,11 +81,10 @@
     </section>
 
     <!-- Footer -->
-    <footer >
+    <footer>
         @include('templates.footer')
     </footer>
 
 </body>
-
 </html>
 

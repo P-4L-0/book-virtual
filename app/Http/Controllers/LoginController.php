@@ -32,8 +32,8 @@ class LoginController extends Controller
 
         if ($user and Hash::check($request->password, $user->password)) {
             //guardamos su session
-                
-            return redirect()->intended('about');
+            Auth::login($user);
+            return redirect()->intended('home');
         }
 
         // devolver errores de credenciales al form
