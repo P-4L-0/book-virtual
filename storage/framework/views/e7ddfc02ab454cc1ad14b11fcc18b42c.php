@@ -15,7 +15,7 @@
     </div>
 
     <!-- Sección de "¿Por qué elegir nuestra aplicación?" -->
-    <section class="w-full py-16 px-6 md:px-16 bg-red-50 text-gray-800 rounded-xl shadow-xl max-w-7xl mx-auto mb-16 mt-24">
+    <section class="w-full py-16 px-6 md:px-16 bg-gray-50 text-gray-800 rounded-xl shadow-xl max-w-7xl mx-auto mb-16 mt-24">
         <div class="flex flex-col lg:flex-row gap-8 items-center justify-between">
             <div class="lg:w-1/2 text-center lg:text-left">
                 <h2 class="font-bold text-3xl lg:text-5xl mb-6">
@@ -55,7 +55,7 @@
     </section>
 
     <!-- Sección Visión -->
-    <section class="w-full py-16 px-6 lg:px-20 bg-red-100 text-gray-800 rounded-xl shadow-lg mt-16  max-w-7xl mx-auto mb-16">
+    <section class="w-full py-16 px-6 lg:px-20 bg-gray-50 text-gray-800 rounded-xl shadow-lg mt-16 max-w-7xl mx-auto mb-16">
         <div class="flex flex-col lg:flex-row-reverse gap-8 items-center justify-between">
             <!-- Texto Visión -->
             <div class="lg:w-1/2 text-center lg:text-left">
@@ -117,7 +117,7 @@
             </div>
         </div>
     </section>
-
+    
     <!-- Footer -->
     <footer>
         <?php echo $__env->make('templates.footer', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
@@ -129,9 +129,6 @@
             el.classList.toggle('line-clamp-3');
         }
     </script>
-
-
 </body>
 
-</html>
 <?php /**PATH C:\xampp\htdocs\book-virtual\resources\views/about.blade.php ENDPATH**/ ?>

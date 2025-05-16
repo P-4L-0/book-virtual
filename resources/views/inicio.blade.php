@@ -56,7 +56,7 @@
                     <div class="flex flex-col items-start justify-start w-full h-32">
                         <div class="flex items-center mt-8 ml-2">
                             <img class="h-12 w-12 mr-4" src="{{ asset('svg/bookmark.svg') }}" alt="Deseados" />
-                            <h1 class="text-2xl" id="whishBooksTotal"></h1>
+                            <h1 class="text-2xl">{{ $info['LibrosDeseados'] ?? "0" }}</h1>
                         </div>
                     </div>
                 </div>
@@ -79,10 +79,9 @@
                             <tbody>
                                 @foreach ($libros as $libro)
                                     <tr>
-                                        <td class="py-4 px-6">{{ $libro->titulo }}</td>
-                                        <td class="py-4 px-6">
-                                            {{ $libro->categoria ? $libro->categoria->nombre : 'Sin categoría' }}</td>
-                                        <td class="py-4 px-6">{{ $libro->autor ? $libro->autor->nombre : 'Sin autor' }}</td>
+                                        <td class="py-4 px-6">{{ $libro['Titulo'] }}</td>
+                                        <td class="py-4 px-6">{{ $libro['Categoria'] }}</td>
+                                        <td class="py-4 px-6">{{ $libro['Autor'] }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -90,7 +89,6 @@
                     @else
                         <p class="text-gray-600">Aún no agregas libros</p>
                     @endif
-
                 </div>
             </div>
         </main>

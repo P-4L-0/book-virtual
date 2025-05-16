@@ -81,10 +81,12 @@
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer >
         <?php echo $__env->make('templates.footer', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
     </footer>
 
 </body>
+
 </html>
+
 <?php /**PATH C:\xampp\htdocs\book-virtual\resources\views/index.blade.php ENDPATH**/ ?>

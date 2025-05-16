@@ -45,7 +45,7 @@
           <button id="register"
             class="w-full p-2 rounded-md bg-red-500 text-white font-bold lg:w-2/5 hover:bg-red-300 hover:text-vh-green duration-200"
             id="show-alert">
-            Registrarse
+            Iniciar Sesion
           </button>
         </form>
         <br />
