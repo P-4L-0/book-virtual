@@ -71,7 +71,7 @@
                             class="min-w-full bg-white border border-gray-300 rounded-2xl border-collapse overflow-hidden">
                             <thead>
                                 <tr class="bg-white border-b border-gray-300">
-                                    <th class="py-3 px-6 text-left">Titulo</th>
+                                    <th class="py-3 px-6 text-left">Título</th>
                                     <th class="py-3 px-6 text-left">Categoría</th>
                                     <th class="py-3 px-6 text-left">Autor</th>
                                 </tr>
@@ -79,9 +79,10 @@
                             <tbody>
                                 @foreach ($libros as $libro)
                                     <tr>
-                                        <td class="py-4 px-6">{{ $libro['Titulo'] }}</td>
-                                        <td class="py-4 px-6">{{ $libro['Categoria'] }}</td>
-                                        <td class="py-4 px-6">{{ $libro['Autor'] }}</td>
+                                        <td class="py-4 px-6">{{ $libro->titulo }}</td>
+                                        <td class="py-4 px-6">
+                                            {{ $libro->categoria ? $libro->categoria->nombre : 'Sin categoría' }}</td>
+                                        <td class="py-4 px-6">{{ $libro->autor ? $libro->autor->nombre : 'Sin autor' }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -89,6 +90,7 @@
                     @else
                         <p class="text-gray-600">Aún no agregas libros</p>
                     @endif
+
                 </div>
             </div>
         </main>

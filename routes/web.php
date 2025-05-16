@@ -16,19 +16,13 @@ Route::view('/about', 'about');
 Route::view('/login', 'login');
 Route::view('/register', 'Registro');
 
-Route::get('/agregarCat', function () {
-    return view('adcategoria');
-})->name('addC');
-
 //ruta login
 Route::post('/login', [LoginController::class, 'login']);
 
 //rutas de usuario autenticado
 Route::middleware(UserVerify::class)->group(function () {
 
-    Route::get('/home', function () {
-        return view('inicio');
-    })->name('home');
+    Route::get('/home', [LibroController::class, 'show'])->name('home');
 
     Route::get('/mislibros', function () {
         return view('mislibros');
@@ -50,6 +44,13 @@ Route::middleware(UserVerify::class)->group(function () {
         return view('agregar');
     })->name('add');
 
+    Route::get('/agregarCat', function () {
+        return view('adcategoria');
+    })->name('addC');
+
+    Route::post('agregarCat', [CategoryController::class, 'store']);
+
+
     Route::get('getAuthors', [AutorController::class, 'userAuthors']);
 
     Route::get('getBooks', [LibroController::class, 'userBooks']);
@@ -57,6 +58,8 @@ Route::middleware(UserVerify::class)->group(function () {
     Route::get('getWishBooks', [DeseadosController::class, 'userWishBooks']);
 
     Route::get('getCategorys', [CategoryController::class, 'userCategorys']);
+
+    Route::get('getLastBooks', [LibroController::class, 'lastBooks']);
 
 });
 

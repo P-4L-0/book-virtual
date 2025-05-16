@@ -12,9 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('categorias', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->unsignedBigInteger('user_id');
             $table->string('nombre',100);
+            $table->string('imagen')->nullable(); 
             $table->foreign('user_id')->references('id')->on('usuarios')->onDelete('cascade');
             $table->timestamps();
         });

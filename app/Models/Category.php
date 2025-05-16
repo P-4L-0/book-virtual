@@ -11,7 +11,8 @@ class Category extends Model
 
     protected $fillable = [
         'nombre',
-        'user_id'
+        'user_id',
+        'imagen'
     ];
 
     //relacion con usuario
