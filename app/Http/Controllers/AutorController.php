@@ -25,7 +25,7 @@ class AutorController
         $autores = Author::where('user_id', Auth::id())->get();
 
         // Pasar los autores a la vista
-        return view('views.autores', compact('autores'));
+        return view('autores', compact('autores'));
     }
     public function store(Request $request)
     {

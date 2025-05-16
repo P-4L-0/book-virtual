@@ -40,4 +40,16 @@ class CategoryController
             'categoria' => $categoria
         ], 201);
     }
+
+public function misCategorias()
+{
+    $userId = Auth::id();
+
+    $categorias = Category::where('user_id', $userId)
+        ->withCount('libros')  // Cuenta libros relacionados
+        ->orderBy('nombre', 'asc')
+        ->get();
+
+    return view('categorias', compact('categorias'));
+}
 }

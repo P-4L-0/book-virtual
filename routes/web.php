@@ -34,15 +34,11 @@ Route::middleware(UserVerify::class)->group(function () {
 
     Route::get('/home', [LibroController::class, 'show'])->name('home');
 
-    Route::get('/home', [LibroController::class, 'show'])->name('home');
-
     Route::get('/deseados', function () {
         return view('deseados');
     })->name('desired');
 
-    Route::get('/categorias', function () {
-        return view('categorias');
-    })->name('categorys');
+    Route::get('/categorias', [CategoryController::class, 'misCategorias'])->name('misCategorias');
 
     Route::get('/autores', function () {
         return view('autores');
@@ -75,6 +71,8 @@ Route::middleware(UserVerify::class)->group(function () {
     Route::post('/addLibros', [LibroController::class, 'store'])->name('addLibros');
 
     Route::get('/mislibros', [LibroController::class, 'misLibros'])->name('misLibros');
+
+
 
     Route::get('getAuthors', [AutorController::class, 'userAuthors']);
 

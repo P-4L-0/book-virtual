@@ -20,4 +20,9 @@ class Category extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    public function libros()
+    {
+        return $this->hasMany(Libro::class, 'category_id');
+    }
 }
