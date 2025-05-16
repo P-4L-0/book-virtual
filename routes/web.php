@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DeseadosController;
+use App\Http\Controllers\LibroController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AutorController;
 use App\Http\Middleware\UserVerify;
@@ -23,7 +26,9 @@ Route::post('/login', [LoginController::class, 'login']);
 //rutas de usuario autenticado
 Route::middleware(UserVerify::class)->group(function () {
 
-    Route::get('/home', [AutorController::class, 'userAuthors'])->name('home');
+    Route::get('/home', function () {
+        return view('inicio');
+    })->name('home');
 
     Route::get('/mislibros', function () {
         return view('mislibros');
@@ -37,11 +42,21 @@ Route::middleware(UserVerify::class)->group(function () {
         return view('categorias');
     })->name('categorys');
 
-    Route::get('/autores', [Author::class, 'userAuthors'])->name('authors');
+    Route::get('/autores', function () {
+        return view('autores');
+    })->name('authors');
 
     Route::get('/agregar', function () {
         return view('agregar');
     })->name('add');
+
+    Route::get('getAuthors', [AutorController::class, 'userAuthors']);
+
+    Route::get('getBooks', [LibroController::class, 'userBooks']);
+
+    Route::get('getWishBooks', [DeseadosController::class, 'userWishBooks']);
+
+    Route::get('getCategorys', [CategoryController::class, 'userCategorys']);
 
 });
 

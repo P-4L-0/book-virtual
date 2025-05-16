@@ -5,14 +5,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
-    <link rel="shortcut icon" href="{{ asset('img/book.png') }}" 
+    <link rel="shortcut icon" href="{{ asset('img/book.png') }}">
     @vite('resources/css/app.css')
 </head>
 
 <body class="flex h-screen bg-gray-100">
     <div class="min-h-screen flex font-sans w-full">
-        @include('templates/menu.php')
-
+        @include('templates.menu')
         <main class="flex-1 lg:pl-72 p-6 space-y-8">
             <h2 class="text-4xl font-semibold text-gray-700 mb-4">Área de Administración</h2>
 

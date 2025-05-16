@@ -10,14 +10,13 @@ use Illuminate\Http\Request;
 
 class AutorController extends Controller
 {
-       /**
-     * Muestra la info del usuario
-     * palo xd
-     */
-    public function userAuthors(){
+
+    public function userAuthors()
+    {
         $id = Auth::user()->id;
-        return view('inicio', [
-            'autor' => User::with('autores')->findOrFail($id)
+        $user = User::with('autores')->findOrFail($id);
+        return response()->json([
+            'authors' => $user->autores->count()
         ]);
     }
 }

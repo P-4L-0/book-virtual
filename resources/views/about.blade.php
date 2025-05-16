@@ -5,175 +5,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre Nosotros - Gestión de Colección de Libros</title>
-    <link rel="shortcut icon" href="{{ asset('img/book.png') }}" 
+    <link rel="shortcut icon" href="{{ asset('img/book.png') }}">
     @vite('resources/css/app.css')
 </head>
 
-<body class="w-full h-full">
-    <div class="w-full h-auto">
-        @include('templates.header');
+<body class="w-full h-full font-sans bg-[#f3f4f6] text-gray-800">
+    <div class="w-full">
+        @include('templates.header')
     </div>
 
     <!-- Sección de "¿Por qué elegir nuestra aplicación?" -->
-    <div class="flex flex-col lg:flex-row w-full py-8 md:pl-16 px-5 lg:pt-16 bg-[#fafafa]">
-        <!-- Contenedor de texto -->
-        <div class="flex flex-col w-full lg:w-1/2 mx-auto items-center md:justify-center lg:text-left text-center">
-            <h2 class="font-bold text-xl py-4 lg:mt-10 lg:text-4xl text-red-400 pb-1 lg:pb-6">
-                ¿Por qué elegir nuestra aplicación de gestión de colección de libros?
-            </h2>
-            <ul class="text-start items-center text-sm pb-1 pl-1 lg:pl-24">
-                <li class="text-sm md:text-base lg:text-2xl lg:font-semibold text-red-300 list-disc">Registra y organiza
-                    tus libros adquiridos fácilmente.</li>
-                <li class="text-sm md:text-base lg:text-2xl lg:font-semibold text-red-300 list-disc">Añade detalles de
-                    los autores de cada libro.</li>
-                <li class="text-sm md:text-base lg:text-2xl lg:font-semibold text-red-300 list-disc">Clasifica tu
-                    colección por categorías personalizadas.</li>
-                <li class="text-sm md:text-base lg:text-2xl lg:font-semibold text-red-300 list-disc">Crea y gestiona una
-                    lista de deseos para futuras compras.</li>
-                <li class="text-sm md:text-base lg:text-2xl lg:font-semibold text-red-300 list-disc">Acceso desde
-                    cualquier dispositivo para una experiencia fluida.</li>
-            </ul>
-        </div>
-
-        <!-- Contenedor de la imagen (visible solo en pantallas grandes) -->
-        <div class="hidden lg:flex lg:w-1/2 lg:items-end lg:justify-end mt-auto">
-            <img src="acercaDe.png" alt="Gestión de libros" class="w-full h-auto object-cover lg:w-auto lg:h-full" />
-        </div>
-    </div>
-
-    <!-- Sección de Misión -->
-    <div class="w-full flex flex-col lg:flex-row pt-8 lg:pt-16">
-        <!-- Contenido para PC -->
-        <div
-            class="hidden lg:block lg:w-1/4 items-center justify-center lg:order-last rounded-xl relative ml-40 bg-red-100 p-8 shadow-md">
-            <div class="absolute top-0 right-0 mr-[-48px] mt-[-48px] rounded-xl overflow-hidden">
-                <!-- Imagen de libro (reemplaza el SVG) -->
-                <img src="libro.png" alt="Libro" class="w-full h-auto rounded-xl" />
+    <section class="w-full py-16 px-6 md:px-16 bg-red-50 text-gray-800 rounded-xl shadow-xl max-w-7xl mx-auto mb-16 mt-24">
+        <div class="flex flex-col lg:flex-row gap-8 items-center justify-between">
+            <div class="lg:w-1/2 text-center lg:text-left">
+                <h2 class="font-bold text-3xl lg:text-5xl mb-6">
+                    ¿Por qué elegir nuestra aplicación de gestión de colección de libros?
+                </h2>
+                <ul class="space-y-4 text-start text-sm md:text-base lg:text-xl list-disc pl-6 lg:pl-12">
+                    <li>Registra y organiza tus libros adquiridos fácilmente.</li>
+                    <li>Añade detalles de los autores de cada libro.</li>
+                    <li>Clasifica tu colección por categorías personalizadas.</li>
+                    <li>Crea y gestiona una lista de deseos para futuras compras.</li>
+                    <li>Acceso desde cualquier dispositivo para una experiencia fluida.</li>
+                </ul>
             </div>
-            <div class="absolute bottom-0 left-0 ml-[-48px] mb-[-48px] rounded-xl overflow-hidden">
-                <img src="libro.png" alt="Libro" class="w-full h-auto rounded-xl" />
+
+            <div class="lg:w-1/2 flex justify-center mt-8 lg:mt-0">
+                <img src="{{ asset('img/acercaDe.png') }}" alt="Gestión de libros" class="max-w-md w-full rounded-xl shadow-lg">
             </div>
         </div>
+    </section>
 
-        <!-- Contenido para Tablet y Celular -->
-        <div class="lg:hidden w-3/4 mx-auto flex items-center justify-center p-8 rounded-xl bg-red-100 shadow-xl">
-            <div class="flex w-full h-full items-center justify-center">
-                <img src="libro.png" alt="Libro" class="w-full h-auto lg:w-96 lg:h-96 md:w-60 md:h-60 rounded-xl" />
+    <!-- Sección Misión -->
+    <section class="w-full py-16 px-6 lg:px-20 bg-white rounded-xl shadow-lg mt-16 max-w-7xl mx-auto mb-16">
+        <div class="flex flex-col lg:flex-row gap-8 items-center justify-between">
+            <!-- Imagen -->
+            <div class="lg:w-1/3 flex justify-center">
+                <img src="{{ asset('img/libro.png') }}" alt="Libro" class="w-64 h-auto rounded-xl shadow-lg">
             </div>
-        </div>
 
-        <!-- Texto de Misión -->
-        <div class="lg:w-1/2 flex flex-col lg:pl-28 lg:order-first">
-            <h2 class="text-star font-bold text-red-400 mb-5 text-4xl mt-8 mx-8">Misión</h2>
-            <div class="flex justify-center text-start">
-                <p class="text-base mx-8 leading-loose">
-                    Nuestra misión es proporcionar una plataforma fácil de usar para que los usuarios puedan gestionar y
-                    organizar su colección de libros de manera eficiente. Buscamos ayudar a los lectores a registrar sus
-                    libros, organizar su biblioteca, gestionar detalles de los autores y crear listas de deseos para
-                    futuras adquisiciones.
+            <!-- Texto Misión -->
+            <div class="lg:w-2/3 text-center lg:text-left">
+                <h2 class="font-bold text-4xl text-red-500 mb-4">Misión</h2>
+                <p class="text-lg leading-relaxed text-gray-700">
+                    Nuestra misión es proporcionar una plataforma fácil de usar para que los usuarios puedan gestionar y organizar su colección de libros de manera eficiente. Buscamos ayudar a los lectores a registrar sus libros, organizar su biblioteca, gestionar detalles de los autores y crear listas de deseos para futuras adquisiciones.
                 </p>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Sección de Visión -->
-    <div class="w-full flex flex-col mb-16 lg:flex-row-reverse pt-8 lg:pt-16">
-        <!-- Contenido para Tablet y Celular -->
-        <div class="lg:hidden w-3/4 mx-auto flex items-center justify-center p-8 rounded-xl bg-red-100">
-            <div class="flex w-full h-full items-center justify-center shadow-xl">
-                <img src="../resources/img/leyendo.jpg" alt="Niño leyendo" class="w-full h-auto lg:w-96 lg:h-96 md:w-60 md:h-60 rounded-xl">
+    <!-- Sección Visión -->
+    <section class="w-full py-16 px-6 lg:px-20 bg-red-100 text-gray-800 rounded-xl shadow-lg mt-16  max-w-7xl mx-auto mb-16">
+        <div class="flex flex-col lg:flex-row-reverse gap-8 items-center justify-between">
+            <!-- Texto Visión -->
+            <div class="lg:w-1/2 text-center lg:text-left">
+                <h2 class="font-bold text-4xl text-red-500 mb-4">Visión</h2>
+                <p class="text-lg leading-relaxed text-gray-700">
+                    Nuestra visión es ser la plataforma líder para la gestión de colecciones de libros, ayudando a los usuarios a organizar sus bibliotecas, descubrir nuevos libros y gestionar sus deseos de adquisición de manera eficiente y organizada.
+                </p>
+            </div>
+
+            <!-- Imagen -->
+            <div class="lg:w-1/2 flex justify-center mt-8 lg:mt-0">
+                <img src="{{ asset('img/leyendo.jpg') }}" alt="Niño leyendo" class="w-full max-w-md h-auto rounded-xl shadow-lg">
             </div>
         </div>
+    </section>
 
-        <!-- Contenido para PC -->
-        <div class="hidden lg:w-1/2 lg:flex items-center justify-center lg:order-last">
-            <div class="lg:w-1/2 rounded-xl bg-red-100 p-4 shadow-md">
-                <img src="../resources/img/leyendo.jpg" alt="Niño leyendo"
-                    class="w-full h-auto lg:w-96 lg:h-96 md:w-60 md:h-60 rounded-xl mx-auto">
-            </div>
+    <!-- Beneficios con tarjetas -->
+    <section class="w-full px-6 lg:px-20 py-16 bg-gray-100 rounded-xl mt-16 max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="font-bold text-4xl mb-2">Beneficios de usar nuestra aplicación</h2>
+            <h3 class="text-red-500 font-bold text-2xl">Tus Beneficios</h3>
+            <p class="text-lg mt-2 max-w-2xl mx-auto leading-relaxed text-gray-700">
+                Únete a nuestra plataforma y disfruta de una experiencia única, con acceso para registrar libros, gestionar autores y crear listas de deseos.
+            </p>
         </div>
 
-        <div class="lg:w-1/2 flex flex-col lg:pl-28">
-            <h2 class="text-end lg:text-start md:text-start font-bold text-red-400 mb-5 text-4xl mt-8 mx-8">Visión</h2>
-            <div class="flex justify-center text-start">
-                <p class="text-base mx-8 leading-loose">
-                    Nuestra visión es ser la plataforma líder para la gestión de colecciones de libros, ayudando a los
-                    usuarios a organizar sus bibliotecas, descubrir nuevos libros y gestionar sus deseos de adquisición
-                    de manera eficiente y organizada.
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Beneficio 1 -->
+            <div class="bg-white rounded-xl shadow-lg p-6 border transform transition-transform duration-300 hover:scale-105 hover:-translate-y-2">
+                <div class="bg-red-100 rounded-full h-16 w-16 flex items-center justify-center mb-4">
+                    <span class="text-red-500 font-bold text-3xl">01</span>
+                </div>
+                <h3 class="font-semibold text-xl mb-2 text-red-500">Registro de Libros</h3>
+                <p class="text-base leading-loose line-clamp-3">
+                    Registra tus libros con detalles completos como título, autor, fecha de adquisición y más.
+                </p>
+            </div>
+
+            <!-- Beneficio 2 -->
+            <div class="bg-white rounded-xl shadow-lg p-6 border transform transition-transform duration-300 hover:scale-105 hover:-translate-y-2">
+                <div class="bg-red-100 rounded-full h-16 w-16 flex items-center justify-center mb-4">
+                    <span class="text-red-500 font-bold text-3xl">02</span>
+                </div>
+                <h3 class="font-semibold text-xl mb-2 text-red-500">Categorización Personalizada</h3>
+                <p class="text-base leading-loose line-clamp-3">
+                    Organiza tu colección de libros en categorías personalizadas como género, autor, etc.
+                </p>
+            </div>
+
+            <!-- Beneficio 3 -->
+            <div class="bg-white rounded-xl shadow-lg p-6 border transform transition-transform duration-300 hover:scale-105 hover:-translate-y-2">
+                <div class="bg-red-100 rounded-full h-16 w-16 flex items-center justify-center mb-4">
+                    <span class="text-red-500 font-bold text-3xl">03</span>
+                </div>
+                <h3 class="font-semibold text-xl mb-2 text-red-500">Lista de Deseos</h3>
+                <p class="text-base leading-loose line-clamp-3">
+                    Crea una lista de libros deseados para futuras adquisiciones y compras.
                 </p>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Sección de Beneficios -->
-    <div class="flex flex-col">
-        <div class="flex flex-col lg:text-center lg:items-center">
-            <h2 class="font-bold text-4xl mt-8 mb-5 text-center">Beneficios de usar nuestra aplicación</h2>
-            <h3 class="text-red-400 font-bold mx-8 text-2xl text-start">Tus Beneficios</h3>
-            <div class="flex mx-8">
-                <p class="text-base leading-loose">
-                    Únete a nuestra plataforma y disfruta de una experiencia de organización única, con acceso para
-                    registrar libros, detalles de autores y gestionar tus futuras compras.
-                </p>
-            </div>
-        </div>
-        <div class="flex flex-wrap m-4 lg:m-16">
-            <!-- Contenedor 1 -->
-            <div class="w-full lg:w-1/3 p-4">
-                <div class="bg-red-50 pt-5 h-full rounded-xl shadow-xl">
-                    <div class="bg-red-100 rounded-full h-14 w-14 flex items-center justify-center ml-5">
-                        <h2 class="text-red-400 font-bold text-2xl">01</h2>
-                    </div>
-                    <h3 class="font-semibold text-xl p-2">Registro de Libros</h3>
-                    <div class="text-container overflow-hidden">
-                        <p id="text1" class="text-base leading-loose p-4 line-clamp-3">
-                            Registra tus libros con detalles completos como título, autor, fecha de adquisición y más.
-                        </p>
-                        <a href="#" onclick="toggleText('text1')" class="text-red-400 hover:underline block p-4">Leer
-                            más</a>
-                    </div>
-                </div>
-            </div>
+    <!-- Footer -->
+    <footer>
+        @include('templates.footer')
+    </footer>
 
-            <!-- Contenedor 2 -->
-            <div class="w-full lg:w-1/3 p-4">
-                <div class="border pt-5 h-full rounded-xl shadow-xl">
-                    <div class="bg-red-100 rounded-full h-14 w-14 flex items-center justify-center ml-5">
-                        <h2 class="text-red-400 font-bold text-2xl">02</h2>
-                    </div>
-                    <h3 class="font-semibold text-xl p-2">Categorización Personalizada</h3>
-                    <div class="text-container overflow-hidden">
-                        <p id="text2" class="text-base leading-loose p-4 line-clamp-3">
-                            Organiza tu colección de libros en categorías personalizadas como género, autor, etc.
-                        </p>
-                        <a href="#" onclick="toggleText('text2')" class="text-red-400 hover:underline block p-4">Leer
-                            más</a>
-                    </div>
-                </div>
-            </div>
+    <script>
+        function toggleText(id) {
+            const el = document.getElementById(id);
+            el.classList.toggle('line-clamp-3');
+        }
+    </script>
 
-            <!-- Contenedor 3 -->
-            <div class="w-full lg:w-1/3 p-4">
-                <div class="bg-red-50 pt-5 h-full rounded-xl shadow-xl">
-                    <div class="bg-red-100 rounded-full h-14 w-14 flex items-center justify-center ml-5">
-                        <h2 class="text-red-400 font-bold text-2xl">03</h2>
-                    </div>
-                    <h3 class="font-semibold text-xl p-2">Lista de Deseos</h3>
-                    <div class="text-container overflow-hidden">
-                        <p id="text3" class="text-base leading-loose p-4 line-clamp-3">
-                            Crea una lista de libros deseados para futuras adquisiciones y compras.
-                        </p>
-                        <a href="#" onclick="toggleText('text3')" class="text-red-400 hover:underline block p-4">Leer
-                            más</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="w-full h-auto footer-container">
-        @include('templates.footer');
-    </div>
 </body>
 
 </html>

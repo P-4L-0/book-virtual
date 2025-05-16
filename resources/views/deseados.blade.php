@@ -11,7 +11,7 @@
 
 <body class="flex h-screen bg-gray-50">
     <div class="min-h-screen flex font-sans">
-        @include('templates/menu.php')
+        @include('templates.menu')
         <main class="flex-1 lg:pl-72 p-6 space-y-8">
             <div class="container mx-auto p-4">
                 <header class="text-center mb-8">
