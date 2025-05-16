@@ -28,10 +28,6 @@ Route::post('/login', [LoginController::class, 'login']);
 //rutas de usuario autenticado
 Route::middleware(UserVerify::class)->group(function () {
 
-    Route::get('/inicio', function () {
-        return view('inicio');
-    })->name('begin');
-
     Route::get('/mislibros', function () {
         return view('mislibros');
     })->name('books');

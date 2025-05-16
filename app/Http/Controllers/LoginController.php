@@ -41,7 +41,7 @@ class LoginController extends Controller
             ['error' => 'Credenciales invalidas']
         )->withInput();
     }
-    
+
     public function logout(Request $request)
     {
         Auth::logout();
