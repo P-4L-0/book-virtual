@@ -74,6 +74,9 @@ Route::middleware(UserVerify::class)->group(function () {
     })->middleware('auth');
     Route::post('/agregarAutor', [AutorController::class, 'store'])->middleware('auth');
 
+    Route::get('/addLibros', [LibroController::class, 'createAddLibros'])->name('addLibros.form');
+    Route::post('/addLibros', [LibroController::class, 'addLibros'])->name('addLibros');
+
 
     Route::get('getAuthors', [AutorController::class, 'userAuthors']);
 
