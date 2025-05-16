@@ -5,13 +5,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
-    <link rel="shortcut icon" href="<?php echo e(asset('img/book.png')); ?>">
+    <link rel="shortcut icon" href="<?php echo e(asset('img/book.png')); ?>" >
     <?php echo app('Illuminate\Foundation\Vite')('resources/css/app.css'); ?>
 </head>
 
 <body class="flex h-screen bg-gray-100">
     <div class="min-h-screen flex font-sans w-full">
-        <?php echo $__env->make('templates/menu.php', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+        <?php echo $__env->make('templates.menu', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
         <main class="flex-1 lg:pl-72 p-6 space-y-8">
             <h2 class="text-4xl font-semibold text-gray-700 mb-4">Área de Administración</h2>

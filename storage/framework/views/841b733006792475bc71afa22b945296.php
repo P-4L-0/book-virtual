@@ -11,7 +11,7 @@
 
 <body class="flex h-screen">
     <div class="min-h-screen flex font-sans">
-        <?php echo $__env->make('templates/menu.php', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+        <?php echo $__env->make('templates.menu', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
         <main class="flex-1 lg:pl-72 p-6 space-y-8">
             <!-- Encabezado con título, buscador y botón AGREGAR -->
             <div class="flex justify-between items-center mb-6">
