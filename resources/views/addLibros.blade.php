@@ -40,7 +40,7 @@
                     <label for="categoria_id" class="block text-lg font-semibold text-gray-700">Categoría</label>
                     <select name="categoria_id" id="categoria_id" required
                         class="block w-full px-6 py-4 border border-gray-300 rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-red-500 transition duration-200">
-                        <option value="">Seleccione una categoría</option>
+                        <option selected disabled>Seleccione una categoría</option>
                         @foreach($categorias as $categoria)
                             <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
                         @endforeach
@@ -52,7 +52,7 @@
                     <label for="autor_id" class="block text-lg font-semibold text-gray-700">Autor</label>
                     <select name="autor_id" id="autor_id" required
                         class="block w-full px-6 py-4 border border-gray-300 rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-red-500 transition duration-200">
-                        <option value="">Seleccione un autor</option>
+                        <option selected disabled>Seleccione un autor</option>
                         @foreach($autores as $autor)
                             <option value="{{ $autor->id }}">{{ $autor->nombre }}</option>
                         @endforeach

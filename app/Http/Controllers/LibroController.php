@@ -40,20 +40,41 @@ class LibroController
             'autor_id' => 'required|exists:autores,id',
         ]);
 
+        //dd($request->all());
         Libro::create([
             'titulo' => $request->titulo,
             'descripcion' => $request->descripcion,
-            'categoria_id' => $request->categoria_id,
-            'autor_id' => $request->autor_id,
-            'user_id' => Auth::id()
+            'category_id' => $request->categoria_id,
+            'author_id' => $request->autor_id,
+            'user_id' => Auth::user()->id
         ]);
 
-        return redirect()->route('libros.create')->with('success', 'Libro agregado correctamente.');
+        return redirect()->route('addLibros')->with('success', 'Libro agregado correctamente.');
     }
+
+    public function misLibros()
+    {
+        $userId = Auth::user()->id;
+
+        // Traemos todos los libros del usuario con autor y categoría
+        $libros = Libro::with(['autor', 'categoria'])
+            ->where('user_id', $userId)
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        
+
+        // Pasamos a la vista
+        return view('misLibros', compact('libros'));
+
+    }
+
     public function createAddLibros()
     {
-        $categorias = Category::all();
-        $autores = Author::all();
+        $userId = Auth::user()->id;
+
+        $categorias = Category::where('user_id', $userId)->get();
+        $autores = Author::where('user_id', $userId)->get();
 
         return view('addLibros', compact('categorias', 'autores'));
     }

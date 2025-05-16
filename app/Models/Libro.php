@@ -19,7 +19,7 @@ class Libro extends Model
         'author_id',
         'category_id',
         'titulo',
-        'descripción'
+        'descripcion'
     ];
 
     //relacion con usuario

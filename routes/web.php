@@ -13,7 +13,7 @@ use App\Http\Controllers\RegistroController;
 
 
 // rutas para la vista
-Route::view('/index', 'index');
+Route::view('/', 'index');
 Route::view('/about', 'about');
 Route::view('/login', 'login');
 Route::view('/register', 'Registro');
@@ -34,13 +34,7 @@ Route::middleware(UserVerify::class)->group(function () {
 
     Route::get('/home', [LibroController::class, 'show'])->name('home');
 
-    Route::get('/home', function () {
-        return view('inicio');
-    })->name('home');
-
-    Route::get('/mislibros', function () {
-        return view('mislibros');
-    })->name('books');
+    Route::get('/home', [LibroController::class, 'show'])->name('home');
 
     Route::get('/deseados', function () {
         return view('deseados');
@@ -66,17 +60,21 @@ Route::middleware(UserVerify::class)->group(function () {
         return view('addAutores');
     })->name('addA');
 
-    Route::post('agregarCat', [CategoryController::class, 'store']);
+    Route::post('/agregarCat', [CategoryController::class, 'store'])->name('agregarCat');
 
-    Route::get('/autores', [AutorController::class, 'index'])->middleware('auth');
+    Route::get('/autores', [AutorController::class, 'index']);
+
     Route::get('/formularioAutor', function () {
-        return view('addAutores'); // nombre correcto del archivo blade
-    })->middleware('auth');
-    Route::post('/agregarAutor', [AutorController::class, 'store'])->middleware('auth');
+        return view('addAutores');
+    })->name('addAuthors');
 
-    Route::get('/addLibros', [LibroController::class, 'createAddLibros'])->name('addLibros.form');
-    Route::post('/addLibros', [LibroController::class, 'addLibros'])->name('addLibros');
+    Route::post('/agregarAutor', [AutorController::class, 'store']);
 
+    Route::get('/addLibros', [LibroController::class, 'createAddLibros'])->name('addLibros');
+
+    Route::post('/addLibros', [LibroController::class, 'store'])->name('addLibros');
+
+    Route::get('/mislibros', [LibroController::class, 'misLibros'])->name('misLibros');
 
     Route::get('getAuthors', [AutorController::class, 'userAuthors']);
 

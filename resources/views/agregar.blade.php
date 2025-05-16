@@ -20,17 +20,17 @@
                 <div class="bg-white p-6 rounded-2xl shadow-lg text-center">
                     <h3 class="text-2xl font-bold text-gray-700 mb-4">Agregar Categoría</h3>
                     <p class="text-gray-600 mb-4">Administra las categorías de los libros.</p>
-                    <a href='agregarCat' class="bg-red-500  text-white px-6 py-2 rounded-lg shadow-md hover:bg-red-800 ">Agregar</a>
+                    <a href='{{ route('agregarCat') }}' class="bg-red-500  text-white px-6 py-2 rounded-lg shadow-md hover:bg-red-800 ">Agregar</a>
                 </div>
                 <div class="bg-white p-6 rounded-2xl shadow-lg text-center">
                     <h3 class="text-2xl font-bold text-gray-700 mb-4">Agregar Autor</h3>
                     <p class="text-gray-600 mb-4">Registra nuevos autores en la base de datos.</p>
-                    <a href='agregarAut' class="bg-red-500  text-white px-6 py-2 rounded-lg shadow-md hover:bg-red-800 ">Agregar</a>
+                    <a href='{{ route('addAuthors') }}' class="bg-red-500  text-white px-6 py-2 rounded-lg shadow-md hover:bg-red-800 ">Agregar</a>
                 </div>
                 <div class="bg-white p-6 rounded-2xl shadow-lg text-center">
                     <h3 class="text-2xl font-bold text-gray-700 mb-4">Agregar Libro</h3>
                     <p class="text-gray-600 mb-4">Añade nuevos libros al inventario.</p>
-                    <a href='agregarCat' class="bg-red-500  text-white px-6 py-2 rounded-lg shadow-md hover:bg-red-800 ">Agregar</a>
+                    <a href='{{ route('addLibros') }}' class="bg-red-500  text-white px-6 py-2 rounded-lg shadow-md hover:bg-red-800 ">Agregar</a>
                 </div>
             </div>
 

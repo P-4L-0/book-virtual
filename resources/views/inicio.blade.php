@@ -51,7 +51,7 @@
                     </div>
                 </div>
 
-                <div class="bg-white shadow-lg rounded-lg p-4 h-48 border-3 border-gray-300">
+                <!-- <div class="bg-white shadow-lg rounded-lg p-4 h-48 border-3 border-gray-300">
                     <h3 class="text-xl font-semibold text-gray-800 mb-4">Deseados</h3>
                     <div class="flex flex-col items-start justify-start w-full h-32">
                         <div class="flex items-center mt-8 ml-2">
@@ -59,7 +59,7 @@
                             <h1 class="text-2xl">{{ $info['LibrosDeseados'] ?? "0" }}</h1>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
 
             <!-- Sección de últimos libros añadidos -->
@@ -79,9 +79,9 @@
                             <tbody>
                                 @foreach ($libros as $libro)
                                     <tr>
-                                        <td class="py-4 px-6">{{ $libro['Titulo'] }}</td>
-                                        <td class="py-4 px-6">{{ $libro['Categoria'] }}</td>
-                                        <td class="py-4 px-6">{{ $libro['Autor'] }}</td>
+                                        <td class="py-4 px-6">{{ $libro->titulo }}</td>
+                                        <td class="py-4 px-6">{{ $libro->categoria->nombre ?? 'Sin categoría' }}</td>
+                                        <td class="py-4 px-6">{{ $libro->autor->nombre ?? 'Sin autor' }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>

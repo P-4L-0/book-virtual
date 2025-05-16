@@ -36,13 +36,13 @@
                     <span class="font-medium">Agregar</span>
                 </a>
             </li>
-            <li>
+            <!-- <li>
                 <a href="/deseados"
                     class="flex items-center px-6 py-3 rounded-xl transition-all duration-300 hover:bg-red-200 hover:shadow-md hover:scale-105 transform focus:outline-none focus:ring-2 focus:ring-gray-500 active:bg-gray-300 active:font-semibold">
                     <img class="h-6 w-6 mr-3" src="{{ asset('svg/gift.svg') }}" alt="Deseados" />
                     <span class="font-medium">Deseados</span>
                 </a>
-            </li>
+            </li> -->
             <li>
                 <a href="/autores"
                     class="flex items-center px-6 py-3 rounded-xl transition-all duration-300 hover:bg-red-200 hover:shadow-md hover:scale-105 transform focus:outline-none focus:ring-2 focus:ring-gray-500 active:bg-gray-300 active:font-semibold">
