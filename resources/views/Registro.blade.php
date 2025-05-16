@@ -31,23 +31,23 @@
             </div>
           @endif
 
-          <input class="block w-full p-2 outline outline-1 outline-red-500 mb-4 lg:w-2/5" type="text"
+          <input class="block w-full p-2  outline-1 outline-red-500 mb-4 lg:w-2/5" type="text"
             placeholder="Nombres" name="nombre" value="{{ old('nombre') }}" />
 
-          <input class="block w-full p-2 outline outline-1 outline-red-500 mb-4 lg:w-2/5" type="text"
+          <input class="block w-full p-2  outline-1 outline-red-500 mb-4 lg:w-2/5" type="text"
             placeholder="Apellidos" name="apellido" value="{{ old('apellido') }}" />
 
-          <input class="block w-full p-2 outline outline-1 outline-red-500 mb-4 lg:w-2/5" type="email"
+          <input class="block w-full p-2  outline-1 outline-red-500 mb-4 lg:w-2/5" type="email"
             placeholder="Email" name="email" value="{{ old('email') }}" />
 
           <!-- Contraseña -->
           <div class="relative w-full lg:w-2/5 mb-4">
-            <input class="block w-full p-2 outline outline-1 outline-red-500 pr-10" type="password"
+            <input class="block w-full p-2  outline-1 outline-red-500 pr-10" type="password"
               placeholder="Contraseña" name="password" />
           </div>
 
           <!-- Confirmar contraseña -->
-          <input class="block w-full p-2 outline outline-1 outline-red-500 mb-4 lg:w-2/5" type="password"
+          <input class="block w-full p-2  outline-1 outline-red-500 mb-4 lg:w-2/5" type="password"
             placeholder="Confirmar Contraseña" name="password_confirmation" />
 
           <button type="submit"

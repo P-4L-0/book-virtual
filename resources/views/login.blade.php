@@ -30,15 +30,16 @@
         </p>
         <form action="/login" method="POST" class="w-4/5 lg:flex flex-col items-center">
           <!-- token --> @csrf
-          <input class="block w-full p-2 outline outline-1 outline-red-500 mb-4 lg:w-2/5" type="email"
+          <input class="block w-full p-2  outline-1 outline-red-500 mb-4 lg:w-2/5" type="email"
             placeholder="Email" id="mail" name="email" />
           <!-- Contenedor para el campo de contraseña y el icono -->
           <div class="relative w-full lg:w-2/5 mb-4">
-            <input class="block w-full p-2 outline outline-1 outline-red-500 pr-10" type="password"
+            <input class="block w-full p-2  outline-1 outline-red-500 pr-10" type="password"
               placeholder="Contraseña" id="password" name="password" />
             <!-- Icono de "Ver Contraseña" -->
             <label for="see_password" class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer">
-              <img src="../resources/img/icono.png" alt="scan_eye" type="image/svg+xml" id="see_password_img" class="h-5 w-5" />
+              <img src="../resources/img/icono.png" alt="scan_eye" type="image/svg+xml" id="see_password_img"
+                class="h-5 w-5" />
             </label>
           </div>
           <input type="checkbox" class="hidden" id="see_password" />
@@ -51,14 +52,14 @@
         <br />
         <!-- Manejo de errores en la informacion del formulario -->
         @if ($errors->any())
-          <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4 w-full lg:w-2/5">
-            <ul class="list-disc list-inside">
-              @foreach ($errors->all() as $error)
-              <li>{{ $error }}</li>
-              @endforeach
-            </ul>
-          </div>
-        @endif
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4 w-full lg:w-2/5">
+          <ul class="list-disc list-inside">
+          @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+          </ul>
+        </div>
+    @endif
         <p class="my-8">
           ¿No posees una cuenta?
           <a href="../views/registro.php" class="text-red-500 font-bold"> Registrarse </a>

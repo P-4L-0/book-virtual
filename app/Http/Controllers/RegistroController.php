@@ -6,11 +6,10 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-class RegistroController extends Controller
+class RegistroController
 {
     public function registerForm()
     {
-        // Asegúrate de que este archivo exista: resources/views/registro.blade.php
         return view('registro');
     }
 
@@ -31,8 +30,6 @@ class RegistroController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-
-    
 
         // Redireccionar a la vista de inicio
         return redirect()->intended('home');

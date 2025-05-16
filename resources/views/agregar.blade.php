@@ -11,7 +11,7 @@
 
 <body class="flex h-screen bg-gray-100">
     <div class="min-h-screen flex font-sans w-full">
-        @include('templates/menu.php')
+        @include('templates.menu')
 
         <main class="flex-1 lg:pl-72 p-6 space-y-8">
             <h2 class="text-4xl font-semibold text-gray-700 mb-4">Área de Administración</h2>
@@ -20,17 +20,17 @@
                 <div class="bg-white p-6 rounded-2xl shadow-lg text-center">
                     <h3 class="text-2xl font-bold text-gray-700 mb-4">Agregar Categoría</h3>
                     <p class="text-gray-600 mb-4">Administra las categorías de los libros.</p>
-                    <button onclick="location.href='agregar_categoria.php'" class="bg-red-500  text-white px-6 py-2 rounded-lg shadow-md hover:bg-red-800 ">Agregar</button>
+                    <a href='agregarCat' class="bg-red-500  text-white px-6 py-2 rounded-lg shadow-md hover:bg-red-800 ">Agregar</a>
                 </div>
                 <div class="bg-white p-6 rounded-2xl shadow-lg text-center">
                     <h3 class="text-2xl font-bold text-gray-700 mb-4">Agregar Autor</h3>
                     <p class="text-gray-600 mb-4">Registra nuevos autores en la base de datos.</p>
-                    <button onclick="location.href='agregar_autor.php'" class="bg-red-500  text-white px-6 py-2 rounded-lg shadow-md hover:bg-red-800 ">Agregar</button>
+                    <a href='agregarAut' class="bg-red-500  text-white px-6 py-2 rounded-lg shadow-md hover:bg-red-800 ">Agregar</a>
                 </div>
                 <div class="bg-white p-6 rounded-2xl shadow-lg text-center">
                     <h3 class="text-2xl font-bold text-gray-700 mb-4">Agregar Libro</h3>
                     <p class="text-gray-600 mb-4">Añade nuevos libros al inventario.</p>
-                    <button onclick="location.href='agregar_libro.php'" class="bg-red-500  text-white px-6 py-2 rounded-lg shadow-md hover:bg-red-800 ">Agregar</button>
+                    <a href='agregarCat' class="bg-red-500  text-white px-6 py-2 rounded-lg shadow-md hover:bg-red-800 ">Agregar</a>
                 </div>
             </div>
 

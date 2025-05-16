@@ -34,7 +34,7 @@ Route::middleware(UserVerify::class)->group(function () {
 
     Route::get('/home', [LibroController::class, 'show'])->name('home');
 
-     Route::get('/home', function () {
+    Route::get('/home', function () {
         return view('inicio');
     })->name('home');
 
@@ -61,6 +61,10 @@ Route::middleware(UserVerify::class)->group(function () {
     Route::get('/agregarCat', function () {
         return view('adcategoria');
     })->name('addC');
+
+    Route::get('/agregarAut', function () {
+        return view('addAutores');
+    })->name('addA');
 
     Route::post('agregarCat', [CategoryController::class, 'store']);
 
