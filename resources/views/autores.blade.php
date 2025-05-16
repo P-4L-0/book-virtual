@@ -17,14 +17,11 @@
             <h2 class="text-4xl font-semibold text-gray-700 mb-4">Autores</h2>
 
             <!-- Barra de búsqueda y botón agregar -->
-            <div class="flex items-center mb-6 w-full">
-                <div class="relative w-1/3">
-                    <input type="text" placeholder="Buscar"
-                        class="border rounded-lg p-3 pl-10 focus:outline-none w-full text-lg">
-                    <span class="absolute left-3 top-3 text-gray-400 text-lg">🔍</span>
-                </div>
-                <button class="bg-red-500 text-white px-6 py-3 rounded-lg ml-auto text-lg">AGREGAR</button>
-            </div>
+            <a href="{{ url('/formularioAutor') }}"
+                class="bg-red-500 text-white px-6 py-3 rounded-lg ml-auto text-lg hover:bg-red-600 transition">
+                AGREGAR
+            </a>
+
 
             <!-- Tarjetas de autores -->
             <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">

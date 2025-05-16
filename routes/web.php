@@ -68,6 +68,12 @@ Route::middleware(UserVerify::class)->group(function () {
 
     Route::post('agregarCat', [CategoryController::class, 'store']);
 
+    Route::get('/autores', [AutorController::class, 'index'])->middleware('auth');
+    Route::get('/formularioAutor', function () {
+        return view('addAutores'); // nombre correcto del archivo blade
+    })->middleware('auth');
+    Route::post('/agregarAutor', [AutorController::class, 'store'])->middleware('auth');
+
 
     Route::get('getAuthors', [AutorController::class, 'userAuthors']);
 
