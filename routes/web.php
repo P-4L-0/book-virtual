@@ -4,9 +4,11 @@ use App\Http\Controllers\LoginController;
 use App\Http\Middleware\UserVerify;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegistroController;
+
 
 // rutas para la vista
-Route::view('/', 'index');
+Route::view('/index', 'index');
 Route::view('/about', 'about');
 Route::view('/login', 'login');
 Route::view('/register', 'Registro');
@@ -25,8 +27,20 @@ Route::fallback(function () {
 //ruta login
 Route::post('/login', [LoginController::class, 'login']);
 
+//ruta logout
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+//ruta registro
+
+Route::get('/register', [RegistroController::class, 'registerForm'])->name('register.form');
+Route::post('/register', [RegistroController::class, 'register'])->name('register');
+
 //rutas de usuario autenticado
 Route::middleware(UserVerify::class)->group(function () {
+
+     Route::get('/home', function () {
+        return view('inicio');
+    })->name('home');
 
     Route::get('/mislibros', function () {
         return view('mislibros');

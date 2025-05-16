@@ -33,7 +33,7 @@ class LoginController extends Controller
         if ($user and Hash::check($request->password, $user->password)) {
             //guardamos su session
             Auth::login($user);
-            return redirect()->intended('about');
+            return redirect()->intended('home');
         }
 
         // devolver errores de credenciales al form
@@ -48,7 +48,7 @@ class LoginController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('login');
+        return redirect()->intended('/');
     }
 
 }

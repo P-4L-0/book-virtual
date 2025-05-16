@@ -11,7 +11,7 @@
 
 <body class="flex h-screen">
     <div class="min-h-screen flex font-sans">
-        @include('templates/menu.php')
+        @include('templates.menu')
         <main class="flex-1 lg:pl-72 p-6 space-y-8">
             <!-- Encabezado con título, buscador y botón AGREGAR -->
             <div class="flex justify-between items-center mb-6">
