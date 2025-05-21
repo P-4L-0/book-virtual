@@ -63,7 +63,7 @@ class LibroController
         if ($request->hasFile('imagen')) {
             $rutaImagen = $request->file('imagen')->store('libros', 'public');
         }
-
+        
         Libro::create([
             'titulo' => $request->titulo,
             'descripcion' => $request->descripcion,

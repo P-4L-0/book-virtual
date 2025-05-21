@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\DeseadosController;
+use App\Http\Controllers\FavoritosController;
 use App\Http\Controllers\LibroController;
 use App\Http\Controllers\AutorController;
 use App\Http\Controllers\AgregarController;
@@ -35,14 +35,10 @@ Route::middleware(UserVerify::class)->group(function () {
 
     //deseados
 
-    Route::get('/deseados', [DeseadosController::class, 'index'])->name('libros.deseados');
-    Route::get('/deseados', [DeseadosController::class, 'index'])->name('deseados');
-    Route::delete('/deseados/{id}', [DeseadosController::class, 'destroy'])->name('deseados.eliminar');
-    Route::delete('/deseados/quitar/{id}', [DeseadosController::class, 'quitar'])->name('deseados.quitar');
-
-
-
-    
+    Route::get('/favoritos', [FavoritosController::class, 'index'])->name('favoritos');
+    Route::get('/favoritos', [FavoritosController::class, 'index'])->name('favoritos');    
+    Route::delete('/favoritos/{id}', [FavoritosController::class, 'destroy'])->name('delFav');
+    Route::delete('/favoritos/quitar/{id}', [FavoritosController::class, 'quitar'])->name('quitFav');
 
 
     // Agregar (vista con lógica en el controlador)
@@ -71,8 +67,6 @@ Route::middleware(UserVerify::class)->group(function () {
     Route::get('/mislibros', [LibroController::class, 'misLibros'])->name('misLibros');
     Route::delete('/libros/{id}', [App\Http\Controllers\LibroController::class, 'destroy'])->name('libros.destroy');
     Route::post('/libros/{id}/toggle-favorito', [LibroController::class, 'toggleFavorito'])->name('libros.toggleFavorito')->middleware('auth');
-
-
 
     /*
     |--------------------------------------------------------------------------

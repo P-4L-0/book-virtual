@@ -8,7 +8,7 @@ use App\Models\Category;
 use App\Models\Author;
 use App\Models\Libro;
 
-class DashboardController extends Controller
+class DashboardController
 {
     /**
      * Mostrar área de administración con últimos agregados

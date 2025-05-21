@@ -24,17 +24,6 @@
                             class="border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-purple-600" />
                     </form>
 
-<<<<<<< Updated upstream
-            <!-- Barra de búsqueda y botón agregar -->
-            <a href="{{ url('/formularioAutor') }}"
-                class="bg-red-500 text-white px-6 py-3 rounded-lg ml-auto text-lg hover:bg-red-600 transition">
-                AGREGAR
-            </a>
-
-
-            <!-- Tarjetas de autores -->
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-=======
                     <!-- Botón de agregar autor -->
                     <a href="{{ url('/formularioAutor') }}"
                         class="bg-green-400 text-white py-2 px-6 rounded-lg hover:bg-green-700 transition duration-300">
@@ -45,7 +34,6 @@
 
             <!-- Tarjetas de autores con 3 columnas -->
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
->>>>>>> Stashed changes
                 @forelse ($autores as $autor)
                     <div class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 flex items-center">
                         <!-- Foto del autor -->

@@ -40,9 +40,6 @@
                         @foreach ($libros as $libro)
                             <div
                                 class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-200">
-<<<<<<< Updated upstream
-                                <!-- Contenido de la tarjeta -->
-=======
 
                                 @if ($libro->imagen)
                                     <img 
@@ -56,7 +53,6 @@
                                     </div>
                                 @endif
 
->>>>>>> Stashed changes
                                 <div class="p-6">
                                     <h2 class="text-2xl font-semibold text-gray-800 mb-2">{{ $libro->titulo }}</h2>
                                     <p class="text-gray-600">{{ $libro->autor->nombre ?? 'Sin autor' }}</p>
@@ -69,11 +65,6 @@
                                     </div>
                                 </div>
 
-<<<<<<< Updated upstream
-                                <div class="flex justify-end items-center p-4 border-t border-gray-100">
-                                    <img class="h-6 w-6 mr-4 cursor-pointer" src="../resources/img/x.png" alt="Eliminar" />
-                                    <img class="h-6 w-6 cursor-pointer" src="../resources/img/heart.png" alt="Favorito" />
-=======
                                 <div class="flex justify-end items-center p-4 border-t border-gray-100 space-x-4">
                                     <form action="{{ route('libros.destroy', $libro->id) }}" method="POST" onsubmit="return confirm('¿Seguro que quieres eliminar este libro?');">
                                         @csrf
@@ -89,7 +80,6 @@
                                     data-id="{{ $libro->id }}"
 >
 
->>>>>>> Stashed changes
                                 </div>
 
                             </div>
@@ -104,8 +94,6 @@
         </main>
     </div>
 
-<<<<<<< Updated upstream
-=======
     <script>
         const heartFilled = "{{ asset('img/like.png') }}"; // CORREGIDO
         const heartEmpty = "{{ asset('img/heart.png') }}";
@@ -147,7 +135,6 @@
         });
     </script>
 
->>>>>>> Stashed changes
 </body>
 
 </html>
