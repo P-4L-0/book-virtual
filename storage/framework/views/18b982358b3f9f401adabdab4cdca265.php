@@ -56,7 +56,7 @@
                     <div class="flex flex-col items-start justify-start w-full h-32">
                         <div class="flex items-center mt-8 ml-2">
                             <img class="h-12 w-12 mr-4" src="<?php echo e(asset('svg/bookmark.svg')); ?>" alt="Deseados" />
-                            <h1 class="text-2xl"><?php echo e($info['LibrosDeseados'] ?? "0"); ?></h1>
+                            <h1 class="text-2xl" id="whishBooksTotal"></h1>
                         </div>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                             class="min-w-full bg-white border border-gray-300 rounded-2xl border-collapse overflow-hidden">
                             <thead>
                                 <tr class="bg-white border-b border-gray-300">
-                                    <th class="py-3 px-6 text-left">Titulo</th>
+                                    <th class="py-3 px-6 text-left">Título</th>
                                     <th class="py-3 px-6 text-left">Categoría</th>
                                     <th class="py-3 px-6 text-left">Autor</th>
                                 </tr>
@@ -79,9 +79,9 @@
                             <tbody>
                                 <?php $__currentLoopData = $libros; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $libro): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <tr>
-                                        <td class="py-4 px-6"><?php echo e($libro['Titulo']); ?></td>
-                                        <td class="py-4 px-6"><?php echo e($libro['Categoria']); ?></td>
-                                        <td class="py-4 px-6"><?php echo e($libro['Autor']); ?></td>
+                                        <td class="py-4 px-6"><?php echo e($libro->titulo); ?></td>
+                                        <td class="py-4 px-6"><?php echo e($libro->categoria->nombre ?? 'Sin categoría'); ?></td>
+                                        <td class="py-4 px-6"><?php echo e($libro->autor->nombre ?? 'Sin autor'); ?></td>
                                     </tr>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </tbody>

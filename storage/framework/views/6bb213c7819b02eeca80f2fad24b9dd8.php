@@ -40,7 +40,7 @@
                 <a href="/deseados"
                     class="flex items-center px-6 py-3 rounded-xl transition-all duration-300 hover:bg-red-200 hover:shadow-md hover:scale-105 transform focus:outline-none focus:ring-2 focus:ring-gray-500 active:bg-gray-300 active:font-semibold">
                     <img class="h-6 w-6 mr-3" src="<?php echo e(asset('svg/gift.svg')); ?>" alt="Deseados" />
-                    <span class="font-medium">Deseados</span>
+                    <span class="font-medium">Favoritos</span>
                 </a>
             </li>
             <li>

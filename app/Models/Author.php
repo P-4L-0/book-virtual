@@ -13,8 +13,14 @@ class Author extends Model
         'nombre', 
         'nacionalidad', 
         'fecha_nacido',
+<<<<<<< Updated upstream
         'user_id'
     ]; 
+=======
+        'user_id',
+        'foto'
+    ];
+>>>>>>> Stashed changes
 
      //relacion con usuario
      public function usuario()
