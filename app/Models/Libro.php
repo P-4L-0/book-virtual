@@ -19,8 +19,7 @@ class Libro extends Model
         'author_id',
         'category_id',
         'titulo',
-        'descripcion',
-        'imagen'
+        'descripción'
     ];
 
     // Relaciones

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Traits\SearchableTrait;
 
-class FavoritosController
+class DeseadosController
 {
     use SearchableTrait;
 
@@ -26,9 +26,9 @@ class FavoritosController
             'libros.descripcion'
         ]);
 
-        $favoritos = $query->get();
+        $librosDeseados = $query->get();
 
-        return view('favoritos', compact('favoritos'));
+        return view('deseados', compact('librosDeseados'));
     }
 
     public function quitar($id)
@@ -41,9 +41,9 @@ class FavoritosController
             ->delete();
 
         if ($deleted) {
-            return redirect()->route('favoritos')->with('success', 'Libro quitado de tus deseados.');
+            return redirect()->route('deseados')->with('success', 'Libro quitado de tus deseados.');
         } else {
-            return redirect()->route('favoritos')->with('error', 'No se pudo quitar el libro de tus deseados.');
+            return redirect()->route('deseados')->with('error', 'No se pudo quitar el libro de tus deseados.');
         }
     }
 
@@ -68,10 +68,10 @@ class FavoritosController
 
             DB::commit();
 
-            return redirect()->route('favoritos')->with('success', 'Libro eliminado correctamente.');
+            return redirect()->route('deseados')->with('success', 'Libro eliminado correctamente.');
         } catch (\Exception $e) {
             DB::rollBack();
-            return redirect()->route('favoritos')->with('error', 'Error al eliminar el libro.');
+            return redirect()->route('deseados')->with('error', 'Error al eliminar el libro.');
         }
     }
 
