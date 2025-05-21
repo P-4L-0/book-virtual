@@ -13,7 +13,8 @@ class Author extends Model
         'nombre',
         'nacionalidad',
         'fecha_nacido',
-        'user_id'
+        'user_id',
+        'foto'
     ];
 
     //relacion con usuario

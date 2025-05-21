@@ -53,8 +53,17 @@ class User extends Authenticatable
         return $this->hasMany(Category::class, 'user_id');
     }
 
-     public function deseados(){
-        return $this->hasMany(desired::class, 'user_id');
+    // app/Models/User.php
+
+    // En User.php
+    public function librosDeseados()
+    {
+        return $this->belongsToMany(
+            Libro::class,
+            'librosdeseados',
+            'user_id',      // columna en librosdeseados que apunta a usuario
+            'id_libro'      // columna en librosdeseados que apunta a libro (ajusta según tu DB)
+        )->withTimestamps();
     }
 
     

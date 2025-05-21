@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
-    <link rel="shortcut icon" href="<?php echo e(asset('img/book.png')); ?>" >
+    <link rel="shortcut icon" href="<?php echo e(asset('img/book.png')); ?>" 
     <?php echo app('Illuminate\Foundation\Vite')('resources/css/app.css'); ?>
 </head>
 
@@ -20,20 +20,19 @@
                 <div class="bg-white p-6 rounded-2xl shadow-lg text-center">
                     <h3 class="text-2xl font-bold text-gray-700 mb-4">Agregar Categoría</h3>
                     <p class="text-gray-600 mb-4">Administra las categorías de los libros.</p>
-                    <button onclick="location.href='agregar_categoria.php'" class="bg-red-500  text-white px-6 py-2 rounded-lg shadow-md hover:bg-red-800 ">Agregar</button>
+                    <a href='<?php echo e(route('agregarCat')); ?>' class="bg-red-500  text-white px-6 py-2 rounded-lg shadow-md hover:bg-red-800 ">Agregar</a>
                 </div>
                 <div class="bg-white p-6 rounded-2xl shadow-lg text-center">
                     <h3 class="text-2xl font-bold text-gray-700 mb-4">Agregar Autor</h3>
                     <p class="text-gray-600 mb-4">Registra nuevos autores en la base de datos.</p>
-                    <button onclick="location.href='agregar_autor.php'" class="bg-red-500  text-white px-6 py-2 rounded-lg shadow-md hover:bg-red-800 ">Agregar</button>
+                    <a href='<?php echo e(route('addAuthors')); ?>' class="bg-red-500  text-white px-6 py-2 rounded-lg shadow-md hover:bg-red-800 ">Agregar</a>
                 </div>
                 <div class="bg-white p-6 rounded-2xl shadow-lg text-center">
                     <h3 class="text-2xl font-bold text-gray-700 mb-4">Agregar Libro</h3>
                     <p class="text-gray-600 mb-4">Añade nuevos libros al inventario.</p>
-                    <button onclick="location.href='agregar_libro.php'" class="bg-red-500  text-white px-6 py-2 rounded-lg shadow-md hover:bg-red-800 ">Agregar</button>
+                    <a href='<?php echo e(route('addLibros')); ?>' class="bg-red-500  text-white px-6 py-2 rounded-lg shadow-md hover:bg-red-800 ">Agregar</a>
                 </div>
             </div>
-
             <!-- Vista previa de las últimas 3 agregaciones -->
             <div class="mt-8">
                 <h3 class="text-3xl font-semibold text-gray-700 mb-4">Últimos Agregados</h3>
@@ -47,25 +46,53 @@
                             </tr>
                         </thead>
                         <tbody class="text-gray-700">
+                            
+                            <?php $__currentLoopData = $lastCategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $categoria): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <tr class="border-b hover:bg-gray-100 transition">
                                 <td class="py-3 px-6 font-bold text-red-800">Categoría</td>
-                                <td class="py-3 px-6">Categoría 1</td>
-                                <td class="py-3 px-6"><a href="" class="text-red-800 hover:underline font-semibold">Ver más</a></td>
+                                <td class="py-3 px-6"><?php echo e($categoria->nombre); ?></td>
+                                <td class="py-3 px-6">
+                                    <a href="<?php echo e(url('/categorias/' . $categoria->id)); ?>" class="text-red-800 hover:underline font-semibold">Ver más</a>
+                                </td>
                             </tr>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+                            
+                            <?php $__currentLoopData = $lastAuthors; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $autor): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <tr class="border-b hover:bg-gray-100 transition">
                                 <td class="py-3 px-6 font-bold text-red-800">Autor</td>
-                                <td class="py-3 px-6">Autor 1</td>
-                                <td class="py-3 px-6"><a href="" class="text-red-800 hover:underline font-semibold">Ver más</a></td>
+                                <td class="py-3 px-6"><?php echo e($autor->nombre); ?></td>
+                                <td class="py-3 px-6">
+                                    <a href="<?php echo e(url('/autores/' . $autor->id)); ?>" class="text-red-800 hover:underline font-semibold">Ver más</a>
+                                </td>
                             </tr>
-                            <tr class="hover:bg-gray-100 transition">
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+                            
+                            <?php $__currentLoopData = $lastBooks; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $libro): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <tr class="border-b hover:bg-gray-100 transition">
                                 <td class="py-3 px-6 font-bold text-red-800">Libro</td>
-                                <td class="py-3 px-6">Libro 1</td>
-                                <td class="py-3 px-6"><a href="" class="text-red-800 hover:underline font-semibold">Ver más</a></td>
+                                <td class="py-3 px-6"><?php echo e($libro->titulo); ?></td>
+                                <td class="py-3 px-6">
+                                    <a href="<?php echo e(url('/libros/' . $libro->id)); ?>" class="text-red-800 hover:underline font-semibold">Ver más</a>
+                                </td>
                             </tr>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+                            
+                            <?php if($lastCategories->isEmpty() && $lastAuthors->isEmpty() && $lastBooks->isEmpty()): ?>
+                            <tr>
+                                <td colspan="3" class="py-4 px-6 text-center text-gray-600">
+                                    No hay registros recientes para mostrar.
+                                </td>
+                            </tr>
+                            <?php endif; ?>
                         </tbody>
                     </table>
                 </div>
             </div>
+
+            
         </main>
     </div>
 </body>

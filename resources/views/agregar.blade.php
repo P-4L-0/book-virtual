@@ -33,7 +33,6 @@
                     <a href='{{ route('addLibros') }}' class="bg-red-500  text-white px-6 py-2 rounded-lg shadow-md hover:bg-red-800 ">Agregar</a>
                 </div>
             </div>
-
             <!-- Vista previa de las últimas 3 agregaciones -->
             <div class="mt-8">
                 <h3 class="text-3xl font-semibold text-gray-700 mb-4">Últimos Agregados</h3>
@@ -47,25 +46,53 @@
                             </tr>
                         </thead>
                         <tbody class="text-gray-700">
+                            {{-- Categorías --}}
+                            @foreach ($lastCategories as $categoria)
                             <tr class="border-b hover:bg-gray-100 transition">
                                 <td class="py-3 px-6 font-bold text-red-800">Categoría</td>
-                                <td class="py-3 px-6">Categoría 1</td>
-                                <td class="py-3 px-6"><a href="" class="text-red-800 hover:underline font-semibold">Ver más</a></td>
+                                <td class="py-3 px-6">{{ $categoria->nombre }}</td>
+                                <td class="py-3 px-6">
+                                    <a href="{{ url('/categorias/' . $categoria->id) }}" class="text-red-800 hover:underline font-semibold">Ver más</a>
+                                </td>
                             </tr>
+                            @endforeach
+
+                            {{-- Autores --}}
+                            @foreach ($lastAuthors as $autor)
                             <tr class="border-b hover:bg-gray-100 transition">
                                 <td class="py-3 px-6 font-bold text-red-800">Autor</td>
-                                <td class="py-3 px-6">Autor 1</td>
-                                <td class="py-3 px-6"><a href="" class="text-red-800 hover:underline font-semibold">Ver más</a></td>
+                                <td class="py-3 px-6">{{ $autor->nombre }}</td>
+                                <td class="py-3 px-6">
+                                    <a href="{{ url('/autores/' . $autor->id) }}" class="text-red-800 hover:underline font-semibold">Ver más</a>
+                                </td>
                             </tr>
-                            <tr class="hover:bg-gray-100 transition">
+                            @endforeach
+
+                            {{-- Libros --}}
+                            @foreach ($lastBooks as $libro)
+                            <tr class="border-b hover:bg-gray-100 transition">
                                 <td class="py-3 px-6 font-bold text-red-800">Libro</td>
-                                <td class="py-3 px-6">Libro 1</td>
-                                <td class="py-3 px-6"><a href="" class="text-red-800 hover:underline font-semibold">Ver más</a></td>
+                                <td class="py-3 px-6">{{ $libro->titulo }}</td>
+                                <td class="py-3 px-6">
+                                    <a href="{{ url('/libros/' . $libro->id) }}" class="text-red-800 hover:underline font-semibold">Ver más</a>
+                                </td>
                             </tr>
+                            @endforeach
+
+                            {{-- Mostrar mensaje si no hay registros --}}
+                            @if($lastCategories->isEmpty() && $lastAuthors->isEmpty() && $lastBooks->isEmpty())
+                            <tr>
+                                <td colspan="3" class="py-4 px-6 text-center text-gray-600">
+                                    No hay registros recientes para mostrar.
+                                </td>
+                            </tr>
+                            @endif
                         </tbody>
                     </table>
                 </div>
             </div>
+
+            
         </main>
     </div>
 </body>

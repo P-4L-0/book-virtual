@@ -1,13 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\User;
 use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Traits\SearchableTrait;
 
 class CategoryController
 {
+    use SearchableTrait;
+
     public function userCategorys()
     {
         $id = Auth::user()->id;
@@ -41,15 +45,36 @@ class CategoryController
         ], 201);
     }
 
-public function misCategorias()
-{
-    $userId = Auth::id();
+    public function misCategorias(Request $request)
+    {
+        $userId = Auth::id();
 
-    $categorias = Category::where('user_id', $userId)
-        ->withCount('libros')  // Cuenta libros relacionados
-        ->orderBy('nombre', 'asc')
-        ->get();
+        $query = Category::where('user_id', $userId)
+            ->withCount('libros')
+            ->orderBy('nombre', 'asc');
 
-    return view('categorias', compact('categorias'));
-}
+        // Aplicar filtro de búsqueda usando el trait
+        $query = $this->applySearchFilter($query, $request, ['nombre']);
+
+        $categorias = $query->get();
+
+        return view('categorias', compact('categorias'));
+    }
+
+    public function destroy($id)
+    {
+        $categoria = Category::findOrFail($id);
+
+        if ($categoria->user_id !== Auth::id()) {
+            return response()->json(['message' => 'No autorizado'], 403);
+        }
+
+        if ($categoria->imagen && \Storage::disk('public')->exists($categoria->imagen)) {
+            \Storage::disk('public')->delete($categoria->imagen);
+        }
+
+        $categoria->delete();
+
+        return response()->json(['message' => 'Categoría eliminada']);
+    }
 }

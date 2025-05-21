@@ -4,40 +4,42 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\SearchableTrait;  // <--- importa el trait
 
 class Libro extends Model
 {
+    use HasFactory, SearchableTrait;  // <--- usa el trait
 
-    use HasFactory;
-
-    //tabla a usar
+    // Tabla a usar
     protected $table = 'libros';
 
-    //campos seguros
+    // Campos asignables
     protected $fillable = [
         'user_id',
         'author_id',
         'category_id',
         'titulo',
-        'descripcion'
+        'descripción'
     ];
 
-    //relacion con usuario
+    // Relaciones
     public function usuario()
     {
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    //relacion con author
     public function autor()
     {
         return $this->belongsTo(Author::class, 'author_id');
     }
 
-    //relacion con categoria
     public function categoria()
     {
         return $this->belongsTo(Category::class, 'category_id');
     }
 
+    public function usuariosDeseados()
+    {
+        return $this->belongsToMany(User::class, 'librosdeseados', 'libro_id', 'user_id')->withTimestamps();
+    }
 }
