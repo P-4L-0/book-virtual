@@ -44,8 +44,6 @@ class CategoryController
             'categoria' => $categoria
         ], 201);
     }
-<<<<<<< Updated upstream
-=======
 
     public function misCategorias(Request $request)
     {
@@ -79,5 +77,4 @@ class CategoryController
 
         return response()->json(['message' => 'Categoría eliminada']);
     }
->>>>>>> Stashed changes
 }

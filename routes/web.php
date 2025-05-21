@@ -10,18 +10,12 @@ use App\Http\Controllers\AutorController;
 use App\Http\Controllers\AgregarController;
 use App\Http\Middleware\UserVerify;
 
-<<<<<<< Updated upstream
-
-// rutas para la vista
-Route::view('/index', 'index');
-=======
 /*
 |--------------------------------------------------------------------------
 | Rutas públicas
 |--------------------------------------------------------------------------
 */
 Route::view('/', 'index');
->>>>>>> Stashed changes
 Route::view('/about', 'about');
 Route::view('/login', 'login');
 Route::view('/register', 'Registro');
@@ -59,37 +53,6 @@ Route::middleware(UserVerify::class)->group(function () {
     Route::view('/agregarCat', 'adcategoria')->name('addC');
     Route::view('/formularioAutor', 'addAutores')->name('addAuthors');
 
-<<<<<<< Updated upstream
-     Route::get('/home', function () {
-        return view('inicio');
-    })->name('home');
-
-    Route::get('/mislibros', function () {
-        return view('mislibros');
-    })->name('books');
-
-    Route::get('/deseados', function () {
-        return view('deseados');
-    })->name('desired');
-
-    Route::get('/categorias', function () {
-        return view('categorias');
-    })->name('categorys');
-
-    Route::get('/autores', function () {
-        return view('autores');
-    })->name('authors');
-
-    Route::get('/agregar', function () {
-        return view('agregar');
-    })->name('add');
-
-    Route::get('/agregarCat', function () {
-        return view('adcategoria');
-    })->name('addC');
-
-    Route::post('agregarCat', [CategoryController::class, 'store']);
-=======
     // Categorías
     Route::get('/categorias', [CategoryController::class, 'misCategorias'])->name('misCategorias');
     Route::post('/agregarCat', [CategoryController::class, 'store'])->name('agregarCat');
@@ -109,7 +72,6 @@ Route::middleware(UserVerify::class)->group(function () {
     Route::delete('/libros/{id}', [App\Http\Controllers\LibroController::class, 'destroy'])->name('libros.destroy');
     Route::post('/libros/{id}/toggle-favorito', [LibroController::class, 'toggleFavorito'])->name('libros.toggleFavorito')->middleware('auth');
 
->>>>>>> Stashed changes
 
 
     /*

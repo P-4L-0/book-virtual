@@ -5,11 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Libro;
-<<<<<<< Updated upstream
-=======
 use App\Models\Category;
 use App\Models\Author;
->>>>>>> Stashed changes
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Traits\SearchableTrait; // IMPORTA el trait
@@ -36,9 +33,6 @@ class LibroController
         ]);
     }
 
-<<<<<<< Updated upstream
-
-=======
     public function store(Request $request)
     {
         $userId = Auth::id();
@@ -163,5 +157,4 @@ class LibroController
         return redirect()->back()->with('success', 'Libro eliminado correctamente.');
     }
 
->>>>>>> Stashed changes
 }

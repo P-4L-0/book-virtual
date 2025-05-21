@@ -20,8 +20,6 @@ class AutorController
             'authors' => $user->autores->count()
         ]);
     }
-<<<<<<< Updated upstream
-=======
 
     public function index(Request $request)
     {
@@ -84,5 +82,4 @@ class AutorController
 
         return redirect()->back()->with('success', 'Autor eliminado correctamente.');
     }
->>>>>>> Stashed changes
 }
