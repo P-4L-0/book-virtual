@@ -87,7 +87,7 @@ class LibroController
             'imagen' => $rutaImagen
         ]);
 
-        return redirect()->route('addLibros')->with('success', 'Libro agregado correctamente.');
+        return redirect()->back()->with('success', 'Libro agregado correctamente.');
     }
 
     public function misLibros(Request $request)

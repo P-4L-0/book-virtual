@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
     <link rel="shortcut icon" href="{{ asset('img/book.png') }}" />
-    @vite('resources/css/app.css')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/fav.js'])
 </head>
 
 <body class="flex h-screen">
@@ -67,23 +68,22 @@
 
                                 <div class="flex justify-end items-center p-4 border-t border-gray-100 space-x-4">
                                     {{-- Formulario para eliminar libro completo --}}
-                                    <form method="POST" action="{{ route('delFav', $libro->id) }}"
-                                        onsubmit="return confirm('¿Estás seguro que quieres eliminar este libro?');">
+                                    <form method="POST" action="{{ route('delFav', $libro->id) }}" class="form-eliminar-fav">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" title="Eliminar"
-                                            class="h-6 w-6 cursor-pointer p-0 border-0 bg-transparent">
+                                        <button type="button" title="Eliminar"
+                                            class="btn-eliminar h-6 w-6 cursor-pointer p-0 border-0 bg-transparent"
+                                            data-id="{{ $libro->id }}">
                                             <img src="{{ asset('img/x.png') }}" alt="Eliminar" />
                                         </button>
                                     </form>
 
                                     {{-- Formulario para quitar de libros deseados (corazón rojo) --}}
-                                    <form method="POST" action="{{ route('quitFav', $libro->id) }}"
-                                        onsubmit="return confirm('¿Quieres quitar este libro de tus deseados?');">
+                                    <form method="POST" action="{{ route('quitFav', $libro->id) }}" class="form-quit-fav">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" title="Quitar de libros deseados"
-                                            class="h-6 w-6 cursor-pointer p-0 border-0 bg-transparent">
+                                        <button type="button" title="Quitar de libros deseados"
+                                            class="btn-quit-fav h-6 w-6 cursor-pointer p-0 border-0 bg-transparent">
                                             <img src="{{ asset('img/like.png') }}" alt="Quitar favorito" />
                                         </button>
                                     </form>

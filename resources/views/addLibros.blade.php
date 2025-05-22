@@ -1,3 +1,6 @@
+@php
+    $disabled = $categorias->isEmpty() || $autores->isEmpty();
+@endphp
 <!DOCTYPE html>
 <html lang="es">
 
@@ -46,7 +49,7 @@
             @endif
 
             <form action="{{ route('addLibros') }}" method="POST" enctype="multipart/form-data" class="space-y-8"
-                @if ($categorias->isEmpty() || $autores->isEmpty()) onsubmit="return false;" @endif>
+                @if ($categorias->isEmpty() || $autores->isEmpty())onsubmit="return false;" @endif>
                 @csrf
 
                 <!-- Título -->
@@ -100,9 +103,14 @@
 
                 <!-- Botón -->
                 <div class="flex justify-center items-center">
-                    <button type="submit"
-                        class="w-full bg-red-600 text-white px-8 py-4 rounded-xl shadow-xl hover:bg-red-700 transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-500"
-                        @if ($categorias->isEmpty() || $autores->isEmpty()) disabled @endif>
+                    <button
+                        type="submit"   
+                        class="w-full px-8 py-4 rounded-xl shadow-xl focus:outline-none focus:ring-2
+                            {{ $disabled 
+                                ? 'bg-gray-400 text-gray-700 cursor-not-allowed' 
+                                : 'bg-red-600 text-white hover:bg-red-700 transform hover:scale-105 focus:ring-red-500 transition-all' 
+                            }}"
+                        @if ($disabled) disabled @endif>
                         Agregar Libro
                     </button>
                 </div>

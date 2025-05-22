@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Autores</title>
     <link rel="shortcut icon" href="{{ asset('img/book.png') }}">
-    @vite('resources/css/app.css')
+    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/apiAutor.js'])
 </head>
 
 <body class="flex h-screen">
@@ -35,13 +35,15 @@
             <!-- Tarjetas de autores con 3 columnas -->
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 @forelse ($autores as $autor)
-                    <div class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 flex items-center">
+                    <div
+                        class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 flex items-center">
                         <!-- Foto del autor -->
                         @if ($autor->foto)
                             <img src="{{ Storage::url($autor->foto) }}" alt="Foto de {{ $autor->nombre }}"
                                 class="w-32 h-32 object-cover rounded-md flex-shrink-0">
                         @else
-                            <div class="w-32 h-32 bg-gray-200 flex items-center justify-center rounded-md text-gray-500 flex-shrink-0">
+                            <div
+                                class="w-32 h-32 bg-gray-200 flex items-center justify-center rounded-md text-gray-500 flex-shrink-0">
                                 Sin foto
                             </div>
                         @endif
@@ -53,14 +55,16 @@
 
                             <!-- Botón eliminar -->
                             <form action="{{ route('destroyAuthor', $autor->id) }}" method="POST"
-                                  onsubmit="return confirm('¿Estás seguro de que deseas eliminar este autor?');">
+                                class="form-delete-author" onsubmit="alertify.success('Eliminado')">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="flex items-center text-red-600 hover:text-red-800 transition">
+                                <button type="button"
+                                    class="btn-delete-author cursor-pointer flex items-center text-red-600 hover:text-red-800 transition">
                                     <img src="{{ asset('img/x.png') }}" alt="Eliminar" class="w-5 h-5 mr-1">
                                     Eliminar
                                 </button>
                             </form>
+
                         </div>
                     </div>
                 @empty

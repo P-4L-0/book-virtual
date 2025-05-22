@@ -19,6 +19,28 @@
             <form action="{{ route('agregarCat') }}" method="POST" enctype="multipart/form-data" class="space-y-8">
                 @csrf
 
+                {{-- Mensaje de éxito --}}
+                @if (session('success'))
+                    <div id="success-alert"
+                        class="mb-6 flex items-start justify-between bg-green-100 border border-green-400 text-green-700 px-6 py-4 rounded-xl shadow transition-opacity duration-500">
+                        <div class="flex items-center gap-3">
+                            <!-- Ícono -->
+                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" stroke-width="2"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <!-- Mensaje -->
+                            <span class="font-medium">{{ session('success') }}</span>
+                        </div>
+
+                        <!-- Botón cerrar -->
+                        <button onclick="document.getElementById('success-alert').remove()"
+                            class="text-green-700 hover:text-green-900 ml-4">
+                            &times;
+                        </button>
+                    </div>
+                @endif
+
                 <!-- Nombre de la categoría -->
                 <div class="space-y-4">
                     <label for="nombre" class="block text-lg font-semibold text-gray-700">Nombre de la Categoría</label>

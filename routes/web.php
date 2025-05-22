@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\NoCacheMiddleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegistroController;
@@ -31,11 +32,11 @@ Route::post('/register', [RegistroController::class, 'register'])->name('registe
 | Rutas protegidas con middleware (usuario autenticado)
 |--------------------------------------------------------------------------
 */
-Route::middleware(UserVerify::class)->group(function () {
+Route::middleware([UserVerify::class, NoCacheMiddleware::class])->group(function () {
 
-    //deseados
+    //favoritos
     Route::get('/favoritos', [FavoritosController::class, 'index'])->name('favoritos');
-    Route::get('/favoritos', [FavoritosController::class, 'index'])->name('favoritos');    
+    Route::get('/favoritos', [FavoritosController::class, 'index'])->name('favoritos');
     Route::delete('/favoritos/{id}', [FavoritosController::class, 'destroy'])->name('delFav');
     Route::delete('/favoritos/quitar/{id}', [FavoritosController::class, 'quitar'])->name('quitFav');
 

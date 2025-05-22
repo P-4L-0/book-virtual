@@ -39,10 +39,7 @@ class CategoryController
             'imagen' => $imagePath,
         ]);
 
-        return response()->json([
-            'message' => 'Categoría creada exitosamente.',
-            'categoria' => $categoria
-        ], 201);
+        return redirect()->back()->with('success', 'Categoria agregada correctamente.');
     }
 
     public function misCategorias(Request $request)

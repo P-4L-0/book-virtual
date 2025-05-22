@@ -42,21 +42,22 @@
                     <p class="text-3xl font-bold text-gray-700" id="authorTotal">{{ $librosPorAutor->count() }}</p>
                 </div>
             </div>
-          <div class="bg-white shadow-lg rounded-lg p-5 flex items-center space-x-6 border-2 border-red-600 max-w-xs mx-auto">
-  <div class="bg-red-50 text-gray-700 px-5 py-3 rounded-md font-mono text-center w-48">
-    <p id="clock" class="text-xl font-semibold tracking-wide"></p>
-    <p class="text-sm text-gray-500 mt-1">Hora El Salvador</p>
-  </div>
-</div>
+            <div
+                class="bg-white shadow-lg rounded-lg p-5 flex items-center space-x-6 border-2 border-red-600 max-w-xs mx-auto">
+                <div class="bg-red-50 text-gray-700 px-5 py-3 rounded-md font-mono text-center w-48">
+                    <p id="clock" class="text-xl font-semibold tracking-wide"></p>
+                    <p class="text-sm text-gray-500 mt-1">Hora El Salvador</p>
+                </div>
+            </div>
 
-<script>
-  function updateClock() {
-    const now = new Date().toLocaleString('es-ES', { timeZone: 'America/El_Salvador', hour12: false });
-    document.getElementById('clock').textContent = now;
-  }
-  updateClock();
-  setInterval(updateClock, 1000);
-</script>
+            <script>
+                function updateClock() {
+                    const now = new Date().toLocaleString('es-ES', { timeZone: 'America/El_Salvador', hour12: false });
+                    document.getElementById('clock').textContent = now;
+                }
+                updateClock();
+                setInterval(updateClock, 1000);
+            </script>
 
         </section>
 
@@ -128,12 +129,12 @@
         const fechasData = @json($librosPorFecha->pluck('total'));
 
         // Función para generar colores en tonos rojos
-        function generateRedColors(num) {
+        function generateRedColors(numColors) {
             const colors = [];
-            const baseHue = 0; // rojo
-            for (let i = 0; i < num; i++) {
-                const lightness = 50 + (i % 3) * 10;
-                colors.push(`hsl(${baseHue}, 70%, ${lightness}%)`);
+            for (let i = 0; i < numColors; i++) {
+                const saturation = 70 + Math.floor((i * 30) / numColors);  // entre 70% y 100%
+                const lightness = 40 + Math.floor((i * 30) / numColors);   // entre 40% y 70%
+                colors.push(`hsl(0, ${saturation}%, ${lightness}%)`);
             }
             return colors;
         }
