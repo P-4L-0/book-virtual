@@ -22,7 +22,10 @@ class Author extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
-
+    public function libros()
+    {
+        return $this->hasMany(Libro::class);
+    }
     public function autores()
     {
         return $this->hasMany(Author::class);
