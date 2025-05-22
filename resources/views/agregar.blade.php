@@ -42,7 +42,7 @@
                             <tr class="bg-gradient-to-r from-gray-300 to-gray-400 text-gray-800 uppercase text-sm">
                                 <th class="py-3 px-6 text-left">Tipo</th>
                                 <th class="py-3 px-6 text-left">Nombre</th>
-                                <th class="py-3 px-6 text-left">Detalles</th>
+                                <!-- <th class="py-3 px-6 text-left">Detalles</th> -->
                             </tr>
                         </thead>
                         <tbody class="text-gray-700">
@@ -51,9 +51,9 @@
                             <tr class="border-b hover:bg-gray-100 transition">
                                 <td class="py-3 px-6 font-bold text-red-800">Categoría</td>
                                 <td class="py-3 px-6">{{ $categoria->nombre }}</td>
-                                <td class="py-3 px-6">
+                                <!-- <td class="py-3 px-6">
                                     <a href="{{ url('/categorias/' . $categoria->id) }}" class="text-red-800 hover:underline font-semibold">Ver más</a>
-                                </td>
+                                </td> -->
                             </tr>
                             @endforeach
 
@@ -62,9 +62,9 @@
                             <tr class="border-b hover:bg-gray-100 transition">
                                 <td class="py-3 px-6 font-bold text-red-800">Autor</td>
                                 <td class="py-3 px-6">{{ $autor->nombre }}</td>
-                                <td class="py-3 px-6">
+                                <!-- <td class="py-3 px-6">
                                     <a href="{{ url('/autores/' . $autor->id) }}" class="text-red-800 hover:underline font-semibold">Ver más</a>
-                                </td>
+                                </td> -->
                             </tr>
                             @endforeach
 
@@ -73,9 +73,9 @@
                             <tr class="border-b hover:bg-gray-100 transition">
                                 <td class="py-3 px-6 font-bold text-red-800">Libro</td>
                                 <td class="py-3 px-6">{{ $libro->titulo }}</td>
-                                <td class="py-3 px-6">
+                                <!-- <td class="py-3 px-6">
                                     <a href="{{ url('/libros/' . $libro->id) }}" class="text-red-800 hover:underline font-semibold">Ver más</a>
-                                </td>
+                                </td> -->
                             </tr>
                             @endforeach
 
