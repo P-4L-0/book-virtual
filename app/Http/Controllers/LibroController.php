@@ -15,13 +15,27 @@ class LibroController
 {
     use SearchableTrait; // USA el trait
 
-    public function show()
+  public function show()
     {
         $libros = Libro::with(['categoria', 'autor'])
             ->orderBy('created_at', 'desc')
             ->take(10)
             ->get();
-        return view('inicio', compact('libros'));
+
+        // Conteo libros por categoría (para gráfica)
+        $librosPorCategoria = Category::withCount('libros')->get();
+
+        // Conteo libros por autor (para gráfica)
+        $librosPorAutor = Author::withCount('libros')->get();
+
+        // Conteo libros creados por mes (últimos 6 meses)
+        $librosPorFecha = Libro::selectRaw("DATE_FORMAT(created_at, '%Y-%m') as mes, COUNT(*) as total")
+            ->where('created_at', '>=', now()->subMonths(6))
+            ->groupBy('mes')
+            ->orderBy('mes')
+            ->get();
+
+        return view('inicio', compact('libros', 'librosPorCategoria', 'librosPorAutor', 'librosPorFecha'));
     }
 
     public function userBooks()
