@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Categorías</title>
     <link rel="shortcut icon" href="{{ asset('img/book.png') }}" />
-    @vite('resources/css/app.css')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/apiCat.js'])
 </head>
 
 <body class="flex h-screen">
@@ -37,8 +38,7 @@
                         <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 relative">
 
                             @if ($categoria->imagen)
-                                <img src="{{ asset('storage/' . $categoria->imagen) }}"
-                                    alt="Imagen de {{ $categoria->nombre }}"
+                                <img src="{{ asset('storage/' . $categoria->imagen) }}" alt="Imagen de {{ $categoria->nombre }}"
                                     class="w-full h-48 object-cover rounded-lg mb-4">
                             @endif
 
@@ -51,9 +51,10 @@
                             </div>
 
                             <!-- Imagen "X" en esquina inferior derecha con función eliminar -->
-                            <img src="{{ asset('img/x.png') }}" alt="Cerrar"
+                            <img src="{{ asset('img/x.png') }}" alt="Eliminar"
                                 class="w-6 h-6 absolute bottom-2 right-2 cursor-pointer hover:scale-110 transition-transform duration-200"
-                                onclick="deleteCategory({{ $categoria->id }}, this)">
+                                data-id="{{ $categoria->id }}">
+
                         </div>
                     @endforeach
                 @else
@@ -64,34 +65,6 @@
             </div>
         </main>
     </div>
-
-    <script>
-        function deleteCategory(id, element) {
-            if (!confirm('¿Seguro que quieres eliminar esta categoría?')) return;
-
-            fetch(`/categoria/${id}`, {
-                method: 'DELETE',
-                headers: {
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
-                    'Accept': 'application/json',
-                }
-            })
-            .then(response => {
-                if (!response.ok) throw new Error('Error al eliminar');
-                return response.json();
-            })
-            .then(data => {
-                // Quita la tarjeta padre (el div con relative)
-                const card = element.closest('div.relative');
-                card.remove();
-                alert(data.message);
-            })
-            .catch(error => {
-                alert('No se pudo eliminar la categoría.');
-                console.error(error);
-            });
-        }
-    </script>
 </body>
 
 </html>
