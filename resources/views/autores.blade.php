@@ -19,7 +19,7 @@
                 <h1 class="text-2xl font-bold">Autores</h1>
                 <div class="flex items-center space-x-4 ml-auto">
                     <!-- Formulario de búsqueda -->
-                    <form method="GET" action="{{ route('autores.index') }}" class="flex items-center space-x-4">
+                    <form method="GET" action="{{ route('autores') }}" class="flex items-center space-x-4">
                         <input type="text" name="buscar" value="{{ request('buscar') }}" placeholder="Buscar..."
                             class="border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-purple-600" />
                     </form>
@@ -52,7 +52,7 @@
                             <p class="text-sm text-gray-600 mb-3">Nacionalidad: {{ $autor->nacionalidad }}</p>
 
                             <!-- Botón eliminar -->
-                            <form action="{{ route('autor.destroy', $autor->id) }}" method="POST"
+                            <form action="{{ route('destroyAuthor', $autor->id) }}" method="POST"
                                   onsubmit="return confirm('¿Estás seguro de que deseas eliminar este autor?');">
                                 @csrf
                                 @method('DELETE')

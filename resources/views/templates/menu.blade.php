@@ -16,53 +16,46 @@
         <!-- Menú -->
         <ul class="flex flex-col w-full mt-8">
             <li>
-                <a href="/home"
+                <a href="{{ route('home') }}"
                     class="flex items-center px-6 py-3 rounded-xl transition-all duration-300 hover:bg-red-200 hover:shadow-md hover:scale-105 transform focus:outline-none focus:ring-2 focus:ring-gray-500 active:bg-gray-300 active:font-semibold ">
                     <img class="h-6 w-6 mr-3" src="{{ asset('svg/door.svg') }}" alt="Inicio" />
                     <span class="font-medium">Inicio</span>
                 </a>
             </li>
             <li>
-                <a href="/mislibros"
+                <a href="{{ route('misLibros') }}"
                     class="flex items-center px-6 py-3 rounded-xl transition-all duration-300 hover:bg-red-200 hover:shadow-md hover:scale-105 transform focus:outline-none focus:ring-2 focus:ring-gray-500 active:bg-gray-300 active:font-semibold">
                     <img class="h-6 w-6 mr-3" src="{{ asset('svg/bookmark.svg') }}" alt="Mis Libros" />
                     <span class="font-medium">Mis Libros</span>
                 </a>
             </li>
             <li>
-                <a href="/agregar"
+                <a href="{{ route('agregar') }}"
                     class="flex items-center px-6 py-3 rounded-xl transition-all duration-300 hover:bg-red-200 hover:shadow-md hover:scale-105 transform focus:outline-none focus:ring-2 focus:ring-gray-500 active:bg-gray-300 active:font-semibold">
                     <img class="h-6 w-6 mr-3" src="{{ asset('svg/square-plus.svg') }}" alt="Agregar" />
                     <span class="font-medium">Agregar</span>
                 </a>
             </li>
-            <!-- <li>
-                <a href="/deseados"
+            <li>
+                <a href="{{ route('favoritos') }}"
                     class="flex items-center px-6 py-3 rounded-xl transition-all duration-300 hover:bg-red-200 hover:shadow-md hover:scale-105 transform focus:outline-none focus:ring-2 focus:ring-gray-500 active:bg-gray-300 active:font-semibold">
                     <img class="h-6 w-6 mr-3" src="{{ asset('svg/gift.svg') }}" alt="Deseados" />
                     <span class="font-medium">Favoritos</span>
                 </a>
-            </li> -->
+            </li>
             <li>
-                <a href="/autores"
+                <a href="{{ route('autores') }}"
                     class="flex items-center px-6 py-3 rounded-xl transition-all duration-300 hover:bg-red-200 hover:shadow-md hover:scale-105 transform focus:outline-none focus:ring-2 focus:ring-gray-500 active:bg-gray-300 active:font-semibold">
                     <img class="h-6 w-6 mr-3" src="{{ asset('svg/id.svg') }}" alt="Autores" />
                     <span class="font-medium">Autores</span>
                 </a>
             </li>
             <li>
-                <a href="/categorias"
+                <a href="{{ route('misCategorias') }}"
                     class="flex items-center px-6 py-3 rounded-xl transition-all duration-300 hover:bg-red-200 hover:shadow-md hover:scale-105 transform focus:outline-none focus:ring-2 focus:ring-gray-500 active:bg-gray-300 active:font-semibold">
                     <img class="h-6 w-6 mr-3" src="{{ asset('svg/category-2.svg') }}" alt="Información" />
                     <span class="font-medium">Categorías</span>
                 </a>
-            </li>
-            <li>
-                <!--<a href="../views/.php"
-                    class="flex items-center px-6 py-3 rounded-xl transition-all duration-300 hover:bg-red-200 hover:shadow-md hover:scale-105 transform focus:outline-none focus:ring-2 focus:ring-gray-500 active:bg-gray-300 active:font-semibold">
-                    <img class="h-6 w-6 mr-3" src="{{ asset('svg/user.svg') }}" alt="Perfil" />
-                    <span class="font-medium">Perfil</span>
-                </a>-->
             </li>
         </ul>
 

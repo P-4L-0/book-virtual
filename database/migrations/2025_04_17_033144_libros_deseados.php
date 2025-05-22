@@ -13,9 +13,11 @@ return new class extends Migration {
         Schema::create('librosDeseados', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('id_libro');
             $table->unsignedBigInteger('author_id')->nullable();
             $table->unsignedBigInteger('category_id')->nullable();
             $table->string('titulo', 255);
+            $table->string('imagen')->nullable();
             $table->foreign('user_id')->references('id')->on('usuarios')->onDelete('cascade');
             $table->foreign('author_id')->references('id')->on('autores')->onDelete('set null');
             $table->foreign('category_id')->references('id')->on('categorias')->onDelete('set null');

@@ -34,7 +34,6 @@ Route::post('/register', [RegistroController::class, 'register'])->name('registe
 Route::middleware(UserVerify::class)->group(function () {
 
     //deseados
-
     Route::get('/favoritos', [FavoritosController::class, 'index'])->name('favoritos');
     Route::get('/favoritos', [FavoritosController::class, 'index'])->name('favoritos');    
     Route::delete('/favoritos/{id}', [FavoritosController::class, 'destroy'])->name('delFav');
@@ -56,10 +55,10 @@ Route::middleware(UserVerify::class)->group(function () {
     Route::get('/categoria/{id}', [CategoryController::class, 'show'])->name('categoria.show');
 
     // Autores
-    Route::get('/autores', [AutorController::class, 'index'])->name('autores.index');
-    Route::post('/agregarAutor', [AutorController::class, 'store'])->name('autores.store');
-    Route::delete('/autor/{id}', [AutorController::class, 'destroy'])->name('autor.destroy');
-    Route::get('/autor/{id}', [AutorController::class, 'show'])->name('autor.show');
+    Route::get('/autores', [AutorController::class, 'index'])->name('autores');
+    Route::post('/agregarAutor', [AutorController::class, 'store'])->name('storeAuthor');
+    Route::delete('/autor/{id}', [AutorController::class, 'destroy'])->name('destroyAuthor');
+    Route::get('/autor/{id}', [AutorController::class, 'show'])->name('showAuthor');
 
     // Libros
     Route::get('/addLibros', [LibroController::class, 'createAddLibros'])->name('addLibros');
@@ -75,7 +74,7 @@ Route::middleware(UserVerify::class)->group(function () {
     */
     Route::get('/getAuthors', [AutorController::class, 'userAuthors']);
     Route::get('/getBooks', [LibroController::class, 'userBooks']);
-    Route::get('/getWishBooks', [DeseadosController::class, 'userWishBooks']);
+    // Route::get('/getWishBooks', [FavoritosController::class, 'userWishBooks']);
     Route::get('/getCategorys', [CategoryController::class, 'userCategorys']);
     Route::get('/getLastBooks', [LibroController::class, 'lastBooks']);
 });
