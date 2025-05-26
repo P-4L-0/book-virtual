@@ -7,14 +7,13 @@
 #TRELLO
 [LINK](https://trello.com/invite/b/67db91e72f80f895fc125cbc/ATTI9e3ecd80d05c8b4e92c437a28a35fb5f15115F8F/catedra)
 
-## Autores
+## Autores - Grupo G03T
 - Victor Alexander Guevara Campos #GC242653  
 - Juan José Galdaméz Soto #GS242646  
 - Edson Enrique Chavéz Castillo #CC242635  
 - Ricardo Amilcar Guevara Alvarado #GA242651  
-- Geovanni Francisco Jacinto Ventura #JV242656  
-- José Natanael Córdoba Magaña #CM240477
-
+- Geovanni Francisco Jacinto Ventura #JV242656
+  
 # Sistema de Gestión de Libros Virtual
 
 ![VirtualBooks](/resources/img/Logo.png)
@@ -58,15 +57,28 @@ Permite al usuario autenticarse y acceder al sistema.
 ### 8. Cerrar sesión
 Permite al usuario cerrar sesión de manera segura.
 
-## Guía de Instalación
+# 🛠️ Guía de Instalación del Proyecto
 
-### Usando GitHub Desktop
+## ✅ Requisitos Previos
 
-1. **Clonar el repositorio:**  
-   - Abre la terminal.  
-   - Navega a la carpeta donde deseas clonar el repositorio.  
-   - Ejecuta el siguiente comando:  
-     ```bash
-     git clone https://github.com/P-4L-0/book-virtual.git
-     ```
-<!--favicon gracias a: <a href="https://www.flaticon.com/free-icons/book" title="book icons">Book icons created by mikan933 - Flaticon</a>-->
+Asegúrate de tener instalado en tu sistema:
+
+- [PHP >= 8.x](https://www.php.net/)
+- [Composer](https://getcomposer.org/)
+- [Laravel](https://laravel.com/)
+- [Node.js y npm](https://nodejs.org/)
+- [Git](https://git-scm.com/)
+- [GitHub Desktop (opcional)](https://desktop.github.com/)
+
+---
+
+## 1. 📥 Clonar el Repositorio
+
+Usando terminal o GitHub Desktop:
+
+```bash
+git clone https://github.com/P-4L-0/book-virtual.git
+cd book-virtual
+```
+
+favicon gracias a: <a href="https://www.flaticon.com/free-icons/book" title="book icons">Book icons created by mikan933 - Flaticon</a>
